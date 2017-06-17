@@ -5,27 +5,11 @@
     "version": "0.2.0",
     "configurations": [   
         {
-            "name": "Launch server with nodemon",
             "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceRoot}",
-            "runtimeExecutable": "nodemon",
-            "windows": {
-               "runtimeExecutable": "nodemon.cmd" 
-            },
-            "runtimeArgs": [
-                "--debug=5858"
-            ],
-            "program": "${workspaceRoot}/bin/www.js",
-            // "protocol": "inspector",
-            "port": 5858,
-            "restart": false,
-            "console": "internalConsole",
-            "internalConsoleOptions": "neverOpen",
-            "env": {
-                "NODE_PATH": "${workspaceRoot}",
-                "DEBUG": "portfolio:server*"
-            }
+            "request": "attach",
+            "name": "Attach to nodemon process",
+            "restart": true,
+            "port": 5858
         },
         {
             "type": "node",
