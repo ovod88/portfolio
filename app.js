@@ -29,13 +29,11 @@ app.set('view engine', 'ejs');
 // }));
 // app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/',function(req, res) {
-  res.send(`Hello`);
-});
+app.use('/', (req, res) => res.send(`Hello`));
 
 // app.use('/users', users);
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   let err = new HttpError(404);
 
   next(err);
@@ -46,7 +44,7 @@ app.use(function(req, res, next) {
   // next(err);
 });
 
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
 
 
 
