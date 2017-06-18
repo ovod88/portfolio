@@ -1,19 +1,19 @@
-var app = require('../app');
-var debug = require('debug')('portfolio:server');
-var http = require('http');
-var config = require('config');
+const app = require('../app'),
+      debug = require('debug')('portfolio:server'),
+      http = require('http'),
+      config = require('config');
 
-var port = normalizePort(process.env.PORT || config.get('port') || '3000');
+let port = normalizePort(process.env.PORT || config.get('port'));
 app.set('port', port);
 
-var server = http.createServer(app);
+let server = http.createServer(app);
 
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-function normalizePort(val) {
-  var port = parseInt(val, 10);
+function normalizePort(val = 3000) {
+  let port = parseInt(val, 10);
 
   if (isNaN(port)) {
     return val;
@@ -31,17 +31,17 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  let bind = typeof port === 'string'
+    ? `Pipe ${port}`
+    : `Port ${port}`;
 
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      console.error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      console.error( `${bind} is already in use`);
       process.exit(1);
       break;
     default:
@@ -50,9 +50,9 @@ function onError(error) {
 }
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  let addr = server.address(),
+      bind = typeof addr === 'string'
+    ? `pipe ${addr}`
+    : `port ${addr.port}`;
+  debug(`Listening on ${bind}`);
 }

@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
-var path = require('path');
-var HttpError = require('errors').HttpError;
+const express = require('express'),
+      app = express(),
+      path = require('path'),
+      HttpError = require('errors').HttpError;
 
 // var favicon = require('serve-favicon');
 // var logger = require('morgan');
@@ -30,13 +30,13 @@ app.set('view engine', 'ejs');
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/',function(req, res) {
-  res.send('Hello');
+  res.send(`Hello`);
 });
 
 // app.use('/users', users);
 
 app.use(function(req, res, next) {
-  var err = new HttpError(404);
+  let err = new HttpError(404);
 
   next(err);
 

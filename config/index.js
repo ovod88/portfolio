@@ -1,4 +1,4 @@
-var nconf = require('nconf'),
+const nconf = require('nconf'),
     path = require('path');
 
   nconf.argv()
