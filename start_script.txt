@@ -1,0 +1,1 @@
+NODE_PATH=. nodemon --debug=5858 bin/www.js

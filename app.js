@@ -29,7 +29,7 @@ app.set('view engine', 'ejs');
 // }));
 // app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', (req, res) => res.send(`Hello`));
+app.get('/', (req, res) => res.send(`Hello`));
 
 // app.use('/users', users);
 
@@ -53,7 +53,8 @@ app.use((err, req, res, next) => {
   // res.locals.message = err.message;
   // res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // res.status(err.status || 500);
+  res.status(err.status || 500);
+  res.send(err.stack);
   // res.render('error');
 });
 

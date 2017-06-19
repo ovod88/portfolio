@@ -1,18 +1,22 @@
 const path = require('path'),
-      util = require('util'),
       http = require('http');
 
-function HttpError(status, message) {
-    Error.apply(this, arguments);
-    Error.captureStackTrace(this, HttpError);
+class HttpError extends Error {
+    constructor(status, message) {
+        super(arguments);
+        Error.captureStackTrace(this, HttpError);
 
-    this.status = status;
-    this.message = message || http.STATUS_CODES[status] || "Error";
+        this.status = typeof status === 'number' ? status : 500;
+        if(message) {
+            this.message = typeof message === 'string' ? message : http.STATUS_CODES[status];
+        } else {
+             this.message = http.STATUS_CODES[status] || "Error occured inside the application";
+        }
+    }
 }
 
-util.inherits(HttpError, Error);
-
 HttpError.prototype.name = "HttpError";
+
 
 
 
