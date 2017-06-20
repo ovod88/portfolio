@@ -35,27 +35,33 @@ app.get('/', (req, res) => res.send(`Hello`));
 
 app.use((req, res, next) => {
   let err = new HttpError(404);
-
   next(err);
-
-
-  // var err = new Error('Not Found Here');
-  // err.status = 404;
-  // next(err);
 });
 
 app.use((err, req, res, next) => {
+  if(typeof err === 'number') {
+    err = new HttpError(err);
+  }
 
-
-
-
-
+  if(err instanceof HttpError) {
+    sendError(err, res);
+  } else {
+    err = new HttpError(err.message);
+    sendError(err, res);
+  }
   // res.locals.message = err.message;
   // res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  res.status(err.status || 500);
-  res.send(err.stack);
   // res.render('error');
 });
+
+let sendError = (err, res) => {
+  if(app.get('env') == 'development') {
+     res.status(err.status || 500);
+     res.send(err.stack);
+  } else {
+     res.send('HERE WILL BE BEAUTIFUL ERROR PAGE FOR USERS WITH TEMPLATE');//TODO
+  }
+}
+
 
 module.exports = app;
