@@ -1,12 +1,19 @@
 const app = require('../app'),
       debug = require('debug')('portfolio:server'),
       http = require('http'),
-      config = require('config');
+      config = require('config'),
+      logger = require('logger')(module);
 
 let port = normalizePort(process.env.PORT || config.get('port'));
 app.set('port', port);
 
 let server = http.createServer(app);
+
+let emit = server.emit;
+server.emit = function(event) {//array function can not be used with apply (this is ignored)
+  logger.debug(event);
+  emit.apply(server, arguments);
+}
 
 server.listen(port);
 server.on('error', onError);
@@ -27,6 +34,7 @@ function normalizePort(val = 3000) {
 }
 
 function onError(error) {
+  logger.crit(`Server stopped dur to ${error}`);
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -37,11 +45,11 @@ function onError(error) {
 
   switch (error.code) {
     case 'EACCES':
-      console.error(`${bind} requires elevated privileges`);
+      logger.error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error( `${bind} is already in use`);
+      logger.error( `${bind} is already in use`);
       process.exit(1);
       break;
     default:
@@ -54,5 +62,5 @@ function onListening() {
       bind = typeof addr === 'string'
     ? `pipe ${addr}`
     : `port ${addr.port}`;
-  debug(`Listening on ${bind}`);
+  logger.info(`Listening on ${bind}`);
 }

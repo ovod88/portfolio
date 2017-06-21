@@ -1,7 +1,8 @@
 const express = require('express'),
       app = express(),
       path = require('path'),
-      HttpError = require('errors').HttpError;
+      HttpError = require('errors').HttpError,
+      logger = require('logger')(module);
 
 // var favicon = require('serve-favicon');
 // var logger = require('morgan');
@@ -42,6 +43,7 @@ app.use((err, req, res, next) => {
   if(typeof err === 'number') {
     err = new HttpError(err);
   }
+  logger.error(`Request to ${req.url} caused error status ${err.status} with message ${err.stack}`);
 
   if(err instanceof HttpError) {
     sendError(err, res);
@@ -57,6 +59,7 @@ app.use((err, req, res, next) => {
 let sendError = (err, res) => {
   if(app.get('env') == 'development') {
      res.status(err.status || 500);
+     res.setHeader('Content-Type', 'text/plain');
      res.send(err.stack);
   } else {
      res.send('HERE WILL BE BEAUTIFUL ERROR PAGE FOR USERS WITH TEMPLATE');//TODO
