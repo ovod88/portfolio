@@ -8,7 +8,7 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       cookieParser = require('cookie-parser');
 
-
+app.engine('ejs', require('ejs-locals'));
 app.set('views', path.join(__dirname, 'templates'));
 app.set('view engine', 'ejs');
 
