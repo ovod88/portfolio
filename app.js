@@ -3,34 +3,48 @@ const express = require('express'),
       path = require('path'),
       HttpError = require('errors').HttpError,
       logger = require('logger')(module),
-      favicon = require('serve-favicon');
-// var logger = require('morgan');
-// var cookieParser = require('cookie-parser');
-// var bodyParser = require('body-parser');
+      loggerM = require('morgan');
+      favicon = require('serve-favicon'),
+      bodyParser = require('body-parser'),
+      cookieParser = require('cookie-parser');
 
-// var index = require('./routes/index');
-// var users = require('./routes/users');
 
-// view engine setup
 app.set('views', path.join(__dirname, 'templates'));
 app.set('view engine', 'ejs');
 
+if(app.get('env') == 'development') {
+  app.use(loggerM('dev'));
+} else {
+  app.use(loggerM('default'));
+}
+
 app.use(favicon(path.join(__dirname, 'public/imgs', 'favicon.ico')));
-// app.use(logger('dev'));
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
 // app.use(require('node-sass-middleware')({
 //   src: path.join(__dirname, 'public'),
 //   dest: path.join(__dirname, 'public'),
 //   indentedSyntax: true,
 //   sourceMap: true
 // }));
-// app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => res.send(`Hello`));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/users', users);
+app.get('/hello', (req, res) => {
+  console.log(req.query);
+  res.send(`Hello`);
+});
+
+app.post('/hello', (req, res) => {
+  console.log(req.body);
+  res.json(req.body);
+});
+
+require("routes")(app);
+
 
 app.use((req, res, next) => {
   let err = new HttpError(404);
@@ -60,7 +74,7 @@ let sendError = (err, res) => {
      res.setHeader('Content-Type', 'text/plain');
      res.send(err.stack);
   } else {
-     res.send('HERE WILL BE BEAUTIFUL ERROR PAGE FOR USERS WITH TEMPLATE');//TODO
+     res.render('error');//TODO
   }
 }
 
