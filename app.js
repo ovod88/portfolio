@@ -24,6 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(require('middleware/sendHttpError'));
+
 // app.use(require('node-sass-middleware')({
 //   src: path.join(__dirname, 'public'),
 //   dest: path.join(__dirname, 'public'),
@@ -57,26 +59,14 @@ app.use((err, req, res, next) => {
   }
   logger.error(`Request to ${req.url} caused error status ${err.status} with message ${err.stack}`);
 
-  if(err instanceof HttpError) {
-    sendError(err, res);
-  } else {
+  if(!(err instanceof HttpError)) {
     err = new HttpError(err.message);
-    sendError(err, res);
   }
+
+  res.sendHttpError(err);
   // res.locals.message = err.message;
   // res.locals.error = req.app.get('env') === 'development' ? err : {};
   // res.render('error');
 });
-
-let sendError = (err, res) => {
-  if(app.get('env') == 'development') {
-     res.status(err.status || 500);
-     res.setHeader('Content-Type', 'text/plain');
-     res.send(err.stack);
-  } else {
-     res.render('error');//TODO
-  }
-}
-
 
 module.exports = app;
