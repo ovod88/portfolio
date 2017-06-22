@@ -2,9 +2,8 @@ const express = require('express'),
       app = express(),
       path = require('path'),
       HttpError = require('errors').HttpError,
-      logger = require('logger')(module);
-
-// var favicon = require('serve-favicon');
+      logger = require('logger')(module),
+      favicon = require('serve-favicon');
 // var logger = require('morgan');
 // var cookieParser = require('cookie-parser');
 // var bodyParser = require('body-parser');
@@ -16,8 +15,7 @@ const express = require('express'),
 app.set('views', path.join(__dirname, 'templates'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/imgs', 'favicon.ico')));
 // app.use(logger('dev'));
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false }));
