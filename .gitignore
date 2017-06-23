@@ -3,3 +3,5 @@ node_modules/
 bash.exe.*
 start_script.*
 logs/
+*-lock.*
+public/

@@ -1,7 +1,6 @@
 'use strict';
 const gulp = require('gulp');
 
-
 function lazyTaskRequest(taskName, path, options) {
     options.taskName = taskName;
     gulp.task(taskName, function (callback) {
@@ -10,7 +9,6 @@ function lazyTaskRequest(taskName, path, options) {
         return task(callback);
     })
 }
-
 
 lazyTaskRequest('copyTest', './gulpTasks/copyTest', {
     src: 'private/**/*.*',
@@ -32,4 +30,18 @@ lazyTaskRequest('cleanImgs', './gulpTasks/del', {
 lazyTaskRequest('clean', './gulpTasks/del', {
     dst: 'public'
 });
+
+lazyTaskRequest('sass', './gulpTasks/sass', {
+    src: 'private/css/style.scss',
+    base: 'private',
+    dst: 'public'
+});
+
+// gulp.task('build-js-prod', gulp.series());//TODO
+// gulp.task('build-js-dev', gulp.series());//TODO
+
+gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));//TODO
+// gulp.task('build-images', gulp.series());//TODO
+
+// gulp.task('build', gulp.series());//TODO
 
