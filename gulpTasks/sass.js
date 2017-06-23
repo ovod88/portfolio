@@ -11,3 +11,5 @@ module.exports = function(options) {
             .pipe(gulp.dest(options.dst));
     }
 };
+
+// {outputStyle: 'compressed'} with if statement
