@@ -32,9 +32,9 @@ lazyTaskRequest('clean', './gulpTasks/del', {
 });
 
 lazyTaskRequest('sass', './gulpTasks/sass', {
-    src: 'private/css/style.scss',
-    base: 'private',
-    dst: 'public'
+    src: 'private/css/sass/style.scss',
+    base: 'private/css/sass',
+    dst: 'public/css'
 });
 
 // gulp.task('build-js-prod', gulp.series());//TODO
