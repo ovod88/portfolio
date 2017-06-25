@@ -34,19 +34,19 @@ lazyTaskRequest('clean', './gulpTasks/del', {
 lazyTaskRequest('sass', './gulpTasks/sass', {
     src: 'private/css/sass/core.scss',
     base: 'private/css/sass',
-    dst: 'private/css'
-});
-
-lazyTaskRequest('concatCSS', './gulpTasks/concatCSS', {
-    src: ['private/css/reset.css', 'private/css/*.css'],
-    dstName: 'style.css',
     dst: 'public/css'
 });
+
+// lazyTaskRequest('concatCSS', './gulpTasks/concatCSS', {
+//     src: ['private/css/core.css'],
+//     dstName: 'style.css',
+//     dst: 'public/css'
+// });
 
 // gulp.task('build-js-prod', gulp.series());//TODO
 // gulp.task('build-js-dev', gulp.series());//TODO
 
-gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concatCSS'));//TODO
+gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));//TODO
 // gulp.task('build-images', gulp.series());//TODO
 
 // gulp.task('build', gulp.series());//TODO
