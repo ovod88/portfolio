@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title><%= blocks.title %></title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href=<%= blocks.style %>>
     </head>
     <body>
         <header>
@@ -16,6 +16,7 @@
 
         <footer>
             Footer
+            <%- partial('../partials/socialNavigation') %>
         </footer><!--make it partial-->
     </body>
 </html>

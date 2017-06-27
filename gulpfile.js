@@ -10,9 +10,10 @@ function lazyTaskRequest(taskName, path, options) {
     })
 }
 
-lazyTaskRequest('copyTest', './gulpTasks/copyTest', {
-    src: 'private/**/*.*',
-    dst: 'public'
+lazyTaskRequest('copyfavicon', './gulpTasks/favicon', {
+    taskname: 'copyfavicon',
+    src: 'private/imgs/favicon.ico',
+    dst: 'public/imgs/'
 });
 
 lazyTaskRequest('cleanJS', './gulpTasks/del', {
@@ -32,16 +33,15 @@ lazyTaskRequest('clean', './gulpTasks/del', {
 });
 
 lazyTaskRequest('sass', './gulpTasks/sass', {
-    src: 'private/css/sass/core.scss',
-    base: 'private/css/sass',
+    src: 'private/css/sass/**/*.*',
     dst: 'public/css'
 });
 
-lazyTaskRequest('sprite', './tasks/sprite', {
+lazyTaskRequest('sprite', './gulpTasks/sprite', {
     taskname: 'sprite',
-    srcFiles: ['img/dist/icons/*.*', '!img/dist/icons/icons.png'],
-    imgDst: 'img/dist/icons/',
-    cssDst: 'css/src/'
+    srcFiles: ['private/imgs/**/*.*'],
+    imgDst: 'public/imgs/',
+    cssDst: 'private/css/'
 });
 
 lazyTaskRequest('compress-imgs', './tasks/makeImgProd', {
@@ -51,7 +51,7 @@ lazyTaskRequest('compress-imgs', './tasks/makeImgProd', {
 });
 
 gulp.task('watch',function() {
-    gulp.watch('private/css/**/*.*', gulp.series('sass'));//TODO ADD JS
+    gulp.watch('private/css/sass/**/*.*', gulp.series('sass'));//TODO ADD JS
 });
 
 // lazyTaskRequest('concatCSS', './gulpTasks/concatCSS', {
@@ -63,10 +63,13 @@ gulp.task('watch',function() {
 // gulp.task('build-js-prod', gulp.series());//TODO
 // gulp.task('build-js-dev', gulp.series());//TODO
 
-gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));//TODO
+
+
+gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));
 gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', 'watch'));
 
-// gulp.task('build-images', gulp.series());//TODO
+gulp.task('build-images', gulp.series('cleanImgs', 'sprite', 'copyfavicon'));
+gulp.task('build-images-dev', gulp.series('cleanImgs', 'sprite', 'copyfavicon'));
 
 // gulp.task('build', gulp.series());//TODO
 

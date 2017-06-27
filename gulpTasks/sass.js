@@ -13,12 +13,14 @@ module.exports = function(options) {
     };
 
     return function() {
-        return gulp.src(options.src, {base: options.base})
+        return gulp.src(options.src)
             .pipe(gulpif(isDevelopment, sourcemap.init({largeFile: true})))
             .pipe(sass(sassOptions).on('error', sass.logError))
             .pipe(gulpif(isDevelopment, sourcemap.write()))
             .pipe(debug({'title': 'Compiling sass ...'}))
-            .pipe(rename('style.css'))
+            .pipe(rename(function(path) {
+                path.basename = 'style';
+            }))
             .pipe(debug({'title': 'Renaming destination file ...'}))
             .pipe(gulp.dest(options.dst));
     }
