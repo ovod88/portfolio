@@ -37,6 +37,23 @@ lazyTaskRequest('sass', './gulpTasks/sass', {
     dst: 'public/css'
 });
 
+lazyTaskRequest('sprite', './tasks/sprite', {
+    taskname: 'sprite',
+    srcFiles: ['img/dist/icons/*.*', '!img/dist/icons/icons.png'],
+    imgDst: 'img/dist/icons/',
+    cssDst: 'css/src/'
+});
+
+lazyTaskRequest('compress-imgs', './tasks/makeImgProd', {
+    taskname: 'make-img-prod',
+    srcFiles: 'img/src/**/*.{png,jpeg,jpg}',
+    dstFolder: 'img/dist'
+});
+
+gulp.task('watch',function() {
+    gulp.watch('private/css/**/*.*', gulp.series('sass'));//TODO ADD JS
+});
+
 // lazyTaskRequest('concatCSS', './gulpTasks/concatCSS', {
 //     src: ['private/css/core.css'],
 //     dstName: 'style.css',
@@ -47,6 +64,8 @@ lazyTaskRequest('sass', './gulpTasks/sass', {
 // gulp.task('build-js-dev', gulp.series());//TODO
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));//TODO
+gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', 'watch'));
+
 // gulp.task('build-images', gulp.series());//TODO
 
 // gulp.task('build', gulp.series());//TODO
