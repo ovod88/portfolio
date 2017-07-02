@@ -1,5 +1,7 @@
 'use strict';
-const gulp = require('gulp');
+const gulp = require('gulp'),
+      browserSync = require('browser-sync').create(),
+      config = require('./config');
 
 function lazyTaskRequest(taskName, path, options) {
     options.taskName = taskName;
@@ -53,6 +55,14 @@ gulp.task('watch',function() {
     gulp.watch('private/css/sass/**/*.*', gulp.series('sass'));//TODO ADD JS
 });
 
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: 'localhost:' + config.get('port')
+    });
+
+    browserSync.watch(['public/**/*.*']).on('change', browserSync.reload);
+});
+
 // lazyTaskRequest('concatCSS', './gulpTasks/concatCSS', {
 //     src: ['private/css/core.css'],
 //     dstName: 'style.css',
@@ -65,10 +75,11 @@ gulp.task('watch',function() {
 
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));
-gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', 'watch'));
+gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', gulp.parallel('watch','browser-sync')));
 
 gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
-gulp.task('build-images-dev', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
+gulp.task('build-images-dev', gulp.series('cleanImgs', 
+                                gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 
 gulp.task('build', gulp.series('clean', 'build-images', 'build-styles'));
 gulp.task('build-dev', gulp.series('clean', 'build-images-dev', 'build-styles-dev'));
