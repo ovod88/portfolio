@@ -43,10 +43,10 @@ lazyTaskRequest('sprite', './gulpTasks/sprite', {
     dstCss: 'private/css/sass/'
 });
 
-lazyTaskRequest('compress-imgs', './tasks/makeImgProd', {
-    taskname: 'make-img-prod',
-    srcFiles: 'img/src/**/*.{png,jpeg,jpg}',
-    dstFolder: 'img/dist'
+lazyTaskRequest('compress-imgs', './gulpTasks/compressImgs', {
+    taskname: 'compress-imgs',
+    src: 'private/imgs/**/pics/*.{png,jpeg,jpg}',
+    dst: 'public/imgs'
 });
 
 gulp.task('watch',function() {
@@ -67,8 +67,8 @@ gulp.task('watch',function() {
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));
 gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', 'watch'));
 
-gulp.task('build-images', gulp.series('cleanImgs', 'sprite', 'copyfavicon'));
-gulp.task('build-images-dev', gulp.series('cleanImgs', 'sprite', 'copyfavicon'));
+gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
+gulp.task('build-images-dev', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 
 gulp.task('build', gulp.series('clean', 'build-images', 'build-styles'));
 gulp.task('build-dev', gulp.series('clean', 'build-images-dev', 'build-styles-dev'));

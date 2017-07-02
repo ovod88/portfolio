@@ -20,11 +20,11 @@ module.exports = function(options) {
     
         var tasks = folders.map(function(folder) {
 
-            let spriteData = gulp.src(path.join(options.src, folder, '/**/*.png'))
+            let spriteData = gulp.src(path.join(options.src, folder, '/icons/*.*'))
                                 .pipe(debug({title: `Sprite compilation`}))
                                 .pipe(sprite({
-                                        imgName: 'icons.png',
-                                        imgPath: '../../imgs/' + folder + '/icons.png',
+                                        imgName: 'icons/icons.png',
+                                        imgPath: '../../imgs/' + folder + '/icons/icons.png',
                                         cssName: '_sprite-icons.scss',
                                         cssFormat: 'scss',
                                         algorithm: 'binary-tree',
