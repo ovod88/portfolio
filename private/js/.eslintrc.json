@@ -1,0 +1,28 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+  "globals": {
+    "requirejs": true,
+    "window": true
+  },
+  // "plugins": [
+  //   "requirejs"
+  // ],
+  "env": {
+    "node": true,
+    "es6": true,
+    "amd": true,
+    "jquery": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+    "strict": 2
+  }
+}

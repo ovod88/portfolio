@@ -28,6 +28,7 @@
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^3.1.0",
+    "gulp-eslint": "^4.0.0",
     "gulp-if": "^2.0.2",
     "gulp-image": "^2.9.0",
     "gulp-newer": "^1.3.0",
@@ -37,6 +38,8 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp.spritesmith": "^6.5.0",
-    "merge-stream": "^1.0.1"
+    "merge-stream": "^1.0.1",
+    "stream-combiner2": "^1.1.1",
+    "through2": "^2.0.3"
   }
 }

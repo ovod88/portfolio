@@ -51,6 +51,10 @@ lazyTaskRequest('compress-imgs', './gulpTasks/compressImgs', {
     dst: 'public/imgs'
 });
 
+lazyTaskRequest('lint', './gulpTasks/lintJS', {
+    src: ['private/js/**/*.js', '!private/js/**/libs/**/*.*']
+});
+
 gulp.task('watch',function() {
     gulp.watch('private/css/sass/**/*.*', gulp.series('sass'));//TODO ADD JS
 });
@@ -69,10 +73,8 @@ gulp.task('browser-sync', function() {
 //     dst: 'public/css'
 // });
 
-// gulp.task('build-js-prod', gulp.series());//TODO
-// gulp.task('build-js-dev', gulp.series());//TODO
-
-
+// gulp.task('build-js', gulp.series('cleanJS', 'lint', 'babel', 'js-optimize'));
+// gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'babel'));
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));
 gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', gulp.parallel('watch','browser-sync')));
