@@ -52,15 +52,26 @@ lazyTaskRequest('compress-imgs', './gulpTasks/compressImgs', {
 });
 
 lazyTaskRequest('lint', './gulpTasks/lintJS', {
-    src: ['private/js/**/*.js', '!private/js/**/libs/**/*.*']
+    src: ['private/js/**/*.js', '!private/js/**/libs/**/*.*', '!private/js/**/bower_components/**/*.*']
 });
 
-gulp.task('watch',function() {
-    gulp.watch('private/css/sass/**/*.*', gulp.series('sass'));//TODO ADD JS
+lazyTaskRequest('babel', './gulpTasks/babelJS', {
+    src: ['private/js/**/*.js'],
+    base: 'private',
+    dst: 'public'
+});
+
+gulp.task('watchjs',function() {
+    gulp.watch('private/js/**/*.*', gulp.series('babel'));
+});
+
+gulp.task('watchcss',function() {
+    gulp.watch('private/css/sass/**/*.*', gulp.series('sass'));
 });
 
 gulp.task('browser-sync', function() {
     browserSync.init({
+        port: config.get('port-browser-sync'),
         proxy: 'localhost:' + config.get('port')
     });
 
@@ -73,11 +84,11 @@ gulp.task('browser-sync', function() {
 //     dst: 'public/css'
 // });
 
-// gulp.task('build-js', gulp.series('cleanJS', 'lint', 'babel', 'js-optimize'));
-// gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'babel'));
+gulp.task('build-js', gulp.series('cleanJS', 'lint', 'babel'));//ADD OPTIMIZER
+gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'babel', gulp.parallel('watchjs',  'browser-sync')));
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));
-gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', gulp.parallel('watch','browser-sync')));
+gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', gulp.parallel('watchcss','browser-sync')));
 
 gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 gulp.task('build-images-dev', gulp.series('cleanImgs', 

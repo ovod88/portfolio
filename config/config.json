@@ -1,5 +1,6 @@
 {
     "port": 3000,
+    "port-browser-sync": 3001,
     "log_dir": "logs",
     "debugOnProd": false,
     "debugOnDev": true

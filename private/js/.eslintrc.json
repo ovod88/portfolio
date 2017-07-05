@@ -10,9 +10,9 @@
     "requirejs": true,
     "window": true
   },
-  // "plugins": [
-  //   "requirejs"
-  // ],
+  "plugins": [
+    "requirejs"
+  ],
   "env": {
     "node": true,
     "es6": true,

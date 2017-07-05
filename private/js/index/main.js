@@ -1,6 +1,17 @@
-let x = 5,
-    showMessage = (message = 'Hello') => {
-        console.log(message);
-    };
+requirejs.config ({
+    baseUrl: '../js',
+    waitSeconds: 200,
+    paths: {
+        'jquery': 'bower_components/jquery/dist/jquery',
+        'lodash': 'index/libs/lodash'
+    }
+});
 
-showMessage('Im Vova');
+
+require(['jquery', 'lodash'], function($, _) {
+    $(function() {
+        for(let i = 5; i > 0; i--) {
+            $('.portfolio').fadeToggle('slow');
+        }
+    })
+});
