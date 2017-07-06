@@ -56,9 +56,14 @@ lazyTaskRequest('lint', './gulpTasks/lintJS', {
 });
 
 lazyTaskRequest('babel', './gulpTasks/babelJS', {
-    src: ['private/js/**/*.js'],
+    src: 'private/js/**/*.js',
     base: 'private',
     dst: 'public'
+});
+
+lazyTaskRequest('js-optimize', './gulpTasks/jsOptimize', {
+    src: 'public/js/**/main.js',
+    dst: 'public/js',
 });
 
 gulp.task('watchjs',function() {
@@ -75,7 +80,7 @@ gulp.task('browser-sync', function() {
         proxy: 'localhost:' + config.get('port')
     });
 
-    browserSync.watch(['public/**/*.*']).on('change', browserSync.reload);
+    browserSync.watch(['public', 'templates']).on('change', browserSync.reload);
 });
 
 // lazyTaskRequest('concatCSS', './gulpTasks/concatCSS', {
@@ -84,16 +89,18 @@ gulp.task('browser-sync', function() {
 //     dst: 'public/css'
 // });
 
-gulp.task('build-js', gulp.series('cleanJS', 'lint', 'babel'));//ADD OPTIMIZER
-gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'babel', gulp.parallel('watchjs',  'browser-sync')));
+gulp.task('build-js', gulp.series('cleanJS', 'lint', 'babel', 'js-optimize'));
+gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'babel'));
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));
-gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', gulp.parallel('watchcss','browser-sync')));
+gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass'));
 
 gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 gulp.task('build-images-dev', gulp.series('cleanImgs', 
                                 gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 
-gulp.task('build', gulp.series('clean', 'build-images', 'build-styles'));
-gulp.task('build-dev', gulp.series('clean', 'build-images-dev', 'build-styles-dev'));
+gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js')));
+gulp.task('build-dev', gulp.series('clean', 'build-images-dev', 
+                                            gulp.parallel('build-styles-dev', 'build-js-dev'), 
+                                            gulp.parallel('watchjs', 'watchcss', 'browser-sync')));
 

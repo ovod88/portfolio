@@ -3,7 +3,8 @@ const gulp = require('gulp'),
       debug = require('gulp-debug'),
       gulpIf = require('gulp-if'),
       combine = require('stream-combiner2').obj,
-      babel = require('gulp-babel');
+      babel = require('gulp-babel'),
+      clone = require('gulp-clone');
 
 module.exports = function (options) {
     return function () {
