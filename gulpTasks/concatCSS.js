@@ -1,6 +1,6 @@
 const gulp = require('gulp'),
       debug = require('gulp-debug'),
-      concat = require('gulp-concat-css'),
+      concat = require('gulp-concat'),
       tap = require('gulp-tap'),
       path = require('path'),
       rename = require('gulp-rename');

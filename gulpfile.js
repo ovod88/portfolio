@@ -98,7 +98,8 @@ gulp.task('browser-sync', function() {
 gulp.task('build-js', gulp.series('cleanJS', 'lint', 'babel', 'js-optimize'));
 gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'babel'));
 
-gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-css'));
+gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-css', 'minify-css'));
+gulp.task('build-styles-without-minify', gulp.series('cleanCSS', 'sass', 'concat-css'));
 gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass'));
 
 gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
