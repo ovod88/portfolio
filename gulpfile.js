@@ -39,6 +39,18 @@ lazyTaskRequest('sass', './gulpTasks/sass', {
     dst: 'private/css'
 });
 
+lazyTaskRequest('concat-css', './gulpTasks/concatCSS', {
+    src: ['private/css/**/*.css'],
+    dstName: 'style.css',
+    dst: 'public/css'
+});
+
+lazyTaskRequest('convert-prod-css', './gulpTasks/productionCSS', {
+    src: ['public/css/**/style.css'],
+    dst: 'public/css'
+});
+
+
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
     src: 'private/imgs',
     dstImg: 'public/imgs/',
@@ -83,17 +95,10 @@ gulp.task('browser-sync', function() {
     browserSync.watch(['public', 'templates']).on('change', browserSync.reload);
 });
 
-
-lazyTaskRequest('concatCSS', './gulpTasks/concatCSS', {
-    src: ['private/css/**/*.css'],
-    dstName: 'style.css',
-    dst: 'public/css'
-});
-
 gulp.task('build-js', gulp.series('cleanJS', 'lint', 'babel', 'js-optimize'));
 gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'babel'));
 
-gulp.task('build-styles', gulp.series('cleanCSS', 'sass'));
+gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-css'));
 gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass'));
 
 gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
