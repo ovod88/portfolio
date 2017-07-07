@@ -6,6 +6,7 @@ const gulp = require('gulp'),
       rename = require('gulp-rename'),
       plumber = require('gulp-plumber'),
       notify = require('gulp-notify'),
+      path = require('path'),
       isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 module.exports = function(options) {
@@ -15,7 +16,7 @@ module.exports = function(options) {
     };
 
     return function() {
-        return gulp.src(options.src)
+        return gulp.src(options.src, {base: options.base})
             .pipe(plumber({
                 errorHandler: notify.onError(function(err) {
                     return {
@@ -28,8 +29,9 @@ module.exports = function(options) {
             .pipe(sass(sassOptions).on('error', sass.logError))
             .pipe(gulpif(isDevelopment, sourcemap.write()))
             .pipe(debug({'title': 'Compiling sass ...'}))
-            .pipe(rename(function(path) {
-                path.basename = 'style';
+            .pipe(rename(function(file) {
+                file.basename = 'style';
+                file.dirname = file.dirname.split(path.sep)[0] + '/style';
             }))
             .pipe(debug({'title': 'Renaming destination file ...'}))
             .pipe(gulp.dest(options.dst));

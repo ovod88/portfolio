@@ -23,7 +23,7 @@ lazyTaskRequest('cleanJS', './gulpTasks/del', {
 });
 
 lazyTaskRequest('cleanCSS', './gulpTasks/del', {
-    dst: 'public/css'
+    dst: ['public/css', 'private/css/**/style']
 });
 
 lazyTaskRequest('cleanImgs', './gulpTasks/del', {
@@ -35,8 +35,8 @@ lazyTaskRequest('clean', './gulpTasks/del', {
 });
 
 lazyTaskRequest('sass', './gulpTasks/sass', {
-    src: 'private/css/sass/**/*.*',
-    dst: 'public/css'
+    src: 'private/css/**/sass/*.*',
+    dst: 'private/css'
 });
 
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
@@ -83,11 +83,12 @@ gulp.task('browser-sync', function() {
     browserSync.watch(['public', 'templates']).on('change', browserSync.reload);
 });
 
-// lazyTaskRequest('concatCSS', './gulpTasks/concatCSS', {
-//     src: ['private/css/core.css'],
-//     dstName: 'style.css',
-//     dst: 'public/css'
-// });
+
+lazyTaskRequest('concatCSS', './gulpTasks/concatCSS', {
+    src: ['private/css/**/*.css'],
+    dstName: 'style.css',
+    dst: 'public/css'
+});
 
 gulp.task('build-js', gulp.series('cleanJS', 'lint', 'babel', 'js-optimize'));
 gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'babel'));
