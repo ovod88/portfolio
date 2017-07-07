@@ -45,8 +45,8 @@ lazyTaskRequest('concat-css', './gulpTasks/concatCSS', {
     dst: 'public/css'
 });
 
-lazyTaskRequest('convert-prod-css', './gulpTasks/productionCSS', {
-    src: ['public/css/**/style.css'],
+lazyTaskRequest('minify-css', './gulpTasks/minifyCSS', {
+    src: 'public/css/**/style.css',
     dst: 'public/css'
 });
 

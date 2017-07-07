@@ -19,7 +19,6 @@ module.exports = function(options) {
                            .pipe(debug({title: 'Concatinating css ... '}))
                            .pipe(rename(function(file) {
                                 file.dirname = rpath;
-                                console.log(file.dirname);
                             }))
                            .pipe(gulp.dest(options.dst));
                         }
