@@ -1,12 +1,8 @@
 const gulp = require('gulp'),
-      plumber = require('gulp-plumber'),
+      $ = require('gulp-load-plugins')(),
       fs = require('fs'),
       through2 = require('through2').obj,
-      combine = require('stream-combiner2').obj,
-      gulpIf = require('gulp-if'),
-      debug = require('gulp-debug'),
-      lint = require('gulp-eslint'),
-      notify = require('gulp-notify');
+      combine = require('stream-combiner2').obj;
 
 module.exports = function(options) {
     let lintCache = {},
@@ -20,16 +16,16 @@ module.exports = function(options) {
 
     return function() {
         return gulp.src(options.src, {read: false})
-                .pipe(debug({'title': 'Lint item ... '}))
-                .pipe(plumber({
-                        errorHandler: notify.onError(function(err) {
+                .pipe($.debug({'title': 'Lint item ... '}))
+                .pipe($.plumber({
+                        errorHandler: $.notify.onError(function(err) {
                             return {
                                 title: 'Javascript linting',
                                 message: err.message
                         };
                     })
                 }))
-               .pipe(gulpIf(function(file){
+               .pipe($.if(function(file){
                         return lintCache[file.path] && lintCache[file.path].mtime == file.stat.mtime.toJSON();
                     },
                     through2(function(file, enc, callback) {
@@ -41,8 +37,8 @@ module.exports = function(options) {
                             file.contents = fs.readFileSync(file.path);
                             callback(null, file);
                         }),
-                        lint(),
-                        debug({ 'title': 'Linting JS code ...'}),
+                        $.eslint(),
+                        $.debug({ 'title': 'Linting JS code ...'}),
                         through2(function(file, enc, callback) {
                             lintCache[file.path] = {
                                 eslint: file.eslint,
@@ -64,7 +60,7 @@ module.exports = function(options) {
                     }
                     callback();
                 }))
-              .pipe(lint.format())
+              .pipe($.eslint.format())
               .on('end', function() {
                   fs.writeFileSync(lintCacheFile, JSON.stringify(lintCache));
               })   

@@ -1,10 +1,7 @@
 const gulp = require('gulp'),
-      debug = require('gulp-debug'),
-      sprite = require('gulp.spritesmith'),
+      $ = require('gulp-load-plugins')(),
       fs = require('fs'),
       path = require('path'),
-      plumber = require('gulp-plumber'),
-      notify = require('gulp-notify'),
       merge = require('merge-stream');
 
 
@@ -23,16 +20,16 @@ module.exports = function(options) {
         var tasks = folders.map(function(folder) {
 
             let spriteData = gulp.src(path.join(options.src, folder, '/icons/*.*'))
-                                .pipe(plumber({
-                                    errorHandler: notify.onError(function(err) {
+                                .pipe($.plumber({
+                                    errorHandler: $.notify.onError(function(err) {
                                         return {
                                             title: 'Sprite compilation',
                                             message: err.message
                                         };
                                     })
                                 }))
-                                .pipe(debug({title: `Sprite compilation`}))
-                                .pipe(sprite({
+                                .pipe($.debug({title: `Sprite compilation`}))
+                                .pipe($.spritesmith({
                                         imgName: 'icons/icons.png',
                                         imgPath: '../../../imgs/' + folder + '/icons/icons.png',
                                         cssName: 'sass/' + '_sprite-icons.scss',
