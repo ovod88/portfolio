@@ -4,6 +4,7 @@ const gulp = require('gulp'),
       config = require('./config');
 
 function lazyTaskRequest(taskName, path, options) {
+    options = options || {};
     options.taskName = taskName;
     gulp.task(taskName, function (callback) {
       let task = require(path).call(this, options)  ;
@@ -45,6 +46,12 @@ lazyTaskRequest('concat-css', './gulpTasks/concatCSS', {
     dst: 'public/css'
 });
 
+lazyTaskRequest('copy-css', './gulpTasks/copyCSS', {
+    src: ['private/css/**/*.css'],
+    taskName: 'copy-css',
+    dst: 'public/css'
+});
+
 lazyTaskRequest('minify-css', './gulpTasks/minifyCSS', {
     src: 'public/css/**/style.css',
     dst: 'public/css'
@@ -54,7 +61,7 @@ lazyTaskRequest('minify-css', './gulpTasks/minifyCSS', {
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
     src: 'private/imgs',
     dstImg: 'public/imgs/',
-    dstCss: 'private/css/sass/'
+    dstCss: 'private/css/'
 });
 
 lazyTaskRequest('compress-imgs', './gulpTasks/compressImgs', {
@@ -100,7 +107,7 @@ gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'babel'));
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-css', 'minify-css'));
 gulp.task('build-styles-without-minify', gulp.series('cleanCSS', 'sass', 'concat-css'));
-gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass'));
+gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', 'copy-css'));
 
 gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 gulp.task('build-images-dev', gulp.series('cleanImgs', 

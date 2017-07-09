@@ -6,7 +6,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title><%= blocks.title %></title>
         <script data-main=<%= blocks.main %> src=<%= blocks.requirejsPath + "require.js" %>></script>
-        <link rel="stylesheet" href=<%= blocks.style %>>
+
+        <% for(let style of styles) { %>
+               <link rel="stylesheet" href= <%= style %>> 
+         <% } %>
+         <link rel="stylesheet" href= <%= styles.customStyle %>> 
     </head>
     <body>
         <header>

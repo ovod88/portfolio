@@ -34,8 +34,8 @@ module.exports = function(options) {
                                 .pipe(debug({title: `Sprite compilation`}))
                                 .pipe(sprite({
                                         imgName: 'icons/icons.png',
-                                        imgPath: '../../imgs/' + folder + '/icons/icons.png',
-                                        cssName: '_sprite-icons.scss',
+                                        imgPath: '../../../imgs/' + folder + '/icons/icons.png',
+                                        cssName: 'sass/' + '_sprite-icons.scss',
                                         cssFormat: 'scss',
                                         algorithm: 'binary-tree',
                                         padding: 1,
