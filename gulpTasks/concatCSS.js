@@ -12,6 +12,10 @@ module.exports = function(options) {
                         set= true;
                         var rpath = path.dirname(file.relative).split(path.sep)[0];
                         return gulp.src(options.src)
+                           .pipe($.autoprefixer({
+                                browsers: ['last 2 versions'],
+                                cascade: false
+                            }))
                            .pipe($.concat(options.dstName))
                            .pipe($.debug({title: 'Concatinating css ... '}))
                            .pipe($.rename(function(file) {
