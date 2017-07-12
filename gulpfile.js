@@ -80,10 +80,6 @@ lazyTaskRequest('revImgs', './gulpTasks/rev', {
 
 gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs'));
 
-lazyTaskRequest('rev-collect', './gulpTasks/revCollect', {
-    src: ['private/manifest/*.json','templates/*.ejs', 'public/css/**/*.css'],
-});
-
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
     src: 'private/imgs',
     dstImg: 'public/imgs/',
