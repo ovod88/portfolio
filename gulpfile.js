@@ -32,7 +32,7 @@ lazyTaskRequest('cleanImgs', './gulpTasks/del', {
 });
 
 lazyTaskRequest('clean', './gulpTasks/del', {
-    dst: 'public'
+    dst: ['public', 'private/manifest']
 });
 
 lazyTaskRequest('sass', './gulpTasks/sass', {
@@ -72,18 +72,16 @@ lazyTaskRequest('revJs', './gulpTasks/rev', {
 });
 
 lazyTaskRequest('revImgs', './gulpTasks/rev', {
-    src: 'public/imgs/**/*.{png,jpg}',
+    src: ['public/imgs/**/*.{png,jpg}'],
     dst: 'public/imgs',
     name: 'imgs',
     dstManifest: 'private/manifest'
 });
 
-gulp.task('revision', gulp.series('revCSS'));
+gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs'));
 
 lazyTaskRequest('rev-collect', './gulpTasks/revCollect', {
-    src: ['private/manifest/*.json', 'templates/'],
-    dstImg: 'public/imgs/',
-    dstCss: 'private/css/'
+    src: ['private/manifest/*.json','templates/*.ejs', 'public/css/**/*.css'],
 });
 
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
