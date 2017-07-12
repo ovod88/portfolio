@@ -57,23 +57,34 @@ lazyTaskRequest('minify-css', './gulpTasks/minifyCSS', {
     dst: 'public/css'
 });
 
-lazyTaskRequest('revCSS', './gulpTasks/revCSS', {
+lazyTaskRequest('revCSS', './gulpTasks/rev', {
     src: 'public/css/**/*.css',
     dst: 'public/css',
+    name: 'css',
     dstManifest: 'private/manifest'
 });
 
-lazyTaskRequest('revJs', './gulpTasks/revJs', {
-    src: 'public/css/**/style.css',
-    dst: 'public/css'
+lazyTaskRequest('revJs', './gulpTasks/rev', {
+    src: 'public/js/**/main.js',
+    dst: 'public/js',
+    name: 'js',
+    dstManifest: 'private/manifest'
 });
 
-lazyTaskRequest('revImgs', './gulpTasks/revImgs', {
-    src: 'public/css/**/style.css',
-    dst: 'public/css'
+lazyTaskRequest('revImgs', './gulpTasks/rev', {
+    src: 'public/imgs/**/*.{png,jpg}',
+    dst: 'public/imgs',
+    name: 'imgs',
+    dstManifest: 'private/manifest'
 });
 
 gulp.task('revision', gulp.series('revCSS'));
+
+lazyTaskRequest('rev-collect', './gulpTasks/revCollect', {
+    src: ['private/manifest/*.json', 'templates/'],
+    dstImg: 'public/imgs/',
+    dstCss: 'private/css/'
+});
 
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
     src: 'private/imgs',
