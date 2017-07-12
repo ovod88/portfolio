@@ -41,7 +41,7 @@ lazyTaskRequest('sass', './gulpTasks/sass', {
 });
 
 lazyTaskRequest('concat-autopref-css', './gulpTasks/concatCSS', {
-    src: ['private/css/**/*.css'],
+    src: ['private/css/fonts/*.css', 'private/css/**/libs/*.css', 'private/css/**/style/*.css'],
     dstName: 'style.css',
     dst: 'public/css'
 });

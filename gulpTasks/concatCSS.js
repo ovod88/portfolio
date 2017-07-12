@@ -8,7 +8,7 @@ module.exports = function(options) {
         return gulp.src(options.src, {read: false})
                .pipe($.tap(function(file, t) {
                     var rpath = '.';
-                    if(path.dirname(file.relative).indexOf('fonts') ==-1 && !set) {
+                    if(path.dirname(file.path).indexOf('fonts') ==-1 && !set) {
                         set= true;
                         var rpath = path.dirname(file.relative).split(path.sep)[0];
                         return gulp.src(options.src)
