@@ -57,6 +57,23 @@ lazyTaskRequest('minify-css', './gulpTasks/minifyCSS', {
     dst: 'public/css'
 });
 
+lazyTaskRequest('revCSS', './gulpTasks/revCSS', {
+    src: 'public/css/**/*.css',
+    dst: 'public/css',
+    dstManifest: 'private/manifest'
+});
+
+lazyTaskRequest('revJs', './gulpTasks/revJs', {
+    src: 'public/css/**/style.css',
+    dst: 'public/css'
+});
+
+lazyTaskRequest('revImgs', './gulpTasks/revImgs', {
+    src: 'public/css/**/style.css',
+    dst: 'public/css'
+});
+
+gulp.task('revision', gulp.series('revCSS'));
 
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
     src: 'private/imgs',
