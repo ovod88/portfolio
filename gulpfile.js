@@ -32,7 +32,7 @@ lazyTaskRequest('cleanImgs', './gulpTasks/del', {
 });
 
 lazyTaskRequest('clean', './gulpTasks/del', {
-    dst: ['public', 'private/manifest']
+    dst: ['public', 'templates']
 });
 
 lazyTaskRequest('sass', './gulpTasks/sass', {
@@ -76,6 +76,12 @@ lazyTaskRequest('revImgs', './gulpTasks/rev', {
     dst: 'public/imgs',
     name: 'imgs',
     dstManifest: 'private/manifest'
+});
+
+lazyTaskRequest('revReplaceJS', './gulpTasks/revReplace', {
+    src: ['templates-private/**/*.ejs'],
+    dst: 'templates',
+    srcManifest: 'private/manifest/js.json'
 });
 
 gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs'));
@@ -135,7 +141,8 @@ gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copy
 gulp.task('build-images-dev', gulp.series('cleanImgs', 
                                 gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 
-gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js')));
+gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js'), 
+                                    'revision', 'revReplaceJS'));
 gulp.task('build-dev', gulp.series('clean', 'build-images-dev', 
                                             gulp.parallel('build-styles-dev', 'build-js-dev'), 
                                             gulp.parallel('watchjs', 'watchcss', 'browser-sync')));
