@@ -84,7 +84,14 @@ lazyTaskRequest('revReplaceJS', './gulpTasks/revReplace', {
     srcManifest: 'private/manifest/js.json'
 });
 
-gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs'));
+lazyTaskRequest('revReplaceImgsInCSS', './gulpTasks/revReplace', {
+    src: ['public/css/**/*.css'],
+    dst: 'public/css',
+    srcManifest: 'private/manifest/imgs.json'
+});
+
+
+gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs', 'revReplaceJS', 'revReplaceImgsInCSS'));
 
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
     src: 'private/imgs',
@@ -141,8 +148,7 @@ gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copy
 gulp.task('build-images-dev', gulp.series('cleanImgs', 
                                 gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 
-gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js'), 
-                                    'revision', 'revReplaceJS'));
+gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js'), 'revision'));
 gulp.task('build-dev', gulp.series('clean', 'build-images-dev', 
                                             gulp.parallel('build-styles-dev', 'build-js-dev'), 
                                             gulp.parallel('watchjs', 'watchcss', 'browser-sync')));

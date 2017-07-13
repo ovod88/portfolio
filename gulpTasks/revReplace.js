@@ -1,6 +1,5 @@
 const gulp = require('gulp'),
-      $ = require('gulp-load-plugins')(),
-      path = require('path');
+      $ = require('gulp-load-plugins')();
 
 module.exports = function(options) {
     return function () {
