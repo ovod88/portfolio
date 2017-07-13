@@ -13,10 +13,16 @@ function lazyTaskRequest(taskName, path, options) {
     })
 }
 
-lazyTaskRequest('copyfavicon', './gulpTasks/favicon', {
+lazyTaskRequest('copyfavicon', './gulpTasks/copy', {
     taskname: 'copyfavicon',
     src: 'private/imgs/favicon.ico',
     dst: 'public/imgs/'
+});
+
+lazyTaskRequest('copytemplates', './gulpTasks/copy', {
+    taskname: 'copytemplates',
+    src: 'templates-private/**/*.*',
+    dst: 'templates'
 });
 
 lazyTaskRequest('cleanJS', './gulpTasks/del', {
@@ -150,6 +156,6 @@ gulp.task('build-images-dev', gulp.series('cleanImgs',
 
 gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js'), 'revision'));
 gulp.task('build-dev', gulp.series('clean', 'build-images-dev', 
-                                            gulp.parallel('build-styles-dev', 'build-js-dev'), 
+                                            gulp.parallel('build-styles-dev', 'build-js-dev'), 'copytemplates',
                                             gulp.parallel('watchjs', 'watchcss', 'browser-sync')));
 
