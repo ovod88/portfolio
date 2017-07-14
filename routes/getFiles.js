@@ -2,41 +2,53 @@ const dir = 'public/',
       relativeFontDir = 'css/fonts',
       fs = require('fs');
 
-function getFiles (dir, files_){
-    files_ = files_ || [];
+function getFiles (dir, filesExt) {
+
+    filesExt = filesExt || [];
     let files = [];
     try {
+
         files = fs.readdirSync(dir);
+
     } catch (error) {
 
     }
-    
-    for (let i in files){
+    for(let i in files) {
+
         let name = dir + '/' + files[i];
-        if (fs.statSync(name).isDirectory()){
-            getFiles(name, files_);
+        if (fs.statSync(name).isDirectory()) {
+
+            getFiles(name, filesExt);
+
         } else {
+
             let arrpath = name.split('/');
             arrpath.shift();
             name = arrpath.join('/');
-            if(name.indexOf('style') != -1) {
-                files_.customStyle = name;
-                return files_;
+            if (name.indexOf('style') != -1) {
+
+                filesExt.customStyle = name;
+                return filesExt;
+
             }
-            files_.push(name);
+            filesExt.push(name);
+
         }
+
     }
-    return files_;
+    return filesExt;
+
 }
 
+module.exports = function (relativeStyleDir) {
 
-module.exports = function(relativeStyleDir) {
     let styles = getFiles(dir + relativeStyleDir),
     fonts = getFiles(dir + relativeFontDir),
     files;
 
-    files = [...styles, ...fonts];
+    files = [ ...styles, ...fonts ];
     files.customStyle = styles.customStyle;
 
     return files;
+
 }

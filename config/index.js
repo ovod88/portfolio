@@ -1,9 +1,8 @@
 const nconf = require('nconf'),
     path = require('path');
 
-  nconf.argv()
+nconf.argv()
    .env()
-   .file({ file: path.join(__dirname, 'config.json') }); 
+   .file({ file : path.join(__dirname, 'config.json') });
 
-
-   module.exports = nconf;
+module.exports = nconf;

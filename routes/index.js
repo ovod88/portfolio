@@ -1,3 +1,5 @@
-module.exports = function(app) {
-  app.get('/', require('./principale').get);
+module.exports = function (app) {
+
+    app.get('/', require('./principale').get);
+
 }
