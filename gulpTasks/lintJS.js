@@ -83,13 +83,15 @@ module.exports = function (options) {
                         }
                         callback();
 
-                    }))
+                    }
+                    ))
                 .pipe($.eslint.format())
-                .on('end', function () {
+                .pipe($.eslint.failAfterError())
+                .on('end', function (one, two) {
 
                     fs.writeFileSync(lintCacheFile, JSON.stringify(lintCache));
 
-                })
+                });
 
     }
 

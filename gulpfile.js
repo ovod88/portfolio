@@ -118,6 +118,10 @@ lazyTaskRequest('lint', './gulpTasks/lintJS', {
     src : [ 'private/js/**/*.js', '!private/js/**/libs/**/*.*', '!private/js/**/bower_components/**/*.*' ]
 });
 
+lazyTaskRequest('jscs', './gulpTasks/jscsJS', {
+    src : [ 'private/js/**/*.js', '!private/js/**/libs/**/*.*', '!private/js/**/bower_components/**/*.*' ]
+});
+
 lazyTaskRequest('babel', './gulpTasks/babelJS', {
     src  : 'private/js/**/*.js',
     base : 'private',
@@ -152,8 +156,8 @@ gulp.task('browser-sync', function () {
 
 });
 
-gulp.task('build-js', gulp.series('cleanJS', 'lint', 'babel', 'js-optimize'));
-gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'babel'));
+gulp.task('build-js', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'js-optimize'));
+gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'jscs', 'babel'));
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-autopref-css', 'minify-css'));
 gulp.task('build-styles-without-minify', gulp.series('cleanCSS', 'sass', 'concat-autopref-css'));
