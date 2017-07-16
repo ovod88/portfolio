@@ -26,8 +26,8 @@ lazyTaskRequest('copyfavicon', './gulpTasks/copy', {
 
 lazyTaskRequest('copytemplates', './gulpTasks/copy', {
     taskname : 'copytemplates',
-    src      : 'templates-private/**/*.*',
-    dst      : 'templates'
+    src      : configGulp.srcTemplates + '/**/*.*',
+    dst      : configGulp.dstTemplates
 });
 
 lazyTaskRequest('cleanJS', './gulpTasks/del', {
@@ -43,7 +43,7 @@ lazyTaskRequest('cleanImgs', './gulpTasks/del', {
 });
 
 lazyTaskRequest('clean', './gulpTasks/del', {
-    dst : [ 'public', 'templates' ]
+    dst : [ 'public', configGulp.dstTemplates ]
 });
 
 lazyTaskRequest('sass', './gulpTasks/sass', {
@@ -91,8 +91,8 @@ lazyTaskRequest('revImgs', './gulpTasks/rev', {
 });
 
 lazyTaskRequest('revReplaceJS', './gulpTasks/revReplace', {
-    src         : [ 'templates-private/**/*.ejs' ],
-    dst         : 'templates',
+    src         : [ configGulp.srcTemplates + '/**/*.ejs' ],
+    dst         : configGulp.dstTemplates,
     srcManifest : 'private/manifest/js.json'
 });
 
@@ -156,7 +156,7 @@ gulp.task('browser-sync', function () {
         proxy : 'localhost:' + config.get('port')
     });
 
-    browserSync.watch([ 'public', 'templates' ]).on('change', browserSync.reload);
+    browserSync.watch([ 'public', configGulp.dstTemplates ]).on('change', browserSync.reload);
 
 });
 

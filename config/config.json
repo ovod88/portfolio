@@ -13,6 +13,8 @@
         "dstImgs": "public/imgs",
         "srcAll": "",
         "dstAll": "",
+        "srcTemplates": "templates-private",
+        "dstTemplates": "templates",
         "dstRevisionManifest": ""
     }
 }
