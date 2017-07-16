@@ -7,8 +7,8 @@
     "gulp": {
         "srcJS": "private/js",
         "dstJS": "public/js",
-        "srcCSS": "",
-        "dstCSS": "",
+        "srcCSS": "private/css",
+        "dstCSS": "public/css",
         "srcImgs": "private/imgs",
         "dstImgs": "public/imgs",
         "srcAll": "",

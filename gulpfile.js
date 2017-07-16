@@ -35,7 +35,7 @@ lazyTaskRequest('cleanJS', './gulpTasks/del', {
 });
 
 lazyTaskRequest('cleanCSS', './gulpTasks/del', {
-    dst : [ 'public/css', 'private/css/**/style' ]
+    dst : [ configGulp.dstCSS, configGulp.srcCSS + '/**/style' ]
 });
 
 lazyTaskRequest('cleanImgs', './gulpTasks/del', {
@@ -47,30 +47,31 @@ lazyTaskRequest('clean', './gulpTasks/del', {
 });
 
 lazyTaskRequest('sass', './gulpTasks/sass', {
-    src : 'private/css/**/sass/*.*',
-    dst : 'private/css'
+    src : configGulp.srcCSS  + '/**/sass/*.*',
+    dst : configGulp.srcCSS
 });
 
 lazyTaskRequest('concat-autopref-css', './gulpTasks/concatCSS', {
-    src     : [ 'private/css/fonts/*.css', 'private/css/**/libs/*.css', 'private/css/**/style/*.css' ],
+    src     : [ configGulp.srcCSS + '/fonts/*.css', configGulp.srcCSS  + '/**/libs/*.css',
+                                            configGulp.srcCSS  + '/**/style/*.css' ],
     dstName : 'style.css',
-    dst     : 'public/css'
+    dst     : configGulp.dstCSS
 });
 
 lazyTaskRequest('copy-css', './gulpTasks/copyCSS', {
-    src      : [ 'private/css/**/*.css' ],
+    src      : [ configGulp.srcCSS  + '/**/*.css' ],
     taskName : 'copy-css',
-    dst      : 'public/css'
+    dst      : configGulp.dstCSS
 });
 
 lazyTaskRequest('minify-css', './gulpTasks/minifyCSS', {
-    src : 'public/css/**/style.css',
-    dst : 'public/css'
+    src : configGulp.dstCSS + '/**/style.css',
+    dst : configGulp.dstCSS
 });
 
 lazyTaskRequest('revCSS', './gulpTasks/rev', {
-    src         : 'public/css/**/*.css',
-    dst         : 'public/css',
+    src         : configGulp.dstCSS + '/**/*.css',
+    dst         : configGulp.dstCSS,
     name        : 'css',
     dstManifest : 'private/manifest'
 });
@@ -96,8 +97,8 @@ lazyTaskRequest('revReplaceJS', './gulpTasks/revReplace', {
 });
 
 lazyTaskRequest('revReplaceImgsInCSS', './gulpTasks/revReplace', {
-    src         : [ 'public/css/**/*.css' ],
-    dst         : 'public/css',
+    src         : [ configGulp.dstCSS + '/**/*.css' ],
+    dst         : configGulp.dstCSS,
     srcManifest : 'private/manifest/imgs.json'
 });
 
@@ -106,7 +107,7 @@ gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs', 'revReplaceJS', 
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
     src    : configGulp.srcImgs,
     dstImg : configGulp.dstImgs + '/',
-    dstCss : 'private/css/'
+    dstCss : configGulp.srcCSS  + '/'
 });
 
 lazyTaskRequest('compress-imgs', './gulpTasks/compressImgs', {
@@ -144,7 +145,7 @@ gulp.task('watchjs',function () {
 
 gulp.task('watchcss',function () {
 
-    gulp.watch('private/css/sass/**/*.*', gulp.series('sass'));
+    gulp.watch(configGulp.srcCSS + '/sass/**/*.*', gulp.series('sass'));
 
 });
 
