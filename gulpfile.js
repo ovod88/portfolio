@@ -1,7 +1,6 @@
 'use strict';
 const gulp = require('gulp'),
       browserSync = require('browser-sync').create(),
-      config = require('./config'),
       configApp = require('./config').get('app'),
       configGulp = require('./config').get('gulp');
 
