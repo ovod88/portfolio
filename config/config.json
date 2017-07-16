@@ -5,7 +5,7 @@
     "debugOnProd": false,
     "debugOnDev": true,
     "gulp": {
-        "srcJS": "",
+        "srcJS": "private/js",
         "dstJS": "public/js",
         "srcCSS": "",
         "dstCSS": "",

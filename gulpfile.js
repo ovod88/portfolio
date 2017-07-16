@@ -31,7 +31,7 @@ lazyTaskRequest('copytemplates', './gulpTasks/copy', {
 });
 
 lazyTaskRequest('cleanJS', './gulpTasks/del', {
-    dst : 'public/js'
+    dst : configGulp.dstJS
 });
 
 lazyTaskRequest('cleanCSS', './gulpTasks/del', {
@@ -76,8 +76,8 @@ lazyTaskRequest('revCSS', './gulpTasks/rev', {
 });
 
 lazyTaskRequest('revJs', './gulpTasks/rev', {
-    src         : 'public/js/**/main.js',
-    dst         : 'public/js',
+    src         : configGulp.dstJS + '/**/main.js',
+    dst         : configGulp.dstJS,
     name        : 'js',
     dstManifest : 'private/manifest'
 });
@@ -116,27 +116,29 @@ lazyTaskRequest('compress-imgs', './gulpTasks/compressImgs', {
 });
 
 lazyTaskRequest('lint', './gulpTasks/lintJS', {
-    src : [ 'private/js/**/*.js', '!private/js/**/libs/**/*.*', '!private/js/**/bower_components/**/*.*' ]
+    src : [ configGulp.srcJS + '/**/*.js', '!' + configGulp.srcJS + '/**/libs/**/*.*',
+                                '!' + configGulp.srcJS + '/**/bower_components/**/*.*' ]
 });
 
 lazyTaskRequest('jscs', './gulpTasks/jscsJS', {
-    src : [ 'private/js/**/*.js', '!private/js/**/libs/**/*.*', '!private/js/**/bower_components/**/*.*' ]
+    src : [ configGulp.srcJS + '/**/*.js', '!' + configGulp.srcJS + '/**/libs/**/*.*',
+                                '!' + configGulp.srcJS + '/**/bower_components/**/*.*' ]
 });
 
 lazyTaskRequest('babel', './gulpTasks/babelJS', {
-    src  : 'private/js/**/*.js',
+    src  : configGulp.srcJS + '/**/*.js',
     base : 'private',
     dst  : 'public'
 });
 
 lazyTaskRequest('js-optimize', './gulpTasks/jsOptimize', {
-    src : 'public/js/**/main.js',
-    dst : 'public/js',
+    src : configGulp.dstJS + '/**/main.js',
+    dst : configGulp.dstJS,
 });
 
 gulp.task('watchjs',function () {
 
-    gulp.watch('private/js/**/*.*', gulp.series('babel'));
+    gulp.watch(configGulp.srcJS + '/**/*.*', gulp.series('babel'));
 
 });
 
