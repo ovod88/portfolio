@@ -43,7 +43,7 @@ lazyTaskRequest('cleanImgs', './gulpTasks/del', {
 });
 
 lazyTaskRequest('clean', './gulpTasks/del', {
-    dst : [ 'public', configGulp.dstTemplates ]
+    dst : [ configGulp.dstAll, configGulp.dstTemplates ]
 });
 
 lazyTaskRequest('sass', './gulpTasks/sass', {
@@ -73,33 +73,33 @@ lazyTaskRequest('revCSS', './gulpTasks/rev', {
     src         : configGulp.dstCSS + '/**/*.css',
     dst         : configGulp.dstCSS,
     name        : 'css',
-    dstManifest : 'private/manifest'
+    dstManifest : configGulp.dstRevisionManifest
 });
 
 lazyTaskRequest('revJs', './gulpTasks/rev', {
     src         : configGulp.dstJS + '/**/main.js',
     dst         : configGulp.dstJS,
     name        : 'js',
-    dstManifest : 'private/manifest'
+    dstManifest : configGulp.dstRevisionManifest
 });
 
 lazyTaskRequest('revImgs', './gulpTasks/rev', {
     src         : [ configGulp.dstImgs + '/**/*.{png,jpg}' ],
     dst         : configGulp.dstImgs,
     name        : 'imgs',
-    dstManifest : 'private/manifest'
+    dstManifest : configGulp.dstRevisionManifest
 });
 
 lazyTaskRequest('revReplaceJS', './gulpTasks/revReplace', {
     src         : [ configGulp.srcTemplates + '/**/*.ejs' ],
     dst         : configGulp.dstTemplates,
-    srcManifest : 'private/manifest/js.json'
+    srcManifest : configGulp.dstRevisionManifest + '/js.json'
 });
 
 lazyTaskRequest('revReplaceImgsInCSS', './gulpTasks/revReplace', {
     src         : [ configGulp.dstCSS + '/**/*.css' ],
     dst         : configGulp.dstCSS,
-    srcManifest : 'private/manifest/imgs.json'
+    srcManifest : configGulp.dstRevisionManifest + '/imgs.json'
 });
 
 gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs', 'revReplaceJS', 'revReplaceImgsInCSS'));
@@ -128,8 +128,8 @@ lazyTaskRequest('jscs', './gulpTasks/jscsJS', {
 
 lazyTaskRequest('babel', './gulpTasks/babelJS', {
     src  : configGulp.srcJS + '/**/*.js',
-    base : 'private',
-    dst  : 'public'
+    base : configGulp.srcAll,
+    dst  : configGulp.dstAll
 });
 
 lazyTaskRequest('js-optimize', './gulpTasks/jsOptimize', {
@@ -156,7 +156,7 @@ gulp.task('browser-sync', function () {
         proxy : 'localhost:' + config.get('port')
     });
 
-    browserSync.watch([ 'public', configGulp.dstTemplates ]).on('change', browserSync.reload);
+    browserSync.watch([ configGulp.dstAll, configGulp.dstTemplates ]).on('change', browserSync.reload);
 
 });
 

@@ -11,10 +11,10 @@
         "dstCSS": "public/css",
         "srcImgs": "private/imgs",
         "dstImgs": "public/imgs",
-        "srcAll": "",
-        "dstAll": "",
+        "srcAll": "private",
+        "dstAll": "public",
         "srcTemplates": "templates-private",
         "dstTemplates": "templates",
-        "dstRevisionManifest": ""
+        "dstRevisionManifest": "private/manifest"
     }
 }
