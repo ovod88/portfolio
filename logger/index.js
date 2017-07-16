@@ -1,11 +1,11 @@
 let winston = require('winston'),
     env = process.env.NODE_ENV || 'development',
     path = require('path'),
-    config = require('config'),
-    logDir = config.get('log_dir'),
+    configApp = require('config').get('app'),
+    logDir = configApp.log_dir,
     isDevelopment = (env === 'development'),
-    isDebugModeProdOn = config.get('debugOnProd'),
-    isDebugModeDevOn = config.get('debugOnDev');
+    isDebugModeProdOn = configApp.debugOnProd,
+    isDebugModeDevOn = configApp.debugOnDev;
 
 const tsFormat = () => (new Date()).toLocaleTimeString();
 

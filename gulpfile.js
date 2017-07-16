@@ -2,6 +2,7 @@
 const gulp = require('gulp'),
       browserSync = require('browser-sync').create(),
       config = require('./config'),
+      configApp = require('./config').get('app'),
       configGulp = require('./config').get('gulp');
 
 function lazyTaskRequest ( taskName, path, options ) {
@@ -152,8 +153,8 @@ gulp.task('watchcss',function () {
 gulp.task('browser-sync', function () {
 
     browserSync.init({
-        port  : config.get('port-browser-sync'),
-        proxy : 'localhost:' + config.get('port')
+        port  : configApp.port_browser_sync,
+        proxy : 'localhost:' + configApp.port
     });
 
     browserSync.watch([ configGulp.dstAll, configGulp.dstTemplates ]).on('change', browserSync.reload);
