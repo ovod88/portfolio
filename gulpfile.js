@@ -1,7 +1,8 @@
 'use strict';
 const gulp = require('gulp'),
       browserSync = require('browser-sync').create(),
-      config = require('./config');
+      config = require('./config'),
+      configGulp = require('./config').get('gulp');
 
 function lazyTaskRequest ( taskName, path, options ) {
 
@@ -19,8 +20,8 @@ function lazyTaskRequest ( taskName, path, options ) {
 
 lazyTaskRequest('copyfavicon', './gulpTasks/copy', {
     taskname : 'copyfavicon',
-    src      : 'private/imgs/favicon.ico',
-    dst      : 'public/imgs/'
+    src      : configGulp.srcImgs + '/favicon.ico',
+    dst      : configGulp.dstImgs
 });
 
 lazyTaskRequest('copytemplates', './gulpTasks/copy', {
@@ -38,7 +39,7 @@ lazyTaskRequest('cleanCSS', './gulpTasks/del', {
 });
 
 lazyTaskRequest('cleanImgs', './gulpTasks/del', {
-    dst : 'public/imgs'
+    dst : configGulp.dstImgs
 });
 
 lazyTaskRequest('clean', './gulpTasks/del', {
@@ -82,8 +83,8 @@ lazyTaskRequest('revJs', './gulpTasks/rev', {
 });
 
 lazyTaskRequest('revImgs', './gulpTasks/rev', {
-    src         : [ 'public/imgs/**/*.{png,jpg}' ],
-    dst         : 'public/imgs',
+    src         : [ configGulp.dstImgs + '/**/*.{png,jpg}' ],
+    dst         : configGulp.dstImgs,
     name        : 'imgs',
     dstManifest : 'private/manifest'
 });
@@ -103,15 +104,15 @@ lazyTaskRequest('revReplaceImgsInCSS', './gulpTasks/revReplace', {
 gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs', 'revReplaceJS', 'revReplaceImgsInCSS'));
 
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
-    src    : 'private/imgs',
-    dstImg : 'public/imgs/',
+    src    : configGulp.srcImgs,
+    dstImg : configGulp.dstImgs + '/',
     dstCss : 'private/css/'
 });
 
 lazyTaskRequest('compress-imgs', './gulpTasks/compressImgs', {
     taskname : 'compress-imgs',
-    src      : 'private/imgs/**/pics/*.{png,jpeg,jpg}',
-    dst      : 'public/imgs'
+    src      : configGulp.srcImgs + '/**/pics/*.{png,jpeg,jpg}',
+    dst      : configGulp.dstImgs
 });
 
 lazyTaskRequest('lint', './gulpTasks/lintJS', {

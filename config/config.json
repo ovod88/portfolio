@@ -3,5 +3,16 @@
     "port-browser-sync": 3001,
     "log_dir": "logs",
     "debugOnProd": false,
-    "debugOnDev": true
+    "debugOnDev": true,
+    "gulp": {
+        "srcJS": "",
+        "dstJS": "public/js",
+        "srcCSS": "",
+        "dstCSS": "",
+        "srcImgs": "private/imgs",
+        "dstImgs": "public/imgs",
+        "srcAll": "",
+        "dstAll": "",
+        "dstRevisionManifest": ""
+    }
 }
