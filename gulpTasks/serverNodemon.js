@@ -11,8 +11,8 @@ module.exports = function (options) {
 
                 if (!started) {
 
-                    callback();
                     started = true;
+                    callback();
 
                 }
 

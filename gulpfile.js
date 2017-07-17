@@ -151,29 +151,12 @@ gulp.task('watchcss',function () {
 
 });
 
-gulp.task('server', function (callback) {
-
-    let started = false,
-        options = {
-            script    : configGulp.nodemon.script,
-            delay     : configGulp.nodemon.delay,
-            env       : configGulp.nodemon.env,
-            nodeArgs  : configGulp.nodemon.nodeArgs,
-            watch     : configGulp.nodemon.watch
-        }
-
-    return $.nodemon(options)
-        .on('start', function () {
-
-            if (!started) {
-
-                started = true;
-                callback();
-
-            }
-
-        })
-
+lazyTaskRequest('server', './gulpTasks/serverNodemon', {
+    script    : configGulp.nodemon.script,
+    delay     : configGulp.nodemon.delay,
+    env       : configGulp.nodemon.env,
+    nodeArgs  : configGulp.nodemon.nodeArgs,
+    watch     : configGulp.nodemon.watch
 });
 
 gulp.task('browser-sync', gulp.series( 'server' , function () {
