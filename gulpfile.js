@@ -1,5 +1,6 @@
 'use strict';
 const gulp = require('gulp'),
+      $ = require('gulp-load-plugins')(),
       browserSync = require('browser-sync').create(),
       configApp = require('./config').get('app'),
       configGulp = require('./config').get('gulp');
@@ -139,7 +140,7 @@ lazyTaskRequest('js-optimize', './gulpTasks/jsOptimize', {
 
 gulp.task('watchjs',function () {
 
-    gulp.watch(configGulp.srcJS + '/**/*.*', gulp.series('babel'));
+    gulp.watch(configGulp.srcJS + '/**/main.js', gulp.series('lint'));
 
 });
 
@@ -149,7 +150,38 @@ gulp.task('watchcss',function () {
 
 });
 
-gulp.task('browser-sync', function () {
+// lazyTaskRequest('browser-sync', './gulpTasks/browserSync', {
+//     port  : configApp.port_browser_sync,
+//     proxy : 'localhost:' + configApp.port,
+//     watch :  [ configGulp.dstAll, configGulp.dstTemplates ]
+// });
+
+gulp.task('server', function (callback) {
+
+    let started = false,
+        options = {
+            script    : configGulp.nodemon.script,
+            delay     : configGulp.nodemon.delay,
+            env       : configGulp.nodemon.env,
+            nodeArgs  : configGulp.nodemon.nodeArgs,
+            watch     : configGulp.nodemon.watch
+        }
+
+    return $.nodemon(options)
+        .on('start', function () {
+
+            if (!started) {
+
+                started = true;
+                callback();
+
+            }
+
+        })
+
+});
+
+gulp.task('browser-sync', gulp.series( 'server' , function () {
 
     browserSync.init({
         port  : configApp.port_browser_sync,
@@ -158,7 +190,7 @@ gulp.task('browser-sync', function () {
 
     browserSync.watch([ configGulp.dstAll, configGulp.dstTemplates ]).on('change', browserSync.reload);
 
-});
+}));
 
 gulp.task('build-js', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'js-optimize'));
 gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'jscs', 'babel'));
@@ -171,7 +203,8 @@ gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copy
 gulp.task('build-images-dev', gulp.series('cleanImgs',
                                 gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 
-gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js'), 'revision'));
+gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js'), 'revision',
+                                                'server'));
 gulp.task('build-dev', gulp.series('clean', 'build-images-dev',
                                             gulp.parallel('build-styles-dev', 'build-js-dev'), 'copytemplates',
                                             gulp.parallel('watchjs', 'watchcss', 'browser-sync')));

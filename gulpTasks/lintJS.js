@@ -87,7 +87,7 @@ module.exports = function (options) {
                     ))
                 .pipe($.eslint.format())
                 .pipe($.eslint.failAfterError())
-                .on('end', function (one, two) {
+                .on('end', function () {
 
                     fs.writeFileSync(lintCacheFile, JSON.stringify(lintCache));
 

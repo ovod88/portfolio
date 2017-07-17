@@ -1,7 +1,7 @@
 const gulp = require('gulp'),
       $ = require('gulp-load-plugins')(),
-      config = require('./requireJsOptimizerConfig'),
-      path = require('path');
+      path = require('path'),
+      configGulp = require('../config').get('gulp');
 
 module.exports = function (options) {
 
@@ -24,12 +24,8 @@ module.exports = function (options) {
                                 var rpath = path.parse(file.relative);
                                 return gulp.src(options.src)
                                     .pipe($.requirejsOptimize({
-                                        baseUrl : 'public/js',
-                                        paths   : {
-                                            'jquery' : 'bower_components/jquery/dist/jquery',
-                                            'lodash' : rpath.dir + '/libs/lodash'
-                                        },
-                                        name    : rpath.dir + '/' + rpath.name
+                                        mainConfigFile : `${configGulp.srcJS}/${rpath.dir}/main.js`,
+                                        name           : rpath.dir + '/' + rpath.name
                                     }))
                                     .pipe($.debug({ title : $.util.colors.yellow('JS optimising ... ') }))
                                     .pipe(gulp.dest(options.dst));

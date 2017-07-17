@@ -43,7 +43,7 @@ function normalizePort (val = 3000) {
 
 function onError (error) {
 
-    logger.crit(`Server stopped dur to ${error}`);
+    logger.crit(`Server stopped due to ${error}`);
     if (error.syscall !== 'listen') {
 
         throw error;

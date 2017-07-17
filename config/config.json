@@ -4,7 +4,7 @@
         "port_browser_sync": 3001,
         "log_dir": "logs",
         "debugOnProd": false,
-        "debugOnDev": true
+        "debugOnDev": false
     },
     "gulp": {
         "srcJS": "private/js",
@@ -17,6 +17,15 @@
         "dstAll": "public",
         "srcTemplates": "templates-private",
         "dstTemplates": "templates",
-        "dstRevisionManifest": "private/manifest"
+        "dstRevisionManifest": "private/manifest",
+        "nodemon": {
+            "script": "bin/www.js",
+            "env": {
+                "NODE_PATH": "."
+            },
+            "delay": 2,
+            "nodeArgs": ["--debug"],
+            "watch": ["bin/*.js", "app.js"]
+        }
     }
 }

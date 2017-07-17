@@ -2,12 +2,13 @@ requirejs.config ({
     baseUrl     : '../js',
     waitSeconds : 200,
     paths       : {
-        'jquery' : 'bower_components/jquery/dist/jquery',
-        'lodash' : 'index/libs/lodash'
+        "jquery" : "bower_components/jquery/dist/jquery",
+        "lodash" : "index/libs/lodash",
+        "test"   : "index/custom/test"
     }
 });
 
-require( [ 'jquery', 'lodash' ], function ($) {
+require( [ 'jquery', 'test' ], function ($, t) {
 
     $( function () {
 
