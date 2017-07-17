@@ -4,7 +4,6 @@ const express = require('express'),
       HttpError = require('errors').HttpError,
       logger = require('logger')(module),
       loggerM = require('morgan'),
-      favicon = require('serve-favicon'),
       bodyParser = require('body-parser'),
       cookieParser = require('cookie-parser'),
       configGulp = require('./config').get('gulp');
@@ -22,8 +21,6 @@ if (app.get('env') == 'development') {
     app.use(loggerM('default'));
 
 }
-
-app.use(favicon(path.join(__dirname, configGulp.dstImgs, 'favicon.ico')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false }));
@@ -46,6 +43,12 @@ app.get('/hello', (req, res) => {
     res.send(`Hello`);
 
 });
+
+app.get('/favicon.ico', (req, res) => {
+
+    res.sendFile(path.join(__dirname, configGulp.dstImgs, 'favicon.ico'));
+
+})
 
 app.post('/hello', (req, res) => {
 
