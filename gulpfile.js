@@ -147,15 +147,9 @@ gulp.task('watchjs',function () {
 
 gulp.task('watchcss',function () {
 
-    gulp.watch(configGulp.srcCSS + '**/sass/*.*', gulp.series('sass', 'copy-css'));
+    gulp.watch(configGulp.srcCSS + '/**/sass/*.*', gulp.series('sass', 'copy-css'));
 
 });
-
-// lazyTaskRequest('browser-sync', './gulpTasks/browserSync', {
-//     port  : configApp.port_browser_sync,
-//     proxy : 'localhost:' + configApp.port,
-//     watch :  [ configGulp.dstAll, configGulp.dstTemplates ]
-// });
 
 gulp.task('server', function (callback) {
 
