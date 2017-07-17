@@ -140,13 +140,14 @@ lazyTaskRequest('js-optimize', './gulpTasks/jsOptimize', {
 
 gulp.task('watchjs',function () {
 
-    gulp.watch(configGulp.srcJS + '/**/main.js', gulp.series('lint'));
+    gulp.watch([ configGulp.srcJS + '/**/main.js',
+                 configGulp.srcJS + '/**/custom/*.js' ], gulp.series('lint', 'jscs', 'babel'));
 
 });
 
 gulp.task('watchcss',function () {
 
-    gulp.watch(configGulp.srcCSS + '/sass/**/*.*', gulp.series('sass'));
+    gulp.watch(configGulp.srcCSS + '**/sass/*.*', gulp.series('sass', 'copy-css'));
 
 });
 

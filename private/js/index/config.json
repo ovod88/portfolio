@@ -1,5 +1,0 @@
-{
-    "jquery" : "bower_components/jquery/dist/jquery",
-    "lodash" : "index/libs/lodash",
-    "test"   : "index/custom/test"
-}
