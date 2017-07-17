@@ -6,7 +6,7 @@ module.exports = function (options) {
     return function () {
 
         return gulp.src(options.src)
-                .pipe($.debug({ 'title' : 'Coping CSS styles...' }))
+                .pipe($.debug({ 'title' : $.util.colors.yellow('Coping CSS styles...') }))
                 .pipe(gulp.dest(options.dst));
 
     }

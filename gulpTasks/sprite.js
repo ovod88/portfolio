@@ -27,13 +27,13 @@ module.exports = function (options) {
                                     errorHandler : $.notify.onError(function (err) {
 
                                         return {
-                                            title   : 'Sprite compilation',
+                                            title   : $.util.colors.red('Sprite compilation'),
                                             message : err.message
                                         };
 
                                     })
                                 }))
-                                .pipe($.debug({ title : `Sprite compilation` }))
+                                .pipe($.debug({ title : $.util.colors.yellow(`Sprite compilation`) }))
                                 .pipe($.spritesmith({
                                         imgName   : 'icons/icons.png',
                                         imgPath   : '../../../imgs/' + folder + '/icons/icons.png',

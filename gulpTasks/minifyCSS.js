@@ -8,11 +8,11 @@ module.exports = function (options) {
 
         return gulp.src(options.src)
             .pipe($.cleanCss())
-            .pipe($.debug({ title : 'Minifying css ...' }))
+            .pipe($.debug({ title : $.util.colors.yellow('Minifying css ...') }))
             .pipe($.rename({
                 suffix : '.min'
             }))
-            .pipe($.debug({ title : 'Renaming css ...' }))
+            .pipe($.debug({ title : $.util.colors.yellow('Renaming css ...') }))
             .pipe(gulp.dest(options.dst))
             .on('end',function () {
 

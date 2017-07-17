@@ -10,16 +10,16 @@ module.exports = function (options) {
                         errorHandler : $.notify.onError(function (err) {
 
                             return {
-                                title   : 'Compressing images',
+                                title   : $.util.colors.red('Compressing images'),
                                 message : err.message
                             };
 
                         })
                     }))
                .pipe($.newer(options.dst))
-               .pipe($.debug({ 'title' : 'Compressing images ...' }))
+               .pipe($.debug({ 'title' : $.util.colors.yellow('Compressing images ...') }))
                .pipe($.image())
-               .pipe($.debug({ 'title' : 'Compressed images ...' }))
+               .pipe($.debug({ 'title' : $.util.colors.yellow('Compressed images ...') }))
                .pipe(gulp.dest(options.dst));
 
         }

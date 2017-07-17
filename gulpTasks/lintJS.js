@@ -21,12 +21,12 @@ module.exports = function (options) {
     return function () {
 
         return gulp.src(options.src, { read : false })
-                .pipe($.debug({ 'title' : 'Lint item ... ' }))
+                .pipe($.debug({ 'title' : $.util.colors.yellow('Lint item ... ') }))
                 .pipe($.plumber({
                         errorHandler : $.notify.onError(function (err) {
 
                             return {
-                                title   : 'Javascript linting',
+                                title   : $.util.colors.red('Javascript linting'),
                                 message : err.message
                             };
 
@@ -52,7 +52,7 @@ module.exports = function (options) {
 
                         }),
                         $.eslint(),
-                        $.debug( { 'title' : 'Linting JS code ...' }),
+                        $.debug( { 'title' : $.util.colors.yellow('Linting JS code ...') }),
                         through2(function (file, enc, callback) {
 
                             lintCache[file.path] = {

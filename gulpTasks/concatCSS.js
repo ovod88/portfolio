@@ -21,7 +21,7 @@ module.exports = function (options) {
                                 cascade  : false
                             }))
                            .pipe($.concat(options.dstName))
-                           .pipe($.debug({ title : 'Concatinating css ... ' }))
+                           .pipe($.debug({ title : $.util.colors.yellow('Concatinating css ... ') }))
                            .pipe($.rename(function (file) {
 
                                 file.dirname = rpath;

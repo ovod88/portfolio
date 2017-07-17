@@ -6,7 +6,7 @@ module.exports = function (options) {
     return function () {
 
         return gulp.src(options.src, { since : gulp.lastRun(options.taskname) })
-                .pipe($.debug({ 'title' : 'Coping ...' }))
+                .pipe($.debug({ 'title' : $.util.colors.yellow('Coping ...') }))
                 .pipe($.newer(options.dst))
                 .pipe(gulp.dest(options.dst));
 

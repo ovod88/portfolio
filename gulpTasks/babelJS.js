@@ -15,12 +15,12 @@ module.exports = function (options) {
 
                         },
                         combine(
-                            $.debug({ title : 'Babeling ...' }),
+                            $.debug({ title : $.util.colors.yellow('Babeling ...') }),
                             $.babel({
                                 presets : [ 'es2015' ]
                             })
                         ),
-                        $.debug({ title : 'JS copying ...' })
+                        $.debug({ title : $.util.colors.yellow('JS copying ...') })
                     ))
                     .pipe(gulp.dest(options.dst));
 

@@ -12,7 +12,7 @@ module.exports = function (options) {
                             errorHandler : $.notify.onError(function (err) {
 
                                 return {
-                                    title   : 'Javascript optimizing',
+                                    title   : $.util.colors.red('Javascript optimizing'),
                                     message : err.message
                                 };
 
@@ -31,7 +31,7 @@ module.exports = function (options) {
                                         },
                                         name    : rpath.dir + '/' + rpath.name
                                     }))
-                                    .pipe($.debug({ title : 'JS optimising ... ' }))
+                                    .pipe($.debug({ title : $.util.colors.yellow('JS optimising ... ') }))
                                     .pipe(gulp.dest(options.dst));
 
                             }))

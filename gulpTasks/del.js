@@ -2,9 +2,9 @@ const del = require('del');
 
 module.exports = function (options) {
 
-    return function () {
+    return function (cb) {
 
-        return del(options.dst);
+        return del(options.dst, cb);
 
     }
 

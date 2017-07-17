@@ -17,7 +17,7 @@ module.exports = function (options) {
                 errorHandler : $.notify.onError(function (err) {
 
                     return {
-                        title   : 'Sass compilation',
+                        title   : $.util.colors.red('Sass compilation'),
                         message : err.message
                     };
 
@@ -26,14 +26,14 @@ module.exports = function (options) {
             .pipe($.if(isDevelopment, $.sourcemaps.init({ largeFile : true })))
             .pipe($.sass(sassOptions).on('error', $.sass.logError))
             .pipe($.if(isDevelopment, $.sourcemaps.write()))
-            .pipe($.debug({ 'title' : 'Compiling sass ...' }))
+            .pipe($.debug({ 'title' : $.util.colors.yellow('Compiling sass ...') }))
             .pipe($.rename(function (file) {
 
                 file.basename = 'style';
                 file.dirname = file.dirname.split(path.sep)[0] + '/style';
 
             }))
-            .pipe($.debug({ 'title' : 'Renaming destination file ...' }))
+            .pipe($.debug({ 'title' : $.util.colors.yellow('Renaming destination file ...') }))
             .pipe(gulp.dest(options.dst));
 
     }

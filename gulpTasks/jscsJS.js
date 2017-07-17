@@ -6,12 +6,12 @@ module.exports = function (options) {
     return function () {
 
         return gulp.src(options.src)
-        .pipe($.debug({ 'title' : 'Javascript style checking ... ' }))
+        .pipe($.debug({ 'title' : $.util.colors.yellow('Javascript style checking ... ') }))
         .pipe($.plumber({
                         errorHandler : $.notify.onError(function (err) {
 
                             return {
-                                title   : 'Javascript style checking ...',
+                                title   : $.util.colors.red('Javascript style checking ...'),
                                 message : err.message
                             };
 
