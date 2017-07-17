@@ -141,7 +141,7 @@ lazyTaskRequest('js-optimize', './gulpTasks/jsOptimize', {
 gulp.task('watchjs',function () {
 
     gulp.watch([ configGulp.srcJS + '/**/main.js',
-                 configGulp.srcJS + '/**/custom/*.js' ], gulp.series('lint', 'jscs', 'babel'));
+                 configGulp.srcJS + '/**/custom/*.js' ], gulp.series('process-js'));
 
 });
 
@@ -187,8 +187,9 @@ gulp.task('browser-sync', gulp.series( 'server' , function () {
 
 }));
 
-gulp.task('build-js', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'js-optimize'));
-gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'jscs', 'babel'));
+gulp.task('process-js', gulp.series('lint', 'jscs', 'babel'));
+gulp.task('build-js', gulp.series('cleanJS', 'process-js', 'js-optimize'));
+gulp.task('build-js-dev', gulp.series('cleanJS', 'process-js'));
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-autopref-css', 'minify-css'));
 gulp.task('build-styles-without-minify', gulp.series('cleanCSS', 'sass', 'concat-autopref-css'));
