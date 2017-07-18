@@ -118,13 +118,11 @@ lazyTaskRequest('compress-imgs', './gulpTasks/compressImgs', {
 });
 
 lazyTaskRequest('lint', './gulpTasks/lintJS', {
-    src : [ configGulp.srcJS + '/**/*.js', '!' + configGulp.srcJS + '/**/libs/**/*.*',
-                                '!' + configGulp.srcJS + '/**/bower_components/**/*.*' ]
+    src : [ configGulp.srcJS + '/**/*.js', '!' + configGulp.srcJS + '/**/bower_components/**/*.*' ]
 });
 
 lazyTaskRequest('jscs', './gulpTasks/jscsJS', {
-    src : [ configGulp.srcJS + '/**/*.js', '!' + configGulp.srcJS + '/**/libs/**/*.*',
-                                '!' + configGulp.srcJS + '/**/bower_components/**/*.*' ]
+    src : [ configGulp.srcJS + '/**/*.js', '!' + configGulp.srcJS + '/**/bower_components/**/*.*' ]
 });
 
 lazyTaskRequest('babel', './gulpTasks/babelJS', {
