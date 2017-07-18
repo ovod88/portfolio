@@ -46,6 +46,7 @@ app.get('/hello', (req, res) => {
 
 app.get('/favicon.ico', (req, res) => {
 
+    res.setHeader('Cache-Control', 'public, max-age=604800');
     res.sendFile(path.join(__dirname, configGulp.dstImgs, 'favicon.ico'));
 
 })
