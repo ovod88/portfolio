@@ -6,10 +6,10 @@ const express = require('express'),
       loggerM = require('morgan'),
       bodyParser = require('body-parser'),
       cookieParser = require('cookie-parser'),
-      configGulp = require('./config').get('gulp');
+      configApp = require('./config').get('app');
 
 app.engine('ejs', require('ejs-locals'));
-app.set('views', path.join(__dirname, configGulp.dstTemplates));
+app.set('views', path.join(__dirname, configApp.dstTemplates));
 app.set('view engine', 'ejs');
 
 if (app.get('env') == 'development') {
@@ -35,7 +35,7 @@ app.use(require('middleware/sendHttpError'));
 //sourceMap: true
 //}));
 
-app.use(express.static(path.join(__dirname, configGulp.dstAll)));
+app.use(express.static(path.join(__dirname, configApp.dstAll)));
 
 app.get('/hello', (req, res) => {
 
@@ -47,7 +47,7 @@ app.get('/hello', (req, res) => {
 app.get('/favicon.ico', (req, res) => {
 
     res.setHeader('Cache-Control', 'public, max-age=604800');
-    res.sendFile(path.join(__dirname, configGulp.dstImgs, 'favicon.ico'));
+    res.sendFile(path.join(__dirname, configApp.dstImgs, 'favicon.ico'));
 
 })
 
