@@ -20,7 +20,7 @@ module.exports = function (options) {
                                 presets : [ 'es2015' ]
                             })
                         ),
-                        $.debug({ title : $.util.colors.yellow('JS copying ...') })
+                        $.debug({ title : $.util.colors.yellow('JS copying ...') })//COPYIN WHILE READING!!!!
                     ))
                     .pipe(gulp.dest(options.dst));
 

@@ -24,7 +24,7 @@ module.exports = function (options) {
                                 var rpath = path.parse(file.relative);
                                 return gulp.src(options.src)
                                     .pipe($.requirejsOptimize({
-                                        mainConfigFile : `${configGulp.srcJS}/${rpath.dir}/main.js`,
+                                        mainConfigFile : `${configGulp.dstJS}/${rpath.dir}/main.js`,
                                         name           : rpath.dir + '/' + rpath.name
                                     }))
                                     .pipe($.debug({ title : $.util.colors.yellow('JS optimising ... ') }))

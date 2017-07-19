@@ -1,14 +1,4 @@
-requirejs.config ({
-    baseUrl     : '../js',
-    waitSeconds : 200,
-    paths       : {
-        "jquery"      : "bower_components/jquery/dist/jquery",
-        "testcommon"  : "commonCustom/testcommon",
-        "test"        : "index/custom/test"
-    }
-});
-
-require( [ 'jquery', 'test', 'testcommon' ], function ($, t, tc) {
+require( [ 'jquery', 'index/custom/test', 'testcommon' ], function ($, t, tc) {
 
     $( function () {
 

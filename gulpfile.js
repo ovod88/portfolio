@@ -131,6 +131,12 @@ lazyTaskRequest('babel', './gulpTasks/babelJS', {
     dst  : configGulp.dstAll
 });
 
+lazyTaskRequest('prepare-main-file', './gulpTasks/prependJS', {
+    srcFiles           : [ configGulp.dstJS + '/**/main.js', '!' + configGulp.dstJS + '/**/bower_components/**/*.*' ],
+    requireConfig      : configGulp.requireJSconfig,
+    dst                : configGulp.dstJS
+});
+
 lazyTaskRequest('js-optimize', './gulpTasks/jsOptimize', {
     src : configGulp.dstJS + '/**/main.js',
     dst : configGulp.dstJS,
@@ -168,7 +174,7 @@ gulp.task('browser-sync', gulp.series( 'server' , function () {
 
 }));
 
-gulp.task('process-js', gulp.series('lint', 'jscs', 'babel'));
+gulp.task('process-js', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'prepare-main-file'));
 gulp.task('build-js', gulp.series('cleanJS', 'process-js', 'js-optimize'));
 gulp.task('build-js-dev', gulp.series('cleanJS', 'process-js'));
 
