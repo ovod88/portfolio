@@ -1,29 +1,23 @@
-// requirejs.config ({
-//     baseUrl     : '../js',
-//     waitSeconds : 200,
-//     paths       : {
-//         "jquery"      : "bower_components/jquery/dist/jquery",
-//         "lodash"      : "bower_components/lodash/dist/lodash",
-//         "test"        : "index/custom/test",
-//         "testcommon"  : "commonCustom/testcommon"
-//     }
-// });
+requirejs.config ({
+    baseUrl     : '../js',
+    waitSeconds : 200,
+    paths       : {
+        "jquery"      : "bower_components/jquery/dist/jquery",
+        "testcommon"  : "commonCustom/testcommon",
+        "test"        : "index/custom/test"
+    }
+});
 
-requirejs([ '../commonCustom/requirejs.config' ], function () {
+require( [ 'jquery', 'test', 'testcommon' ], function ($, t, tc) {
 
+    $( function () {
 
-    require( [ 'jquery', '../index/custom/test', 'testcommon' ], function ($, t, tc) {
+        for( let i = 5; i > 0; i-- ) {
 
-        $( function () {
+            $('.portfolio').fadeToggle('slow');
 
-            for( let i = 5; i > 0; i-- ) {
+        }
 
-                $('.portfolio').fadeToggle('slow');
+    })
 
-            }
-
-        })
-
-    });
-
-})
+});

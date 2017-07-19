@@ -1,8 +1,8 @@
 requirejs.config ({
-    baseUrl     : 'js/bower_components',
+    baseUrl     : '../js',
     waitSeconds : 200,
     paths       : {
-        "jquery"      : "jquery/dist/jquery",
-        "testcommon"  : "../commonCustom/testcommon"
+        "jquery"      : "bower_components/jquery/dist/jquery",
+        "testcommon"  : "commonCustom/testcommon"
     }
 });
