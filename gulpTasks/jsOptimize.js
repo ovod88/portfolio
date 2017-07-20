@@ -28,6 +28,7 @@ module.exports = function (options) {
                                         name           : rpath.dir + '/' + rpath.name
                                     }))
                                     .pipe($.debug({ title : $.util.colors.yellow('JS optimising ... ') }))
+                                    .pipe($.uglify())
                                     .pipe(gulp.dest(options.dst));
 
                             }))

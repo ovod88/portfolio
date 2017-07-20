@@ -7,7 +7,7 @@ module.exports = function (options) {
     return function () {
 
         return gulp.src(options.src)
-            .pipe($.cleanCss())
+            .pipe($.csso())
             .pipe($.debug({ title : $.util.colors.yellow('Minifying css ...') }))
             .pipe($.rename({
                 suffix : '.min'
