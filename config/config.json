@@ -7,6 +7,7 @@
         "debugOnDev": false
     },
     "gulp": {
+        "packages" : [ "./package.json", "private/js/bower.json" ],
         "srcJS": "private/js",
         "dstJS": "public/js",
         "srcCSS": "private/css",

@@ -3,7 +3,8 @@ const gulp = require('gulp'),
       $ = require('gulp-load-plugins')(),
       browserSync = require('browser-sync').create(),
       configApp = require('./config').get('app'),
-      configGulp = require('./config').get('gulp');
+      configGulp = require('./config').get('gulp'),
+      args = require('yargs').argv;
 
 function lazyTaskRequest ( taskName, path, options ) {
 
@@ -192,3 +193,32 @@ gulp.task('build-dev', gulp.series('clean', 'build-images-dev',
                                             gulp.parallel('build-styles-dev', 'build-js-dev'), 'copytemplates',
                                             gulp.parallel('watchjs', 'watchcss', 'browser-sync')));
 
+gulp.task('bump', function () {
+
+    let msg = 'Bumping version',
+        type = args.type,
+        version = args.version,
+        options = {};
+
+    if (version) {
+
+        msg += ' to version ' + version;
+        options.version = version;
+
+    } else {
+
+        msg += ' for a ' + type;
+        options.type = type;
+
+    }
+
+    return gulp.src(configGulp.packages)
+               .pipe($.debug({ title : 'Bumping the version ' }))
+               .pipe($.bump(options))
+               .pipe(gulp.dest(function (file) {
+
+                    return file.base;
+
+                }));
+
+})
