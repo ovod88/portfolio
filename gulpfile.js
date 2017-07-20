@@ -2,8 +2,9 @@
 const gulp = require('gulp'),
       $ = require('gulp-load-plugins')(),
       browserSync = require('browser-sync').create(),
-      configApp = require('./config').get('app'),
-      configGulp = require('./config').get('gulp'),
+      config = require('./config')(),
+      configApp = config.app,
+      configGulp = config.gulp,
       args = require('yargs').argv;
 
 function lazyTaskRequest ( taskName, path, options ) {
@@ -143,19 +144,6 @@ lazyTaskRequest('js-optimize', './gulpTasks/jsOptimize', {
     dst : configGulp.dstJS,
 });
 
-gulp.task('watchjs',function () {
-
-    gulp.watch([ configGulp.srcJS + '/**/main.js',
-                 configGulp.srcJS + '/**/custom/*.js' ], gulp.series('process-js'));
-
-});
-
-gulp.task('watchcss',function () {
-
-    gulp.watch(configGulp.srcCSS + '/**/sass/*.*', gulp.series('sass', 'copy-css'));
-
-});
-
 lazyTaskRequest('server', './gulpTasks/serverNodemon', {
     script    : configGulp.nodemon.script,
     delay     : configGulp.nodemon.delay,
@@ -171,11 +159,17 @@ gulp.task('browser-sync', gulp.series( 'server' , function () {
         proxy : 'localhost:' + configApp.port
     });
 
-    browserSync.watch([ configGulp.dstAll, configGulp.dstTemplates ]).on('change', browserSync.reload);
+    gulp.watch([ configGulp.srcJS + '/**/main.js',
+                 configGulp.srcJS + '/**/custom/*.js',
+                 configGulp.srcJS + '/commonCustom/*.js' ], gulp.series('watchjs'));
+
+    gulp.watch(configGulp.srcCSS + '/**/sass/*.*', gulp.series('watchcss'));
+
+    gulp.watch(configGulp.srcTemplates, gulp.series('watchtemplates'));
 
 }));
 
-gulp.task('process-js', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'prepare-main-file'));
+gulp.task('process-js', gulp.series('lint', 'jscs', 'babel', 'prepare-main-file'));
 gulp.task('build-js', gulp.series('cleanJS', 'process-js', 'js-optimize'));
 gulp.task('build-js-dev', gulp.series('cleanJS', 'process-js'));
 
@@ -191,7 +185,21 @@ gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-sty
                                                 'server'));
 gulp.task('build-dev', gulp.series('clean', 'build-images-dev',
                                             gulp.parallel('build-styles-dev', 'build-js-dev'), 'copytemplates',
-                                            gulp.parallel('watchjs', 'watchcss', 'browser-sync')));
+                                                                                    'browser-sync'));
+
+gulp.task('watchjs', gulp.series('process-js', browserReload));
+
+gulp.task('watchcss', gulp.series('sass', 'copy-css', browserReload));
+
+gulp.task('watchtemplates', gulp.series('copytemplates', browserReload));
+
+lazyTaskRequest('tests-once', './gulpTasks/runTests', {
+    singleRun : true
+});
+
+lazyTaskRequest('tests', './gulpTasks/runTests', {
+    singleRun : false
+});
 
 gulp.task('bump', function () {
 
@@ -222,3 +230,10 @@ gulp.task('bump', function () {
                 }));
 
 })
+
+function browserReload (done) {
+
+    browserSync.reload();
+    done();
+
+}

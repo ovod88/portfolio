@@ -1,7 +1,8 @@
 const app = require('../app'),
       debug = require('debug')('portfolio:server'),
       http = require('http'),
-      configApp = require('config').get('app'),
+      config = require('config')(),
+      configApp = config.app,
       logger = require('logger')(module);
 
 let port = normalizePort(process.env.PORT || configApp.port);

@@ -6,7 +6,8 @@ const express = require('express'),
       loggerM = require('morgan'),
       bodyParser = require('body-parser'),
       cookieParser = require('cookie-parser'),
-      configApp = require('./config').get('app');
+      config = require('./config')(),
+      configApp = config.app;
 
 app.engine('ejs', require('ejs-locals'));
 app.set('views', path.join(__dirname, configApp.dstTemplates));

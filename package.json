@@ -64,7 +64,6 @@
     "gulp-util": "^3.0.8",
     "gulp.spritesmith": "^6.5.0",
     "merge-stream": "^1.0.1",
-    "nconf": "^0.8.4",
     "stream-combiner2": "^1.1.1",
     "through2": "^2.0.3",
     "yargs": "^8.0.2"

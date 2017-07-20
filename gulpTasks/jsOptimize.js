@@ -1,7 +1,8 @@
 const gulp = require('gulp'),
       $ = require('gulp-load-plugins')(),
       path = require('path'),
-      configGulp = require('../config').get('gulp');
+      config = require('../config')(),
+      configGulp = config.gulp;
 
 module.exports = function (options) {
 
