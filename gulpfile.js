@@ -202,7 +202,7 @@ lazyTaskRequest('tests-once', './gulpTasks/runTests', {
     singleRun : true
 });
 
-lazyTaskRequest('tests', './gulpTasks/runTests', {
+lazyTaskRequest('autotests', './gulpTasks/runTests', {
     singleRun : false
 });
 

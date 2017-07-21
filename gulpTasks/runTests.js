@@ -1,5 +1,6 @@
 const gulp = require('gulp'),
-      $ = require('gulp-load-plugins')();
+      $ = require('gulp-load-plugins')(),
+      path = require('path');
 
 module.exports = function (options) {
 
@@ -13,14 +14,15 @@ module.exports = function (options) {
 
 function startKarma (singleRun, done) {
 
-    let karma = require('karma').server,
+    let KarmaServer = require('karma').Server,
         excludeFiles = [];
 
-    karma.start({
-        config    : __dirname + '/karma.config.js',
-        exclude   : excludeFiles,
-        singleRun : !!singleRun
-    }, karmaCompleted);
+    new KarmaServer({
+        configFile     : path.normalize(__dirname +'/../karma.conf.js'),
+        exclude        : excludeFiles,
+        singleRun      : !!singleRun,
+        captureTimeout : 60000
+    }, karmaCompleted).start();
 
     function karmaCompleted (result) {
 

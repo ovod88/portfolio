@@ -1,9 +1,18 @@
+let wiredep = require('wiredep');
+
 module.exports = function () {
 
     let srcJS = "private/js",
+        dstJS = "public/js",
         dstTemplates = "templates",
         dstAll = "public",
         dstImgs = "public/imgs",
+        bowerJSFiles = srcJS + "/bower_components/**/*.js",
+        commonJSFiles = dstJS + "/commonCustom/!(*.config)+(.js)",
+        customJSFiles = dstJS + "/**/custom/*.js",
+        mainJSFiles = dstJS + "/**/*.js",
+        testFiles = "tests/**/*.spec.js",
+        reports = "reports",
         config = {
         "app"   : {
             "port"              : 3000,
@@ -18,7 +27,7 @@ module.exports = function () {
         "gulp"  : {
             "packages"            : [ "./package.json", "private/js/bower.json" ],
             "srcJS"               : srcJS,
-            "dstJS"               : "public/js",
+            "dstJS"               : dstJS,
             "srcCSS"              : "private/css",
             "dstCSS"              : "public/css",
             "srcImgs"             : "private/imgs",
@@ -39,11 +48,39 @@ module.exports = function () {
             },
             "requireJSconfig"     : srcJS + '/commonCustom/requirejs.config.js'
         },
-        "karma" : {
-            "frameworks" : [ "jasmine", "requirejs" ]
-        }
+        "karma" : getKarmaConfig()
     }
 
     return config;
+
+    function getKarmaConfig () {
+
+        let karmaFiles = [
+            { pattern : bowerJSFiles, included  : false },
+            { pattern : commonJSFiles, included : false },
+            { pattern : customJSFiles, included : false },
+            mainJSFiles,
+            testFiles
+        ],
+        options = {
+            frameworks       : [ "jasmine", "requirejs" ],
+            files            : karmaFiles,
+            reporters        : [ "progress", "coverage"],
+            coverageReporter : {
+                dir       : reports + "/coverage",
+                reporters : [
+                    { type : 'html', subdir : 'report-html' },
+                    { type : 'lcov', subdir : 'report-lcov' },
+                    { type : 'text-summary' }
+                ]
+            },
+            preprocessors    : {},
+            port             : 9876,
+
+        }
+        options.preprocessors[dstJS + "/**/!bower_components/*.js"] = [ 'coverage' ];
+        return options;
+
+    }
 
 }
