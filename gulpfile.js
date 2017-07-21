@@ -189,7 +189,12 @@ gulp.task('build-dev', gulp.series('clean', 'build-images-dev',
 
 gulp.task('watchjs', gulp.series('process-js', browserReload));
 
-gulp.task('watchcss', gulp.series('sass', 'copy-css', browserReload));
+gulp.task('watchcss', gulp.series('sass', 'copy-css', function (done) {
+
+    return gulp.src(configGulp.dstCSS + '/**/*.css')
+        .pipe(browserSync.stream());
+
+}));
 
 gulp.task('watchtemplates', gulp.series('copytemplates', browserReload));
 
