@@ -6,6 +6,7 @@ module.exports = function (config) {
     config.set({
         basePath         : '',
         frameworks       : configKarma.frameworks,
+        browsers         : configKarma.browsers,
         files            : configKarma.files,
         reporters        : configKarma.reporters,
         preprocessors    : configKarma.preprocessors,

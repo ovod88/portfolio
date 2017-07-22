@@ -10,7 +10,8 @@ module.exports = function () {
         bowerJSFiles = srcJS + "/bower_components/**/*.js",
         commonJSFiles = dstJS + "/commonCustom/!(*.config)+(.js)",
         customJSFiles = dstJS + "/**/custom/*.js",
-        mainJSFiles = dstJS + "/**/*.js",
+        mainJSFiles = dstJS + "/**/main.js",
+        testConfig = "tests/tests-config.js",
         testFiles = "tests/**/*.spec.js",
         reports = "reports",
         config = {
@@ -56,11 +57,12 @@ module.exports = function () {
     function getKarmaConfig () {
 
         let karmaFiles = [
+            testConfig,
+            { pattern : testFiles, included : false },
             { pattern : bowerJSFiles, included  : false },
             { pattern : commonJSFiles, included : false },
             { pattern : customJSFiles, included : false },
-            mainJSFiles,
-            testFiles
+            { pattern : mainJSFiles, included : false }
         ],
         options = {
             frameworks       : [ "jasmine", "requirejs" ],
@@ -76,9 +78,10 @@ module.exports = function () {
             },
             preprocessors    : {},
             port             : 9876,
-
+            browsers         : [ 'PhantomJS' ]
         }
         options.preprocessors[dstJS + "/**/!bower_components/*.js"] = [ 'coverage' ];
+
         return options;
 
     }
