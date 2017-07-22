@@ -27,7 +27,12 @@ function startKarma (singleRun, done) {
 
         if (result == 1) {
 
-            done('Karma tests ended with errors');
+            done();
+            if (singleRun) {
+
+                process.exit(-1);
+
+            }
 
         } else {
 
@@ -36,7 +41,7 @@ function startKarma (singleRun, done) {
 
                 process.exit(0);
 
-        }
+            }
 
         }
 
