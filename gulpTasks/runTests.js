@@ -21,12 +21,14 @@ function startKarma (singleRun, done) {
             exclude        : excludeFiles,
             singleRun      : !!singleRun,
             captureTimeout : 60000
-        }, karmaCompleted).start();
+        }, karmaCompleted);
 
     function karmaCompleted () {
 
         done();
 
     }
+
+    KarmaServer.start();
 
 };
