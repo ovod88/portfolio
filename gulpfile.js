@@ -182,7 +182,7 @@ lazyTaskRequest('autotests', './gulpTasks/runTests', {
 gulp.task('process-js-ready-for-tests', gulp.series('lint', 'jscs', 'babel'));
 gulp.task('process-js', gulp.series('tests-once', 'prepare-main-file'));
 gulp.task('build-js', gulp.series('cleanJS', 'tests-once', 'prepare-main-file', 'js-optimize'));
-gulp.task('build-js-dev', gulp.series('cleanJS', 'process-js-ready-for-tests', 'tests-once', 'prepare-main-file'));
+gulp.task('build-js-dev', gulp.series('cleanJS', 'tests-once', 'prepare-main-file'));
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-autopref-css', 'minify-css'));
 gulp.task('build-styles-without-minify', gulp.series('cleanCSS', 'sass', 'concat-autopref-css'));

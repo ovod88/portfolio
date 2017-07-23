@@ -1,10 +1,16 @@
-define([], function () {
+define([ 'testcommon', 'index/custom/test' ], function (common, indexCustom) {
 
-    describe('Main test',  function () {
+    describe('General tests',  function () {
 
-        it('Check if sum is correct', function () {
+        it('Check if common returns object', function () {
 
-            expect(1 + 2).toBe(3);
+            expect(common.commonDependancy).toBe(true);
+
+        });
+
+        it('Check if index custom returns object', function () {
+
+            expect(indexCustom.indexCustom).toBe(true);
 
         });
 

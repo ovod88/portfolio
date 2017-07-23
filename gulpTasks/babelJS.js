@@ -7,7 +7,6 @@ module.exports = function (options) {
     return function () {
 
                 return gulp.src(options.src, { base : options.base })
-                    .pipe($.newer(options.dst))
                     .pipe($.if(function (file) {
 
                             return (file.relative.indexOf('libs') == -1) &&
@@ -20,7 +19,10 @@ module.exports = function (options) {
                                 presets : [ 'es2015' ]
                             })
                         ),
-                        $.debug({ title : $.util.colors.yellow('JS copying ...') })//COPYIN WHILE READING!!!!
+                        combine(
+                            $.newer(options.dst),
+                            $.debug({ title : $.util.colors.yellow('JS copying ...') })
+                        )
                     ))
                     .pipe(gulp.dest(options.dst));
 
