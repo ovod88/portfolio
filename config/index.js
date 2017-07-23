@@ -67,7 +67,7 @@ module.exports = function () {
         options = {
             frameworks       : [ "jasmine", "requirejs" ],
             files            : karmaFiles,
-            reporters        : [ "progress", "coverage"],
+            reporters        : [ "progress", "coverage", "notify" ],
             coverageReporter : {
                 dir       : reports + "/coverage",
                 reporters : [
@@ -75,6 +75,10 @@ module.exports = function () {
                     { type : 'lcov', subdir : 'report-lcov' },
                     { type : 'text-summary' }
                 ]
+            },
+            notifyReporter   : {
+                reportEachFailure : true,
+                reportSuccess     : false,
             },
             preprocessors    : {},
             port             : 9876,

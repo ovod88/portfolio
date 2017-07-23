@@ -23,27 +23,9 @@ function startKarma (singleRun, done) {
             captureTimeout : 60000
         }, karmaCompleted).start();
 
-    function karmaCompleted (result) {
+    function karmaCompleted () {
 
-        if (result == 1) {
-
-            done();
-            if (singleRun) {
-
-                process.exit(-1);
-
-            }
-
-        } else {
-
-            done();
-            if (singleRun) {
-
-                process.exit(0);
-
-            }
-
-        }
+        done();
 
     }
 

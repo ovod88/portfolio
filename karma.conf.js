@@ -11,6 +11,7 @@ module.exports = function (config) {
         reporters        : configKarma.reporters,
         preprocessors    : configKarma.preprocessors,
         coverageReporter : configKarma.coverageReporter,
+        notifyReporter   : configKarma.notifyReporter,
         port             : configKarma.port,
         colors           : true,
         loglevel         : config.LOG_INFO
