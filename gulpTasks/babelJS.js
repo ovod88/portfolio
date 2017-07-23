@@ -1,6 +1,8 @@
 const gulp = require('gulp'),
       $ = require('gulp-load-plugins')(),
-      combine = require('stream-combiner2').obj;
+      combine = require('stream-combiner2').obj,
+      fs = require('fs'),
+      through2 = require('through2').obj;
 
 module.exports = function (options) {
 
