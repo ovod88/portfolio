@@ -170,19 +170,18 @@ gulp.task('browser-sync', gulp.series( 'server' , function () {
 }));
 
 lazyTaskRequest('tests-once', './gulpTasks/runTests', {
-    deps      : [ 'process-js-ready-for-tests' ],
+    deps      : [],
     singleRun : true
 });
 
 lazyTaskRequest('autotests', './gulpTasks/runTests', {
-    deps      : [ 'process-js-ready-for-tests' ],
+    deps      : [],
     singleRun : false
 });
 
-gulp.task('process-js-ready-for-tests', gulp.series('lint', 'jscs', 'babel'));
-gulp.task('process-js', gulp.series('tests-once', 'prepare-main-file'));
-gulp.task('build-js', gulp.series('cleanJS', 'tests-once', 'prepare-main-file', 'js-optimize'));
-gulp.task('build-js-dev', gulp.series('cleanJS', 'tests-once', 'prepare-main-file'));
+gulp.task('process-js', gulp.series('lint', 'jscs', 'babel', 'prepare-main-file'));
+gulp.task('build-js', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'prepare-main-file', 'tests-once', 'js-optimize'));
+gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'prepare-main-file'));
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-autopref-css', 'minify-css'));
 gulp.task('build-styles-without-minify', gulp.series('cleanCSS', 'sass', 'concat-autopref-css'));
@@ -196,7 +195,7 @@ gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-sty
                                                 'server'));
 gulp.task('build-dev', gulp.series('clean', 'build-images-dev',
                                             gulp.parallel('build-styles-dev', 'build-js-dev'), 'copytemplates',
-                                                                                    'browser-sync'));
+                                                            gulp.parallel('browser-sync', 'autotests')));
 
 gulp.task('watchjs', gulp.series('process-js', browserReload));
 

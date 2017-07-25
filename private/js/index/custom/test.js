@@ -1,6 +1,6 @@
 define([], function () {
 
-    console.log('Customed script connected ....');
+    console.log('Custom script connected ....');
 
     return {
         indexCustom : true

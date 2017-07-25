@@ -15,17 +15,23 @@ module.exports = function (options) {
 
 function startKarma (singleRun, done) {
 
-    let excludeFiles = [],
-        KarmaServer = new karma.Server({
+    let KarmaServer = new karma.Server({
             configFile     : path.normalize(__dirname +'/../karma.conf.js'),
-            exclude        : excludeFiles,
             singleRun      : !!singleRun,
             captureTimeout : 60000
         }, karmaCompleted);
 
-    function karmaCompleted () {
+    function karmaCompleted (result) {
 
-        done();
+        if (result == 1) {
+
+            done('Karma ended with error');
+
+        } else {
+
+            done();
+
+        }
 
     }
 

@@ -10,10 +10,4 @@ require( [ 'jquery', 'index/custom/test', 'testcommon' ], function ($, t, tc) {
 
     })
 
-    function sum (a, b) {
-
-        return a + b;
-
-    }
-
 });

@@ -8,9 +8,10 @@ module.exports = function () {
         dstAll = "public",
         dstImgs = "public/imgs",
         bowerJSFiles = dstJS + "/bower_components/**/*.js",
-        commonJSFiles = dstJS + "/commonCustom/!(*.config)+(.js)",
-        customJSFiles = dstJS + "/**/custom/*.js",
-        mainJSFiles = dstJS + "/**/main.js",
+        commonJSFiles = dstJS + "/commonCustom/**/!(*.config)+(.js)",
+        customJSFiles = dstJS + "/**/custom/**/*.js",
+        otherFiles = dstJS + "/**/*.js",
+        excludeFiles = dstJS + "/**/main.js",
         testConfig = "tests/tests-config.js",
         testFiles = "tests/**/*.spec.js",
         reports = "reports",
@@ -61,12 +62,12 @@ module.exports = function () {
             { pattern : testFiles, included : false },
             { pattern : bowerJSFiles, included  : false },
             { pattern : commonJSFiles, included : false },
-            { pattern : customJSFiles, included : false },
-            { pattern : mainJSFiles, included : false }
+            { pattern : customJSFiles, included : false }
         ],
         options = {
             frameworks       : [ "jasmine", "requirejs" ],
             files            : karmaFiles,
+            exclude          : excludeFiles,
             reporters        : [ "progress", "coverage", "notify" ],
             coverageReporter : {
                 dir       : reports + "/coverage",
@@ -84,7 +85,7 @@ module.exports = function () {
             port             : 9876,
             browsers         : [ 'PhantomJS' ]
         }
-        options.preprocessors[dstJS + "/**/!bower_components/*.js"] = [ 'coverage' ];
+        options.preprocessors["public/js/!(bower_components)/**/*.js"] = [ 'coverage' ];
 
         return options;
 
