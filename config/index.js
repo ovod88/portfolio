@@ -85,7 +85,7 @@ module.exports = function () {
             port             : 9876,
             browsers         : [ 'PhantomJS' ]
         }
-        options.preprocessors["public/js/!(bower_components)/**/*.js"] = [ 'coverage' ];
+        options.preprocessors["!(bower_components|node_modules)/**/!(*config)+(.js)"] = [ 'coverage' ];
 
         return options;
 

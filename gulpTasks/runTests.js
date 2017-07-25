@@ -18,7 +18,7 @@ function startKarma (singleRun, done) {
     let KarmaServer = new karma.Server({
             configFile     : path.normalize(__dirname +'/../karma.conf.js'),
             singleRun      : !!singleRun,
-            captureTimeout : 60000
+            captureTimeout : 20000
         }, karmaCompleted);
 
     function karmaCompleted (result) {

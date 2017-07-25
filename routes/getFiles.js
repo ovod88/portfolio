@@ -2,7 +2,7 @@ const dir = 'public/',
       relativeFontDir = 'css/fonts',
       fs = require('fs');
 
-function getFiles (dir, filesExt) {
+function getFiles(dir, filesExt) {
 
     filesExt = filesExt || [];
     let files = [];

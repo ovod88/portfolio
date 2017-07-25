@@ -1,4 +1,5 @@
 'use strict';
+
 const gulp = require('gulp'),
       $ = require('gulp-load-plugins')(),
       browserSync = require('browser-sync').create(),
@@ -180,7 +181,8 @@ lazyTaskRequest('autotests', './gulpTasks/runTests', {
 });
 
 gulp.task('process-js', gulp.series('lint', 'jscs', 'babel', 'prepare-main-file'));
-gulp.task('build-js', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'prepare-main-file', 'tests-once', 'js-optimize'));
+gulp.task('build-js', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'prepare-main-file',
+                                                                'tests-once', 'js-optimize'));
 gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'prepare-main-file'));
 
 gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-autopref-css', 'minify-css'));
