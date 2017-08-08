@@ -129,7 +129,7 @@ lazyTaskRequest('jscs', './gulpTasks/jscsJS', {
 });
 
 lazyTaskRequest('babel', './gulpTasks/babelJS', {
-    src  : configGulp.srcJS + '/**/*.js',
+    src  : configGulp.srcAll + '/**/*.js',
     base : configGulp.srcAll,
     dst  : configGulp.dstAll
 });

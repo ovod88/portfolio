@@ -9,10 +9,20 @@
   "main": "",
   "license": "MIT",
   "private": true,
-  "devDependencies": {},
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "compass-sass-mixins": "*"
+  },
   "dependencies": {
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
-    "requirejs": "^2.3.3"
+    "requirejs": "^2.3.3",
+    "compass-sass-mixins": "*"
   }
 }

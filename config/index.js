@@ -7,7 +7,7 @@ module.exports = function () {
         dstTemplates = "templates",
         dstAll = "public",
         dstImgs = "public/imgs",
-        bowerJSFiles = dstJS + "/bower_components/**/*.js",
+        bowerJSFiles = dstAll + "/bower_components/**/*.js",
         commonJSFiles = dstJS + "/commonCustom/**/!(*.config)+(.js)",
         customJSFiles = dstJS + "/**/custom/**/*.js",
         otherFiles = dstJS + "/**/*.js",
@@ -27,7 +27,7 @@ module.exports = function () {
             "dstImgs"           : dstImgs
         },
         "gulp"  : {
-            "packages"            : [ "./package.json", "private/js/bower.json" ],
+            "packages"            : [ "./package.json", "./bower.json" ],
             "srcJS"               : srcJS,
             "dstJS"               : dstJS,
             "srcCSS"              : "private/css",
