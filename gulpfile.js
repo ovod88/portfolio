@@ -164,7 +164,7 @@ gulp.task('browser-sync', gulp.series( 'server' , function () {
                  configGulp.srcJS + '/**/custom/*.js',
                  configGulp.srcJS + '/commonCustom/*.js' ], gulp.series('watchjs'));
 
-    gulp.watch(configGulp.srcCSS + '/**/sass/*.*', gulp.series('watchcss'));
+    gulp.watch([ configGulp.srcCSS + '/**/sass/*.*', configGulp.srcCSS + '/fonts/*.*' ], gulp.series('watchcss'));
 
     gulp.watch(configGulp.srcTemplates, gulp.series('watchtemplates'));
 
@@ -201,7 +201,7 @@ gulp.task('build-dev', gulp.series('clean', 'build-images-dev',
 
 gulp.task('watchjs', gulp.series('process-js', browserReload));
 
-gulp.task('watchcss', gulp.series('sass', 'copy-css', function (done) {
+gulp.task('watchcss', gulp.series('sass', 'copy-css', function () {
 
     return gulp.src(configGulp.dstCSS + '/**/*.css')
         .pipe(browserSync.stream());

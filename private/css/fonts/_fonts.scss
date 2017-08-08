@@ -1,3 +1,6 @@
-.testfonts{
-    color:red;
-}
+@include font-face("Helvetica",
+        font-files("fonts/Helvetica/helveticaneue.woff", "fonts/Helvetica/helveticaneue.ttf"),
+        "fonts/Helvetica/helveticaneue.woff2",
+        normal,
+        normal
+);
