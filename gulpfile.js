@@ -36,7 +36,7 @@ lazyTaskRequest('copytemplates', './gulpTasks/copy', {
 
 lazyTaskRequest('copyfonts', './gulpTasks/copy', {
     taskname : 'copyfonts',
-    src      : configGulp.srcCSS + '/**/*.{eot, woff, ttf}',
+    src      : configGulp.srcCSS + '/**/*.{eot,woff,ttf}',
     dst      : configGulp.dstCSS
 });
 

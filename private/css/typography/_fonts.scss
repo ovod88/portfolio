@@ -1,13 +1,9 @@
-@include font-face("Helvetica Thin",
-        font-files("../../typography/fonts/Helvetica/helveticaneue_thin.woff", "../../typography/fonts/Helvetica/helveticaneue_thin.ttf"),
-        "../../typography/fonts/Helvetica/helveticaneue_thin.eot",
-        normal,
-        normal
-);
+@import "fonts_mixin";
 
-// @include font-face("Helvetica",
-//         font-files("../../typography/Helvetica/helveticaneue.woff", "../../typography/Helvetica/helveticaneue.ttf"),
-//         "../../typography/Helvetica/helveticaneue.eot",
-//         normal,
-//         normal
-// );
+
+@include font-face("Helvetica Neue",
+        "../../typography/fonts/Helvetica/helveticaneue_thin",
+        lighter,
+        normal,
+        eot woff ttf
+);
