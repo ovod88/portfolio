@@ -27,3 +27,129 @@
         normal,
         eot woff ttf
 );
+
+@include font-face("Open Sans",
+        "../../typography/fonts/Open_Sans/opensans-light",
+        200,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Open Sans",
+        "../../typography/fonts/Open_Sans/opensans-lightitalic",
+        200,
+        italic,
+        eot woff ttf
+);
+
+@include font-face("Open Sans",
+        "../../typography/fonts/Open_Sans/opensans-regular",
+        normal,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Open Sans",
+        "../../typography/fonts/Open_Sans/opensans-italic",
+        normal,
+        italic,
+        eot woff ttf
+);
+
+@include font-face("Open Sans",
+        "../../typography/fonts/Open_Sans/opensans-semibold",
+        bold,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Open Sans",
+        "../../typography/fonts/Open_Sans/opensans-semibolditalic",
+        bold,
+        italic,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-thin",
+        200,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-thinitalic",
+        200,
+        italic,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-light",
+        300,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-lightitalic",
+        300,
+        italic,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-regular",
+        400,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-italic",
+        400,
+        italic,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-medium",
+        500,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-mediumitalic",
+        500,
+        italic,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-bold",
+        700,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-bolditalic",
+        700,
+        italic,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-black",
+        900,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Roboto",
+        "../../typography/fonts/Roboto/roboto-blackitalic",
+        900,
+        italic,
+        eot woff ttf
+);
