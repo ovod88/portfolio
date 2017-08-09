@@ -34,6 +34,12 @@ lazyTaskRequest('copytemplates', './gulpTasks/copy', {
     dst      : configGulp.dstTemplates
 });
 
+lazyTaskRequest('copyfonts', './gulpTasks/copy', {
+    taskname : 'copyfonts',
+    src      : configGulp.srcCSS + '/**/*.{eot, woff, ttf}',
+    dst      : configGulp.dstCSS
+});
+
 lazyTaskRequest('cleanJS', './gulpTasks/del', {
     dst : configGulp.dstJS
 });
@@ -56,7 +62,7 @@ lazyTaskRequest('sass', './gulpTasks/sass', {
 });
 
 lazyTaskRequest('concat-autopref-css', './gulpTasks/concatCSS', {
-    src     : [ configGulp.srcCSS + '/fonts/*.css', configGulp.srcCSS  + '/**/libs/*.css',
+    src     : [ configGulp.srcCSS  + '/**/libs/*.css',
                                             configGulp.srcCSS  + '/**/style/*.css' ],
     dstName : 'style.css',
     dst     : configGulp.dstCSS
@@ -164,7 +170,7 @@ gulp.task('browser-sync', gulp.series( 'server' , function () {
                  configGulp.srcJS + '/**/custom/*.js',
                  configGulp.srcJS + '/commonCustom/*.js' ], gulp.series('watchjs'));
 
-    gulp.watch([ configGulp.srcCSS + '/**/sass/*.*', configGulp.srcCSS + '/fonts/*.*' ], gulp.series('watchcss'));
+    gulp.watch([ configGulp.srcCSS + '/**/sass/*.*', configGulp.srcCSS + '/typography/*.*' ], gulp.series('watchcss'));
 
     gulp.watch(configGulp.srcTemplates, gulp.series('watchtemplates'));
 
@@ -185,9 +191,9 @@ gulp.task('build-js', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'prepare-m
                                                                 'tests-once', 'js-optimize'));
 gulp.task('build-js-dev', gulp.series('cleanJS', 'lint', 'jscs', 'babel', 'prepare-main-file'));
 
-gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-autopref-css', 'minify-css'));
-gulp.task('build-styles-without-minify', gulp.series('cleanCSS', 'sass', 'concat-autopref-css'));
-gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', 'copy-css'));
+gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-autopref-css', 'minify-css', 'copyfonts'));
+gulp.task('build-styles-without-minify', gulp.series('cleanCSS', 'sass', 'concat-autopref-css', 'copyfonts'));
+gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', 'copy-css', 'copyfonts'));
 
 gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 gulp.task('build-images-dev', gulp.series('cleanImgs',
