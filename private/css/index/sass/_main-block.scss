@@ -1,7 +1,7 @@
 .main-block {
     display: block;
     width: 50%;
-    height: 1527px;
+    height: 2403px;
     background-color: white;
 }
 
@@ -141,5 +141,25 @@
     font-size: 17px;
     font-weight: 900;
     font-style: italic;
+}
+
+.main-block p:nth-of-type(23) {
+    font-family: "Allura";
+    font-size: 45px;
+}
+
+.main-block p:nth-of-type(24) {
+    font-family: "Capture";
+    font-size: 27px;
+}
+
+.main-block p:nth-of-type(25) {
+    font-family: "Champagne";
+    font-size: 37px;
+}
+
+.main-block p:nth-of-type(26) {
+    font-family: "Lobster";
+    font-size: 30px;
 }
 

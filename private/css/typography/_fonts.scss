@@ -1,155 +1,184 @@
 @import "fonts_mixin";
 
 @include font-face("Helvetica Neue",
-        "../../typography/fonts/Helvetica/helveticaneue-thinitalic",
+        "../../../css/typography/fonts/Helvetica/helveticaneue-thinitalic",
         normal,
         italic,
         eot woff ttf
 );
 
 @include font-face("Helvetica Neue",
-        "../../typography/fonts/Helvetica/helveticaneue",
+        "../../../css/typography/fonts/Helvetica/helveticaneue",
         normal,
         normal,
         eot woff ttf
 );
 
 @include font-face("Helvetica Neue",
-        "../../typography/fonts/Helvetica/helveticaneuemed",
+        "../../../css/typography/fonts/Helvetica/helveticaneuemed",
         700,
         normal,
         eot woff ttf
 );
 
 @include font-face("Helvetica Neue",
-        "../../typography/fonts/Helvetica/helveticaneuebd",
+        "../../../css/typography/fonts/Helvetica/helveticaneuebd",
         900,
         normal,
         eot woff ttf
 );
 
 @include font-face("Open Sans",
-        "../../typography/fonts/Open_Sans/opensans-light",
+        "../../../css/typography/fonts/Open_Sans/opensans-light",
         200,
         normal,
         eot woff ttf
 );
 
 @include font-face("Open Sans",
-        "../../typography/fonts/Open_Sans/opensans-lightitalic",
+        "../../../css/typography/fonts/Open_Sans/opensans-lightitalic",
         200,
         italic,
         eot woff ttf
 );
 
 @include font-face("Open Sans",
-        "../../typography/fonts/Open_Sans/opensans-regular",
+        "../../../css/typography/fonts/Open_Sans/opensans-regular",
         normal,
         normal,
         eot woff ttf
 );
 
 @include font-face("Open Sans",
-        "../../typography/fonts/Open_Sans/opensans-italic",
+        "../../../css/typography/fonts/Open_Sans/opensans-italic",
         normal,
         italic,
         eot woff ttf
 );
 
 @include font-face("Open Sans",
-        "../../typography/fonts/Open_Sans/opensans-semibold",
+        "../../../css/typography/fonts/Open_Sans/opensans-semibold",
         bold,
         normal,
         eot woff ttf
 );
 
 @include font-face("Open Sans",
-        "../../typography/fonts/Open_Sans/opensans-semibolditalic",
+        "../../../css/typography/fonts/Open_Sans/opensans-semibolditalic",
         bold,
         italic,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-thin",
+        "../../../css/typography/fonts/Roboto/roboto-thin",
         200,
         normal,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-thinitalic",
+        "../../../css/typography/fonts/Roboto/roboto-thinitalic",
         200,
         italic,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-light",
+        "../../../css/typography/fonts/Roboto/roboto-light",
         300,
         normal,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-lightitalic",
+        "../../../css/typography/fonts/Roboto/roboto-lightitalic",
         300,
         italic,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-regular",
+        "../../../css/typography/fonts/Roboto/roboto-regular",
         400,
         normal,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-italic",
+        "../../../css/typography/fonts/Roboto/roboto-italic",
         400,
         italic,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-medium",
+        "../../../css/typography/fonts/Roboto/roboto-medium",
         500,
         normal,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-mediumitalic",
+        "../../../css/typography/fonts/Roboto/roboto-mediumitalic",
         500,
         italic,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-bold",
+        "../../../css/typography/fonts/Roboto/roboto-bold",
         700,
         normal,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-bolditalic",
+        "../../../css/typography/fonts/Roboto/roboto-bolditalic",
         700,
         italic,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-black",
+        "../../../css/typography/fonts/Roboto/roboto-black",
         900,
         normal,
         eot woff ttf
 );
 
 @include font-face("Roboto",
-        "../../typography/fonts/Roboto/roboto-blackitalic",
+        "../../../css/typography/fonts/Roboto/roboto-blackitalic",
         900,
         italic,
+        eot woff ttf
+);
+
+
+@include font-face("Allura",
+        "../../../css/typography/fonts/Allura/allura-regular",
+        normal,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Capture",
+        "../../../css/typography/fonts/Capture/capture",
+        normal,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Champagne",
+        "../../../css/typography/fonts/Champagne/champagne",
+        normal,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Lobster",
+        "../../../css/typography/fonts/Lobster/lobster",
+        normal,
+        normal,
         eot woff ttf
 );
