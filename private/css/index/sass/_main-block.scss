@@ -1,165 +1,168 @@
-.main-block {
-    display: block;
-    width: 50%;
-    height: 2403px;
-    background-color: white;
-}
+.medium-desktops {
 
-.main-block p:first-of-type {
-    font-family: "Helvetica Neue";
-    font-size: 17px;
-    font-style: italic;
-}
+        .main-block {
+            display: block;
+            width: 50%;
+            height: 2403px;
+            background-color: white;
+        }
 
-.main-block p:nth-of-type(2) {
-    font-family: "Helvetica Neue";
-    font-size: 17px;
-}
+        .main-block p:first-of-type {
+            font-family: "Helvetica Neue";
+            font-size: 17px;
+            font-style: italic;
+        }
 
-.main-block p:nth-of-type(3) {
-    font-family: "Helvetica Neue";
-    font-size: 17px;
-    font-weight: 700;
-}
+        .main-block p:nth-of-type(2) {
+            font-family: "Helvetica Neue";
+            font-size: 17px;
+        }
 
-.main-block p:nth-of-type(4) {
-    font-family: "Helvetica Neue";
-    font-size: 17px;
-    font-weight: 900;
-}
+        .main-block p:nth-of-type(3) {
+            font-family: "Helvetica Neue";
+            font-size: 17px;
+            font-weight: 700;
+        }
 
-.main-block p:nth-of-type(5) {
-    font-family: "Open Sans";
-    font-size: 17px;
-    font-weight: 200;
-}
+        .main-block p:nth-of-type(4) {
+            font-family: "Helvetica Neue";
+            font-size: 17px;
+            font-weight: 900;
+        }
 
-.main-block p:nth-of-type(6) {
-    font-family: "Open Sans";
-    font-size: 17px;
-    font-weight: 200;
-    font-style: italic;
-}
+        .main-block p:nth-of-type(5) {
+            font-family: "Open Sans";
+            font-size: 17px;
+            font-weight: 200;
+        }
 
-.main-block p:nth-of-type(7) {
-    font-family: "Open Sans";
-    font-size: 17px;
-}
+        .main-block p:nth-of-type(6) {
+            font-family: "Open Sans";
+            font-size: 17px;
+            font-weight: 200;
+            font-style: italic;
+        }
 
-.main-block p:nth-of-type(8) {
-    font-family: "Open Sans";
-    font-size: 17px;
-    font-style: italic;
-}
+        .main-block p:nth-of-type(7) {
+            font-family: "Open Sans";
+            font-size: 17px;
+        }
 
-.main-block p:nth-of-type(9) {
-    font-family: "Open Sans";
-    font-size: 17px;
-    font-weight: bold;
-}
+        .main-block p:nth-of-type(8) {
+            font-family: "Open Sans";
+            font-size: 17px;
+            font-style: italic;
+        }
 
-.main-block p:nth-of-type(10) {
-    font-family: "Open Sans";
-    font-size: 17px;
-    font-weight: bold;
-    font-style: italic;
-}
+        .main-block p:nth-of-type(9) {
+            font-family: "Open Sans";
+            font-size: 17px;
+            font-weight: bold;
+        }
 
-.main-block p:nth-of-type(11) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 200;
-}
+        .main-block p:nth-of-type(10) {
+            font-family: "Open Sans";
+            font-size: 17px;
+            font-weight: bold;
+            font-style: italic;
+        }
 
-.main-block p:nth-of-type(12) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 200;
-    font-style: italic;
-}
+        .main-block p:nth-of-type(11) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 200;
+        }
 
-.main-block p:nth-of-type(13) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 300;
-}
+        .main-block p:nth-of-type(12) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 200;
+            font-style: italic;
+        }
 
-.main-block p:nth-of-type(14) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 300;
-    font-style: italic;
-}
+        .main-block p:nth-of-type(13) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 300;
+        }
 
-.main-block p:nth-of-type(15) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 400;
-}
+        .main-block p:nth-of-type(14) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 300;
+            font-style: italic;
+        }
 
-.main-block p:nth-of-type(16) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 400;
-    font-style: italic;
-}
+        .main-block p:nth-of-type(15) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 400;
+        }
 
-.main-block p:nth-of-type(17) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 500;
-}
+        .main-block p:nth-of-type(16) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 400;
+            font-style: italic;
+        }
 
-.main-block p:nth-of-type(18) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 500;
-    font-style: italic;
-}
+        .main-block p:nth-of-type(17) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 500;
+        }
 
-.main-block p:nth-of-type(19) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 700;
-}
+        .main-block p:nth-of-type(18) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 500;
+            font-style: italic;
+        }
 
-.main-block p:nth-of-type(20) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 700;
-    font-style: italic;
-}
+        .main-block p:nth-of-type(19) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 700;
+        }
 
-.main-block p:nth-of-type(21) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 900;
-}
+        .main-block p:nth-of-type(20) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 700;
+            font-style: italic;
+        }
 
-.main-block p:nth-of-type(22) {
-    font-family: "Roboto";
-    font-size: 17px;
-    font-weight: 900;
-    font-style: italic;
-}
+        .main-block p:nth-of-type(21) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 900;
+        }
 
-.main-block p:nth-of-type(23) {
-    font-family: "Allura";
-    font-size: 45px;
-}
+        .main-block p:nth-of-type(22) {
+            font-family: "Roboto";
+            font-size: 17px;
+            font-weight: 900;
+            font-style: italic;
+        }
 
-.main-block p:nth-of-type(24) {
-    font-family: "Capture";
-    font-size: 27px;
-}
+        .main-block p:nth-of-type(23) {
+            font-family: "Allura";
+            font-size: 45px;
+        }
 
-.main-block p:nth-of-type(25) {
-    font-family: "Champagne";
-    font-size: 37px;
-}
+        .main-block p:nth-of-type(24) {
+            font-family: "Capture";
+            font-size: 27px;
+        }
 
-.main-block p:nth-of-type(26) {
-    font-family: "Lobster";
-    font-size: 30px;
-}
+        .main-block p:nth-of-type(25) {
+            font-family: "Champagne";
+            font-size: 37px;
+        }
 
+        .main-block p:nth-of-type(26) {
+            font-family: "Lobster";
+            font-size: 30px;
+        }
+
+}
