@@ -1,0 +1,13 @@
+@import "../../../bower_components/sass-to-js/sass/sass-to-js";
+
+$breakpoints:  (
+    'phones'          : "(max-width 600px)",
+    'tablets'         : "601px 900px",
+    'small-desktops'  : "901px 1200px",
+    'medium-desktops' : "1201px 1800px",
+    'large-desktops'  : "(min-width 1801px)"
+);
+
+.breakpoints {
+    font-family: sassToJs("breakpoints", $breakpoints);
+}

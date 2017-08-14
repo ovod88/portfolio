@@ -1,4 +1,4 @@
-require( [ 'jquery', 'index/custom/test', 'testcommon' ], function ($, t, tc) {
+require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass' ], function ($, t, tc, mediaQueryClass) {
 
     $( function () {
 
@@ -7,7 +7,13 @@ require( [ 'jquery', 'index/custom/test', 'testcommon' ], function ($, t, tc) {
             $('.portfolio').fadeToggle('slow');
 
         }
+        $(window).resize(function () {
 
-    })
+            mediaQueryClass();
+
+        });
+        mediaQueryClass();
+
+    });
 
 });
