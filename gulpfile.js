@@ -62,8 +62,9 @@ lazyTaskRequest('sass', './gulpTasks/sass', {
 });
 
 lazyTaskRequest('concat-autopref-css', './gulpTasks/concatCSS', {
-    src     : [ configGulp.srcCSS  + '/**/libs/*.css',
-                                            configGulp.srcCSS  + '/**/style/*.css' ],
+    src     : [ configGulp.srcCSS  + '/libs/*.css',
+                configGulp.srcCSS  + '/**/libs/*.css',
+                configGulp.srcCSS  + '/**/style/*.css' ],
     dstName : 'style.css',
     dst     : configGulp.dstCSS
 });
@@ -172,7 +173,8 @@ gulp.task('browser-sync', gulp.series( 'server' , function () {
 
     gulp.watch([ configGulp.srcJS + '/**/main.js',
                  configGulp.srcJS + '/**/custom/*.js',
-                 configGulp.srcJS + '/commonCustom/*.js' ], gulp.series('watchjs'));
+                 configGulp.srcJS + '/commonCustom/*.js',
+                 configGulp.routes ], gulp.series('watchjs'));
 
     gulp.watch([ configGulp.srcCSS + '/**/sass/*.*', configGulp.srcCSS + '/typography/*.*' ], gulp.series('watchcss'));
 

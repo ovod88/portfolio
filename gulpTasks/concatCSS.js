@@ -11,7 +11,7 @@ module.exports = function (options) {
                .pipe($.tap(function (file, t) {
 
                     var rpath = '.';
-                    if (path.dirname(file.path).indexOf('fonts') ==-1 && !set) {
+                    if (path.dirname(file.path).indexOf('style') !=-1 && !set) {
 
                         set = true;
                         var rpath = path.dirname(file.relative).split(path.sep)[0];

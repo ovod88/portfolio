@@ -39,6 +39,8 @@ module.exports = function () {
             "srcTemplates"        : "templates-private",
             "dstTemplates"        : dstTemplates,
             "dstRevisionManifest" : "private/manifest",
+            "routes"              : "routes",
+            'commonCssLibs'       : "css/libs",
             "nodemon"             : {
                 "script"   : "bin/www.js",
                 "env"      : {
