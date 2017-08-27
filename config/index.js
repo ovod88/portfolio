@@ -4,6 +4,7 @@ module.exports = function () {
 
     let srcJS = "private/js",
         dstJS = "public/js",
+        srcCSS = "private/css",
         dstTemplates = "templates",
         dstAll = "public",
         dstImgs = "public/imgs",
@@ -30,7 +31,7 @@ module.exports = function () {
             "packages"            : [ "./package.json", "./bower.json" ],
             "srcJS"               : srcJS,
             "dstJS"               : dstJS,
-            "srcCSS"              : "private/css",
+            "srcCSS"              : srcCSS,
             "dstCSS"              : "public/css",
             "srcImgs"             : "private/imgs",
             "dstImgs"             : dstImgs,

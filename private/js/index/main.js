@@ -2,11 +2,11 @@ require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass' ], fun
 
     $( function () {
 
-        for( let i = 5; i > 0; i-- ) {
+        // for( let i = 5; i > 0; i-- ) {
 
-            $('.portfolio').fadeToggle('slow');
+        //     $('.portfolio').fadeToggle('slow');
 
-        }
+        // }
         $(window).resize(function () {
 
             mediaQueryClass();

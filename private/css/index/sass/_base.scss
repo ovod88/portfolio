@@ -2,8 +2,9 @@
 @import "sprite-icons";
 @include sprites($spritesheet-sprites);
 
+@import 'common';
 @import 'header';
-@import "main-block";
+@import "section-intro";
 @import "portfolio";
 @import "social-navigation";
 @import "footer";
