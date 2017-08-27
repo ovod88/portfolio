@@ -1,7 +1,16 @@
-footer {
-    display: block;
-    width: 50%;
-    height: 33%;
-    background-color: white;
-    position: relative;
+.medium-desktops {
+    footer {
+        display: block;
+        width: 50%;
+        position: relative;
+        @extend %clearfix;
+        height: 150px;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .portfolio_footer_logo {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
 }

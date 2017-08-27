@@ -1,8 +1,10 @@
 .social-nav {
     display: inline-block;
-    position: absolute;
-    right: 20px;
-    bottom: 0;
+}
+
+
+.social-nav-link:first-child {
+    margin-left: 0;
 }
 
 .social-nav-link {

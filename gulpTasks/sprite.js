@@ -45,7 +45,7 @@ module.exports = function (options) {
 
                                             var temparray = sprite.name.split('-');
 
-                                            if (temparray[1] == 'blue') {
+                                            if (temparray[1] == 'color') {
 
                                                 sprite.name = temparray[0] + ':hover';
 
