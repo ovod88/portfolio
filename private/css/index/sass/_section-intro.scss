@@ -1,7 +1,7 @@
 .medium-desktops {
 
     .portfolio_intro {
-        height: 300px;
+        height: 350px;
         width: 50%;
         position: relative;
     }
@@ -11,8 +11,53 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: blue;
-        height: 50px;
+        background:  #e6f9ff;
+        height: 130px;
         width: 95%;
+        border-radius: 40px;
+    }
+
+    .portfolio_intro_desc_img {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 30px;
+        border-radius: 50%;
+    }
+    .portfolio_intro_desc_text {
+        float: right;
+        font-size: 22px;
+        line-height: 25px;
+        text-align: center;
+        padding-left: 200px;
+        padding-right: 30px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .portfolio_intro_message_me {
+        position: absolute;
+        bottom: 10px;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #e6f9ff;
+        border-radius: 30px;
+        padding: 10px 50px;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .portfolio_intro_message_me_text {
+        padding-bottom: 5px;
+    }
+
+    .envelope {
+        font-size: 30px;
     }
 }
