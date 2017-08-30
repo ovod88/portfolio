@@ -9,17 +9,29 @@
 
     .portfolio_container_block {
         width: 33.3%;
-        height: 250px;
-        background-color: red;
-        display: inline-block;
-        border: 2px green solid;
-        margin-left: -4px;
+        height: 220px;
+        // background-color: red;
+        float: left;
+        border: 2px black solid;
         border-radius: 3px;
+        overflow: hidden;
     }
 
     .portfolio_block_link {
         display: block;
         height: 100%;
+        position: relative;
+    }
+
+    .portfolio_block_link_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
     }
 
     .portfolio_container_block:hover {
@@ -27,9 +39,13 @@
         transition: all 200ms ease-in;
     }
 
-    .portfolio_block_link:hover + .portfolio_block_text{
+    .portfolio_container_block:hover .portfolio_block_text{
         height: 30px;
         transition: all 200ms ease-in;
+    }
+
+    .portfolio_container_block:hover .portfolio_block_link_bg {
+        z-index: 0;
     }
     
     .portfolio_block_text {
