@@ -1,9 +1,43 @@
-.portfolio {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    background-color: yellow;
+.medium-desktops {
+   .portfolio {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+    }
+
+    .portfolio_container_block {
+        width: 33.3%;
+        height: 250px;
+        background-color: red;
+        display: inline-block;
+        border: 2px green solid;
+        margin-left: -4px;
+        border-radius: 3px;
+    }
+
+    .portfolio_block_link {
+        display: block;
+        height: 100%;
+    }
+
+    .portfolio_container_block:hover {
+        transform: scaleX(1.1);
+        transition: all 200ms ease-in;
+    }
+
+    .portfolio_block_link:hover + .portfolio_block_text{
+        height: 30px;
+        transition: all 200ms ease-in;
+    }
+    
+    .portfolio_block_text {
+        display: block;
+        height: 0px;
+        width: 100%;
+        background-color: yellow;
+        position: absolute;
+        bottom: 0;
+    }
 }
