@@ -123,7 +123,7 @@ lazyTaskRequest('sprite', './gulpTasks/sprite', {
 
 lazyTaskRequest('compress-imgs', './gulpTasks/compressImgs', {
     taskname : 'compress-imgs',
-    src      : configGulp.srcImgs + '/**/pics/*.{png,jpeg,jpg}',
+    src      : configGulp.srcImgs + '/**/pics/*.{png,jpg,jpeg}',
     dst      : configGulp.dstImgs
 });
 
