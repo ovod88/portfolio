@@ -28,6 +28,12 @@ lazyTaskRequest('copyfavicon', './gulpTasks/copy', {
     dst      : configGulp.dstImgs
 });
 
+lazyTaskRequest('copyprojects', './gulpTasks/copy', {
+    taskname : 'copyprojects',
+    src      : configGulp.srcProjects + '/**/*.*',
+    dst      : configGulp.dstProjects
+});
+
 lazyTaskRequest('copytemplates', './gulpTasks/copy', {
     taskname : 'copytemplates',
     src      : configGulp.srcTemplates + '/**/*.*',
@@ -205,10 +211,11 @@ gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copy
 gulp.task('build-images-dev', gulp.series('cleanImgs',
                                 gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 
-gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js'), 'revision',
-                                                'server'));
+gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js'), 'copyprojects',
+                                        'revision', 'server'));
 gulp.task('build-dev', gulp.series('clean', 'build-images-dev',
-                                            gulp.parallel('build-styles-dev', 'build-js-dev'), 'copytemplates',
+                                            gulp.parallel('build-styles-dev', 'build-js-dev'), 
+                                            'copyprojects', 'copytemplates',
                                                             gulp.parallel('browser-sync', 'autotests')));
 
 gulp.task('watchjs', gulp.series('process-js', browserReload));

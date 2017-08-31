@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TenisGame</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="game_field">
+            <canvas>
+
+            </canvas>
+        </div>
+
+        <form action="#">
+            <div>
+                <span>Figure to draw:&nbsp</span>
+                <select name="form" id="select_form">
+                    <option value="" id="default">default (heart)</option>
+                </select>
+                <select name="size" id="select_racket_size">
+                    <option value="small" selected>racket size small</option>
+                    <option value="normal">racket size normal</option>
+                    <option value="big">racket size big</option>
+                </select>
+                <select name="size" id="select_speed">
+                    <option value="slow" selected>speed level 1</option>
+                    <option value="normal">speed level 2</option>
+                    <option value="fast">speed level 3</option>
+                </select>
+                <select name="size" id="select_size">
+                    <option value="small" selected>small size</option>
+                    <option value="normal">normal size</option>
+                    <option value="big">big size</option>
+                </select>
+            </div>
+            <button id="start_game" type="submit" onclick="event.preventDefault();">Start Game</button>
+            <button id="restart_game" type="submit" onclick="event.preventDefault();">Restart Game</button>
+        </form>
+        <script src="js/view/gameView.js"></script>
+        <script src="js/models/Model.js"></script>
+        <script src="js/models/FormsModel.js"></script>
+        <script src="js/models/BallModel.js"></script>
+        <script src="js/models/RacketModel.js"></script>
+        <script src="js/controller/TenisController.js"></script>
+        <script src="js/game.js"></script>
+    </body>
+</html>

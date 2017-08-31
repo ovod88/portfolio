@@ -15,6 +15,8 @@ module.exports = function () {
         excludeFiles = dstJS + "/**/main.js",
         testConfig = "tests/tests-config.js",
         testFiles = "tests/**/*.spec.js",
+        srcProjects = "private/projects",
+        dstProjects = "public/projects",
         reports = "reports",
         config = {
         "app"   : {
@@ -42,6 +44,8 @@ module.exports = function () {
             "dstRevisionManifest" : "private/manifest",
             "routes"              : "routes",
             'commonCssLibs'       : "css/libs",
+            'srcProjects'         : srcProjects,
+            'dstProjects'         : dstProjects,
             "nodemon"             : {
                 "script"   : "bin/www.js",
                 "env"      : {
@@ -49,7 +53,7 @@ module.exports = function () {
                 },
                 "delay"    : 2,
                 "nodeArgs" : [ "--debug" ],
-                "watch"    : [ "bin/*.js", "app.js" ]
+                "watch"    : [ "bin/*.js", "app.js", "routes/**/*.js" ]
             },
             "requireJSconfig"     : srcJS + '/commonCustom/requirejs.config.js'
         },
