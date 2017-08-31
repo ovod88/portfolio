@@ -11,8 +11,8 @@
         width: 33.3%;
         height: 220px;
         float: left;
-        border: 2px black solid;
-        border-radius: 3px;
+        border: 1px #4dff4d solid;
+        border-radius: 5px;
         overflow: hidden;
     }
 
@@ -48,5 +48,10 @@
         background-color: yellow;
         position: absolute;
         bottom: 0;
+    }
+
+    .portfolio_block_link_bg_remark1 {
+        width: 145%;
+        margin-left: -33%;
     }
 }
