@@ -1,0 +1,80 @@
+.how_it_works__header {
+  color: black;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: $how-it-works-section-header-font-size;
+  margin: $how-it-works-section-header-margins;
+  text-align: center;
+}
+
+.how_it_works {
+  @extend %clearfix;
+  width: 100%;
+}
+.how_it_works__picture_block_inner {
+  @extend %how-it-works-section-picture-block-radius;
+  margin: $how-it-works-section-picture-block-margins;
+  height: 100%;
+}
+
+.how_it_works__picture_block {
+  height: $how-it-works-section-picture-block-height;
+  width: 100%;
+}
+
+.how_it_works__picture_block--first {
+  & .how_it_works__picture_block_inner {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+    url(../../img/dist/How_works_step1_img.jpg) -75px -25px no-repeat;
+  }
+}
+
+.how_it_works__picture_block--second {
+  & .how_it_works__picture_block_inner {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+    url(../../img/dist/How_works_step2_img.jpg) -65px -25px no-repeat;
+  }
+}
+
+.how_it_works__picture_block--third {
+  & .how_it_works__picture_block_inner {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+    url(../../img/dist/How_works_step3_img.jpg) -65px -25px no-repeat;
+  }
+}
+
+.how_it_works__picture_block_content {
+  padding-left: $how-it-works-section-picture-content-padding-left;
+}
+
+.how_it_works__h5 {
+  margin-top: $how-it-works-section-picture-content-h5-margin-top;
+  display: inline-block;
+  padding: $how-it-works-section-picture-content-h5-paddings;
+  color: $how-it-works-section-picture-content-h5-color;
+  text-transform: uppercase;
+  font-size: $how-it-works-section-picture-content-h5-font-size;
+  font-family: Montserrat;
+  background: $how-it-works-section-picture-content-h5-background-color;
+  @include border-radius($how-it-works-section-picture-content-h5-border-radius);
+  letter-spacing: $how-it-works-section-picture-content-h5-letter-spacing;
+}
+
+.how_it_works__h2 {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: $how-it-works-section-picture-content-h2-font-size;
+  color: $how-it-works-section-picture-content-h2-color;
+  margin-top: $how-it-works-section-picture-content-h2-margin-top;
+  line-height: $how-it-works-section-picture-content-h2-line-height;
+  letter-spacing: $how-it-works-section-picture-content-h2-letter-spacing;
+}
+
+.how_it_works__text {
+  font-family: Roboto;
+  line-height: $how-it-works-section-picture-content-text-line-height;
+  color: $how-it-works-section-picture-content-text-color;
+  font-size: $how-it-works-section-picture-content-text-font-size;
+  padding-right: $how-it-works-section-picture-content-text-padding-right;
+  margin-top: $how-it-works-section-picture-content-text-margin-top;
+}

@@ -1,0 +1,18 @@
+/*SLIDER*/
+/*.slider_bg {*/
+    /*!*background: rgba(0,0,0, 0.9);*!*/
+    /*opacity: 1;*/
+/*}*/
+
+
+.slider_bg {
+    background: rgb(0,0,0);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+    opacity: 0.2;
+    width: 100%;
+    margin-top: 172px;
+    height: 400px;
+    margin-bottom: 170px;
+}
+

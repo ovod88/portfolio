@@ -1,0 +1,83 @@
+.partners {
+  text-align: center;
+  margin-top: $partners-margin-top;
+}
+
+.partners__header {
+  font-family: Montserrat;
+  font-size: $partners-header-font-size;
+  line-height: $partners-header-font-size + 6px;
+  padding-left: $partners-header-padding;
+  padding-right: $partners-header-padding;
+  font-weight: bold;
+}
+
+.partner__views {
+  @extend %clearfix;
+}
+
+.partner__view {
+  width: $partners-view-width;
+  margin: $partners-view-margin-top auto 0 auto;
+}
+
+.partner__view_picture_block {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.partner__view_picture {
+  @include border-radius(50%);
+  display: block;
+}
+
+.partner__view_signature1 {
+  font-family: Montserrat;
+  font-weight: bold;
+  margin-top: $partners-view-signature1-margin-top;
+  font-size: $partners-view-signature1-font-size;
+}
+
+.partner__view_signature2 {
+  font-family: Roboto;
+  margin: $partners-view-signature2-margin;
+  font-size: $partners-view-signature2-font-size;
+  width: $partners-view-signature2-width;
+  line-height: $partners-view-signature2-line-height;
+  color: $partners-view-signature2-color;
+}
+
+.partner__view_icon {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  width: $partners-view-icon-background-size;
+  height: $partners-view-icon-background-size;
+  background: $partners-view-icon-background-color;
+  @include border-radius(50%);
+}
+
+.partner__view_icon_picture {
+    margin: 4px 0 0 3px;
+}
+
+.partners__search {
+  font-family: Montserrat;
+  font-weight: bold;
+  margin: $partners-search-line-position;
+  display: block;
+  font-size: $partners-search-font-size;
+  height: $partners-search-line-height;
+  line-height: $partners-search-line-height;
+  vertical-align: middle;
+  color: $partners-search-line-color;
+  border-radius: $partners-search-line-border-radius;
+  border: $partners-search-line-border;
+
+  &:hover {
+    @include box-shadow($partners-search-line-hover-box-shadow);
+  }
+}

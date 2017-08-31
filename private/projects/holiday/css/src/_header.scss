@@ -1,0 +1,72 @@
+header {
+  height: $header-image-height;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+            url(../../img/dist/Header_pic.jpg) center center no-repeat;
+  color: $header-color;
+  @extend %montserrat-bold;
+}
+
+.header_register {
+  padding-top: 20px;
+}
+
+.header_register__login {
+  @extend %header-link-style;
+}
+
+.header_register__signup {
+  @extend %header-link-style;
+  margin-left: $header-register-signup-margin-left;
+  padding: $header-register-signup-internal-padding-below $header-register-signup-internal-padding-aside
+            $header-register-signup-internal-padding-below $header-register-signup-internal-padding-aside;
+  @include border-radius($header-register-signup-internal-padding-aside);
+  border: $header-color solid $header-register-signup-border-px;
+
+    &:hover {
+      background: rgba($header-link-hover-color, 0.3);
+    }
+}
+
+.header_main__p1 {
+  margin-top: $header-main-p1-margin-top;
+  text-transform: uppercase;
+  font-size: $header-main-p1-font-size;
+}
+
+.header_main__p2 {
+  padding-top: 40px;
+  text-transform: uppercase;
+  font-size: $header-main-p2-font-size;
+  line-height: $header-main-p2-font-line-height;
+}
+
+.header_main__p3 {
+  @extend %roboto-light;
+  padding-top: 20px;
+  opacity: $header-main-p3-font-opacity;
+  width: 70%;
+  margin: 0 auto;
+  font-size: $header-main-p3-font-size;
+  line-height: $header-main-p3-font-size + 5px;
+}
+
+.header_main__p4 {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  height: $header-main-p4-height;
+  color: $header-color;
+  line-height: $header-main-p4-height;
+  vertical-align: middle;
+  margin-top: 20px;
+  font-size: $header-main-p4-font-size;
+  background: rgba($header-link-hover-color, 0.3);
+  @include border-radius($header-main-p4-height/2);
+
+  @include transition(background 0.5s linear);
+
+    &:hover {
+      background: rgba($header-link-hover-color, 0.5);
+    }
+}

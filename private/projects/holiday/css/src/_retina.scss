@@ -1,0 +1,46 @@
+@include respond-to(retina) {
+  .how_it_works__picture_block:first-of-type {
+    .how_it_works__picture_block_inner  {
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+      url(../../img/dist/How_works_step1_img@2x.jpg) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .how_it_works__picture_block:nth-of-type(2) {
+    .how_it_works__picture_block_inner  {
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+      url(../../img/dist/How_works_step2_img@2x.jpg) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .how_it_works__picture_block:last-of-type {
+    .how_it_works__picture_block_inner  {
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+      url(../../img/dist/How_works_step3_img@2x.jpg) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  @include respond-to(mobile-tablet) {
+    .how_it_works__picture_block:first-of-type {
+      .how_it_works__picture_block_inner  {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+        url(../../img/dist/How_works_step1_img@2x.jpg) center center no-repeat;
+        background-size: cover;
+      }
+    }
+    .how_it_works__picture_block:nth-of-type(2) {
+      .how_it_works__picture_block_inner  {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+        url(../../img/dist/How_works_step2_img@2x.jpg) center center no-repeat;
+        background-size:  cover;
+      }
+    }
+    .how_it_works__picture_block:last-of-type {
+      .how_it_works__picture_block_inner  {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+        url(../../img/dist/How_works_step3_img@2x.jpg) center center no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}

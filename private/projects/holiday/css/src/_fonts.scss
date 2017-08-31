@@ -1,0 +1,20 @@
+@include font-face("Montserrat",
+        font-files("Montserrat/Montserrat-Regular.woff", "Montserrat/Montserrat-Regular.ttf"),
+        "Montserrat/Montserrat-Regular.eot",
+        normal,
+        normal
+);
+
+@include font-face("Montserrat",
+        font-files("Montserrat/Montserrat-Bold.woff", "Montserrat/Montserrat-Bold.ttf"),
+        "Montserrat/Montserrat-Bold.eot",
+        bold,
+        normal
+);
+
+@include font-face("Roboto",
+        font-files("Roboto/Roboto-Light.woff", "Roboto/Roboto-Light.ttf"),
+        "Roboto/Roboto-Light.eot",
+        300,
+        normal
+);

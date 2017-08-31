@@ -1,0 +1,142 @@
+.discover_holiday {
+  text-align: center;
+}
+
+.grid_size {
+  width: 33.3%;
+}
+
+.discover_holiday_blocks {
+  box-sizing: border-box;
+}
+
+.discover_holiday_block {
+  height: $discover-holiday-block-height;
+  width: 100%;
+  margin-bottom: $discover-holiday-block-content-margin;
+}
+
+.discover_holiday_block_content {
+  display: block;
+  height: 100%;
+  margin-left: $discover-holiday-block-content-margin;
+  margin-right: $discover-holiday-block-content-margin;
+  @extend %discover-holiday-radius;
+
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: $discover-holiday-block-content-margin;
+    bottom: 0;
+    left: $discover-holiday-block-content-margin;
+    @include background(linear-gradient($discover-holiday-block-cover-start-color,
+            $discover-holiday-block-cover-end-color));
+    @extend %discover-holiday-radius;
+  }
+
+  &:hover:before {
+    @include background(linear-gradient($discover-holiday-block-cover-start-color-hover,
+            $discover-holiday-block-cover-end-color-hover));
+  }
+}
+
+.discover_holiday_block_img {
+  width: 100%;
+  height: 100%;
+  @extend %discover-holiday-radius;
+}
+
+.discover_holiday_block__text {
+  color: $discover-holiday-block-text-color;
+  text-align: center;
+  display: block;
+  width: 95%;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: $discover-holiday-block-text-font-size;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.discover_holiday_header {
+  text-align: center;
+  @extend %montserrat-bold;
+  font-size: $discover-holiday-header-font-size;
+  margin: $discover-holiday-header-margin;
+}
+
+
+.discover_holiday_search_box {
+  text-align: center;
+}
+
+
+
+.discover_holiday_search_box__text {
+  font-size: $discover-holiday-search-box-text-font-size;
+  color: $discover-holiday-search-box-text-color;
+  @extend %roboto-light;
+}
+
+.discover_holiday_search_box__input_wrap {
+  padding-left: $discover-holiday-search-box-input-wrap-padding;
+  padding-right: $discover-holiday-search-box-input-wrap-padding;
+}
+
+.discover_holiday_search_box__input {
+  margin-top: $discover-holiday-search-box-input-margin-top;
+  margin-bottom: $discover-holiday-search-box-input-margin-bottom;
+  box-sizing: border-box;
+  height: $discover-holiday-search-box-input-height;
+  border: $discover-holiday-search-box-input-border;
+  @include border-radius($discover-holiday-search-box-input-border-radius);
+  width: 100%;
+  font-size: $discover-holiday-search-box-input-font-size;
+  color: $discover-holiday-search-box-input-color;
+  padding-left: $discover-holiday-search-box-input-padding-left;
+  @extend %roboto-light;
+
+  &:focus {
+    outline-width: 0px;
+    @include box-shadow($discover-holiday-search-box-input-focus-shadow);
+  }
+}
+
+.discover_holiday_search_box__link__error {
+  display: none;
+  font-family: Roboto;
+  font-size: $discover-holiday-search-box-link-error-font-size;
+  font-weight: bold;
+  color: $discover-holiday-search-box-link-error-font-color;
+  margin-bottom: $discover-holiday-search-box-link-error-margin-bottom;
+}
+
+.discover_holiday_search_box__link {
+  display:  block;
+  height: $discover-holiday-search-box-link-height;
+  color: $discover-holiday-search-box-link-color;
+  background: $discover-holiday-search-box-link-background;
+  font-size: $discover-holiday-search-box-link-font-size;
+  @include border-radius($discover-holiday-search-box-link-border-radius);
+  line-height: $discover-holiday-search-box-link-height;
+  vertical-align: middle;
+  margin: $discover-holiday-search-box-link-margin;
+  @extend %montserrat-bold;
+}
+
+.discover_holiday_search_box__line {
+  background: $discover-holiday-search-box-line-background-color;
+  height: $discover-holiday-search-box-line-height;
+  border: none;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+

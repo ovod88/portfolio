@@ -1,0 +1,13 @@
+
+a {
+  text-decoration: none;
+}
+
+@import 'sprite-icons';
+@include sprites($spritesheet-sprites);
+
+@import 'header';
+@import "how_it_works";
+@import "partners";
+@import "discover_holiday";
+@import "footer";

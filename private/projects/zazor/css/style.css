@@ -1,0 +1,825 @@
+body, html {
+	font-family: "Lucida Sans Unicode", Arial, sans-serif;
+}
+
+.clearfix:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.clearcontent:after {
+	content: '.';
+	visibility: hidden;
+}
+
+main {
+	width: 909px;
+	margin: 0 auto;
+	margin-top: 23px;
+}
+
+main>header {
+	width: 100%;
+	padding-left: 8px;
+	line-height: 27px;;
+}
+
+.tel_number {
+	color: #5e696d;
+	font-family: Arial, sans-serif;
+	padding-right: 17px;
+	float: left;
+	font-size: 18px;
+}
+
+.tel_number>img {
+	vertical-align: middle;
+}
+
+.tel_number>span {
+	vertical-align: middle;
+	font-family: Arial, sans-serif;
+	margin-left: -2px;
+}
+
+.tel_number #first {;
+	margin-left: -4px;
+	
+}
+
+.tel_number #second {
+	padding-left: 4px;
+
+}
+
+.login {
+	border-radius: 3px;
+	float: left;
+	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#1e6383 0%,#0d365a 100%);
+	width: 495px;
+	height: 24px;
+	margin-left: 1px;
+}
+
+.login img {
+	float: left;
+	padding-top: 4px;
+	padding-left: 6px;
+	padding-right: 5px;
+}
+
+.login input[type=text] {
+	float: left;
+	max-width: 113px;
+	max-height: 16px;
+	box-sizing: border-box;
+	padding-left: 0px;
+	margin-top: 3px;
+	margin-right: 7px;
+}
+
+.login .vl {
+	float: left;
+	width: 1px;
+	height: 40%;
+	background: white;
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-top: 7px;
+}
+
+.login .regitration {
+	font-size: 11px;
+	float: left;
+	color: white;
+	padding-left: 2px;
+	position: relative;
+    bottom: 2px;
+}
+
+.login .forget_password {
+	color: #bfbfbf;
+	font-size: 12px;
+	text-decoration: underline;
+	margin-left: 19px;
+	float: left;
+	text-transform: lowercase;
+	margin-top: -2px;
+}
+
+.common_links {
+	float: left;
+	width: 76px;
+	border: 1px solid #c1c8cb;
+	margin-left: 17px;
+	height: 20px;
+	border-radius: 12px;
+}
+
+.common_links a {
+	float: left;
+	width: 33%;
+	height: 100%;
+	display: block;
+	position: relative;
+}
+
+.common_links img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}
+
+.common_links #home_icon {
+	top: -4px;
+}
+
+.common_links #scheme_icon {
+	left: -6px;
+}
+
+.common_links #letter_icon {
+	right: 11px;
+	top: -1px;
+}
+
+.menu>img {
+	margin-left: 0;
+	margin-top: 9px;
+	margin-bottom: 5px;
+}
+
+.menu .main_menu {
+	width: 100%;
+	height: 35px;
+	border-radius: 4px;
+	background: black;
+	margin-bottom: 9px;
+}
+
+.main_menu .left_list {
+	float: left;
+	line-height: 34px;
+	margin-left: 125px;
+}
+
+.main_menu .left_list a {
+	text-transform: uppercase;
+	font-size: 13px;
+	line-height: 26px;
+	color: #b1bcc0;
+	padding-right: 16px;
+	padding-left: 16px;
+	position: relative;
+	bottom: 1px;
+}
+
+.main_menu .left_list a:hover {
+	background: blue;
+	border-radius: 17px;
+	color: white;
+}
+
+.main_menu .right_list {
+	float: right;
+	margin-right: 13px;
+}
+
+.main_menu .right_nav {
+	float: left;
+	line-height: 34px;
+}
+
+.main_menu .right_nav * {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.main_menu .right_nav p {
+	color: #929b9f;
+	font-size: 10px;
+}
+
+.main_menu .right_nav span {
+	color: #0d5a8f;
+}
+
+.menu .search {
+	height: 132px;
+	margin-bottom: 16px;
+}
+
+.search .search_auto_box {
+	float: left;
+	width: 415px;
+	height: 100%;
+	border-radius: 15px;
+	margin-right: 19px;
+	margin-left: 3px;
+	-webkit-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	-moz-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+}
+
+.search .search_tires_box {
+	margin-right: 14px;
+	float: left;
+	width: 192px;
+	height: 100%;
+	border-radius: 15px;
+	-webkit-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	-moz-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+}
+
+.search .search_disks_box {
+	float: left;
+	width: 266px;
+	height: 100%;
+	border-radius: 15px;
+	-webkit-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	-moz-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+}
+
+.right_disk_column {
+	float: left;
+	width: 55%;
+}
+
+.right_disk_column .text {
+	width: 74px;
+	float: left;
+	margin-top: 4px;
+	margin-left: 16px;
+	margin-top: 11px;
+}
+
+.right_disk_column .inline {
+	display: inline-block;
+}
+
+.right_disk_column .grey_colored {
+	font-size: 8px;
+	color: #77858b;
+}
+
+.right_disk_column .selects {
+	width: 56px;
+	float: right;
+	margin-top: 7px;
+}
+
+.right_disk_column .selects select {
+	margin-bottom: 15px;
+}
+
+.right_disk_column .quantity {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 17px;
+	width: 50px;
+	background: url(../img/select_arrow.png) 100% / 45% no-repeat;
+}
+
+.right_disk_column .diameter,
+.right_disk_column .diameter_holes {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 17px;
+	width: 56px;
+	background: url(../img/select_arrow.png) 100% / 39% no-repeat;
+}
+
+.left_disk_column {
+	width: 75px;
+	float: right;
+	border-left: 1px solid #bdc6ca;
+	margin-right: 18px;
+	padding-left: 11px;
+	margin-top: -8px;
+}
+
+.left_disk_column .selection_text {
+	margin-bottom: 4px;
+}
+
+p.ET {
+	margin-top: 5px;
+}
+
+select.DCO,
+select.ET {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	height: 17px;
+	width: 56px;
+	background: url(../img/select_arrow.png) 100% / 39% no-repeat;
+}
+
+.search_disks_position {
+	position: relative;
+	right: 3px;
+}
+
+.disks_header {
+	position: relative;
+	left: 20px;
+	top: 8px;	
+	float: left;
+	width: 20%;
+	color: #154468;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.tires_header {
+	position: relative;
+	right: -23px;
+	top: 4px;
+	float: right;
+	width: 20%;
+	color: #154468;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.search_by_auto_header {
+	position: relative;
+	top: 4px;
+	margin: 0 auto;
+	width: 50%;
+	color: #154468;
+	font-weight: bold;
+	font-size: 14px;
+	left: 14px;
+}
+
+.search_by_auto_form {
+	margin-top: 10px;
+}
+
+.search_by_auto_form .search_disks_form {
+	float: left;
+	margin-left: 16px;
+}
+
+.search_form .text {
+	width: 70px	;
+	float: left;
+	margin-top: 4px	;
+}
+
+.search_form .selects {
+	width: 100px;
+	float: right;
+	margin-left: -2px;
+}
+
+.search_form .selects select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	height: 17px;
+	margin-bottom: 6px;
+	background: url(../img/select_arrow.png) 100% / 20% no-repeat;
+}
+
+.search_form .selects .year_auto {
+	background: url(../img/select_arrow.png) 100% / 36% no-repeat;
+}
+
+.search_form .selects select::-ms-expand {
+    display: none;
+}
+
+.selection_text {
+	display: block;
+	font-family: Arial, sans-serif;
+	font-size: 10px;
+	margin-bottom: 7px;
+}
+
+.search_form .year_auto {
+	width: 56px;
+}
+
+.search_form .auto_type,
+.search_form .model_auto,
+.search_form .complect {
+	width: 100px;
+}
+
+.search_form .grey_colored {
+	font-size: 8px;
+	color: #77858b;
+}
+
+.search_form .new_line {
+	display: block;
+}
+
+.search_by_auto_form .search_tires_form {
+	float: right;
+	margin-right: 20px;
+}
+
+.submit_link {
+	font-family: Arial, sans-serif;
+	font-style: italic;
+  	background-color: transparent;
+  	text-transform: uppercase;
+  	color: #154467;
+  	cursor: pointer;
+  	width: 56px;
+  	height: 17px;
+	border: none;
+	float: right;
+	font-size: 10px;
+	text-decoration: underline;
+}
+
+.position_search_by_auto {
+	position: relative;
+  	right: 20px;
+	bottom: 3px;
+}
+
+.submi_link:focus {
+  outline: none;
+}
+
+.search_tires_header,
+.search_disks_header {
+	margin: 0 100% 0 0;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.search_by_tire_form .text {
+	width: 40px;
+	float: left;
+	margin-left: 13px;
+	margin-top: 18px;
+}
+
+.search_by_tire_form .selection_text {
+	margin-bottom: 11px;
+}
+
+.search_by_tire_form .selects .size_upper,
+.search_by_tire_form .selects .size_below {
+	width: 50px;
+	background: url(../img/select_arrow.png) 100% / 39% no-repeat;
+}
+
+.search_by_tire_form .selects {
+	width: 133px;
+	margin-top: 11px;
+}
+
+.search_by_tire_form .selects .R {
+	width: 41px;
+	background: url(../img/select_arrow.png) 100% / 43% no-repeat;
+}
+
+.search_by_tire_form .selects input[type=checkbox] {
+	display: none;
+}
+
+.search_by_tire_form .selects input[type=checkbox] + span {
+	display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #345b79;
+    box-shadow: inset 1px 1px 0px 0px #afafaf;
+    margin-right: 2px;
+}
+
+.search_by_tire_form .selects input[type=checkbox]:checked + span:before {
+	content: '✓';
+    display: block;
+    width: 7px;
+    line-height: 8px;
+    text-align: center;
+}
+
+.search_by_tire_form .selects input[type=checkbox] + span + span {
+	font-size: 12px;
+}
+
+.search_tires_position {
+	float: right;
+	position: relative;
+	bottom: 3px;
+    right: 10px;
+}
+
+.catalog {
+	overflow: hidden;
+	margin-bottom: 27px;
+}
+
+.catalog>div,
+.catalog>aside{
+	padding-bottom: 20000px;
+	margin-bottom: -20000px;
+}
+
+.catalog .left_catalog,
+.catalog .right_catalog {
+	width: 181px;
+	float: left;
+}
+
+.catalog .right_catalog {
+	margin-left: 7px;
+}
+
+.catalog .left_catalog .product,
+.catalog .right_catalog .product {
+	border: 1px solid #909ba0;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 12px;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom: 18px;
+	margin-top: 3px;
+	margin-left: 6px;
+	width: 178px;
+}
+
+.catalog .left_catalog .product *,
+.catalog .right_catalog .product * {
+	float: left;
+}
+
+.catalog .left_catalog .product>img,
+.catalog .right_catalog .product>img {
+	margin-left: 1px;
+	margin-top: 1px;
+}
+
+.catalog .left_catalog .product>p,
+.catalog .right_catalog .product>p {
+	margin-top: 1px;
+	letter-spacing: 0.5px;
+	padding-left: 3px;
+}
+
+.catalog .left_catalog dt,
+.catalog .right_catalog dt {
+	width: 137px;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid #a6afb3;
+	border-radius: 12px;
+	margin-bottom: 0px;
+	margin-top: -4px;;
+}
+
+.catalog .right_catalog dt {
+	margin-left: 16px;
+}
+
+.catalog .left_catalog dt *,
+.catalog .right_catalog dt * {
+	float: left;
+}
+
+.catalog .left_catalog dt>img,
+.catalog .right_catalog dt>img {
+	margin-left: 6px;
+	margin-top: 1px;
+}
+
+.catalog .left_catalog dt>p,
+.catalog .right_catalog dt>p {
+	font-size: 14px;
+	margin-top: 1px;
+	margin-left: 5px;
+	color: #114165;
+	text-transform: uppercase;
+}
+
+.catalog .left_catalog dd,
+.catalog .right_catalog dd {
+	display: list-item;
+	list-style-type: circle;
+	font-size: 13px;
+	line-height: 2;
+	margin-left: 53px;
+}
+
+.catalog .right_catalog dl {
+	margin-bottom: 12px;
+}
+
+.catalog .right_catalog dd {
+	margin-left: 23px;
+	list-style-type: none;
+	font-size: 13px;
+	line-height: 2;
+}
+
+.catalog .left_catalog dd>a {
+	position: relative;
+	left: -6px;
+	color: #465961;
+}
+
+.catalog .right_catalog dd input[type=checkbox] {
+	display: none;
+}
+
+.catalog .right_catalog dd input[type=checkbox] + span {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border: 1px solid #345b79;
+	box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.75);
+	border-radius: 2px;
+	margin-right: 15px;
+	margin-left: 5px;
+}
+
+.catalog .right_catalog dd input[type=checkbox]:checked + span:before {
+	content: '✓';
+	display: block;
+	width: 7px;
+	line-height: 8px;
+	text-align: center;
+}
+
+.catalog .right_catalog input[type=submit] {
+	background: #0e3a5e;
+	height: 26px;
+	width: 80px;
+	margin-left: 28px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	margin-top: 6px;
+	outline: none;
+}
+
+.catalog .left_catalog dd>a:hover {
+	color: #0c3256;
+	text-decoration: underline;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: bold;
+	font-family: "Arial Bold", sans-serif;
+}
+
+.catalog .tires {
+	width: 527px;
+	float: left;
+	background: -webkit-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
+	background: -moz-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
+	background: -o-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
+	background: -ms-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
+	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
+	border-radius: 2px;
+	margin-left: 8px;
+}
+
+.catalog .tires_internal {
+	margin-left: 24px;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+.catalog .tires figure {
+	float: left;
+	text-align: center;
+	margin-left: 30px;
+	margin-bottom: 48px;
+}
+
+.catalog .tires figure figcaption>.head {
+	font-size: 12px;
+	text-transform: capitalize;
+}
+
+.catalog .tires figure figcaption>.head>span {
+	text-transform: capitalize;
+	font-size: 15px;
+	color: #206988;
+	font-weight: bold;
+}
+
+.catalog .tires figure.left {
+	margin-left: 0;
+}
+
+.catalog .tires figure div {
+	width: 137px;
+	height: 127px;
+	background: white;
+	border-radius: 5px;
+}
+
+.catalog .tires figure p {
+	padding-top: 4px;
+}
+
+.catalog .tires figure p a {
+	font-size: 17px;
+	color: #114165;
+	font-weight: bold;
+	font-style: italic;
+	font-family: "Arial";
+	position: relative;	
+}
+
+.catalog .tires figure a img {
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 13px;
+}
+
+.catalog .tires figure p span {
+	font-size: 12px;
+}
+
+.catalog .tires figure p a:visited {
+	color: #95a8b1;
+}
+
+.catalog .tires figure p a:hover img {
+	padding-bottom: 20px;
+}
+
+footer .partners {
+	text-align: center;
+}
+
+footer .partners span {
+	margin-left: -18px;
+}
+
+footer .partners img {
+	padding-left: 8px;
+}
+
+footer .partners {
+	margin-bottom: 27px;
+}
+
+footer .footer_links {
+	height: 100px;
+	width: 100%;
+	background: #213a4d;
+	text-align: center;
+}
+
+footer ul {
+	padding-top: 5px;
+	padding-left: 22px;
+}
+
+footer ul li{
+	display: inline;
+}
+
+footer ul li>a {
+	color: white;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+footer ul li:before {
+	content: "|";
+	color: white;
+}
+
+footer ul li:first-child:before {
+	content: "";
+}
+
+footer ul li>a {
+	font-size: 12px;
+}
+
+footer ul li>a:hover {
+	color: #52abcb;
+}
+
+footer p {
+	margin-top: 19px;
+	color: #7f4740;
+	font-size: 10px;
+}
+
+footer {
+	margin-bottom: 15px;
+}

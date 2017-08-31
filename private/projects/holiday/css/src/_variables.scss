@@ -1,0 +1,179 @@
+%clearfix {
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
+
+%roboto-light {
+  font-family: Roboto;
+}
+
+%montserrat-bold {
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+/*FOR MEDIA QUERIES*/
+$breakpoints:  (
+  'mobile': 321px 480px,
+  'mobile-portrait': 321px 380px,
+  'mobile-landscape': 381px 480px,
+  'retina': min-resolution 1.5dppx,
+  'mobile-tablet': (min-width 481px),
+  'mobile-tablet-desktop-portrait': 481px 960px,
+  'tablet-portrait': (min-width 769px),
+  'tablet-desktop': (min-width 961px)
+);
+
+/*HEADER*/
+$header-image-height: 541px;
+$header-register-font-size: 14px;
+$header-register-font-color: white;
+
+%header-link-style {
+  color: white;
+  display: inline-block;
+  font-size: $header-register-font-size;
+}
+
+%header-content-position {
+  position: absolute;
+  z-index: 1;
+}
+
+$header-register-signup-margin-left: 17px;
+$header-register-signup-internal-padding-aside: 17px;
+$header-register-signup-internal-padding-below: 7px;
+$header-color: white;
+$header-register-signup-border-px: 2px;
+$header-main-p1-margin-top: 115px;
+$header-main-p1-font-size: 20px;
+$header-main-p2-font-size: 30px;
+$header-main-p2-font-line-height: $header-main-p2-font-size + 5px;
+$header-main-p3-font-size: 18px;
+$header-main-p3-font-opacity: 0.9;
+$header-main-p4-height: 40px;
+$header-main-p4-font-size: 14px;
+$header-link-hover-color: rgb(51,255,102);
+
+/*HOW IT WORKS SECTION */
+$how-it-works-section-header-font-size: 22px;
+$how-it-works-section-header-margins: 35px auto 15px auto;
+$how-it-works-section-picture-block-margins: 10px;
+$how-it-works-section-picture-block-height: 240px;
+$how-it-works-section-picture-block-border-radius: 5px;
+
+%how-it-works-section-picture-block-radius {
+  @include border-radius-compass(5px);
+}
+
+$how-it-works-section-picture-block-cover-start-color: rgba(0, 0, 0, 0.3);
+$how-it-works-section-picture-block-cover-end-color: rgba(0, 0, 0, 0.3);
+$how-it-works-section-picture-block-cover-opacity: .3;
+$how-it-works-section-picture-content-padding-left: 20px;
+$how-it-works-section-picture-content-h5-margin-top: 75px;
+$how-it-works-section-picture-content-h5-paddings: 6px 12px 4px 12px;
+$how-it-works-section-picture-content-h5-color: white;
+$how-it-works-section-picture-content-h5-font-size: 10px;
+$how-it-works-section-picture-content-h5-background-color: #ff4e50;
+$how-it-works-section-picture-content-h5-border-radius: 10px;
+$how-it-works-section-picture-content-h5-letter-spacing: 2px;
+
+$how-it-works-section-picture-content-h2-font-size: 24px;
+$how-it-works-section-picture-content-h2-color: white;
+$how-it-works-section-picture-content-h2-margin-top: 15px;
+$how-it-works-section-picture-content-h2-line-height: 25px;
+$how-it-works-section-picture-content-h2-letter-spacing: 1px;
+
+$how-it-works-section-picture-content-text-font-size: 14px;
+$how-it-works-section-picture-content-text-line-height: 17px;
+$how-it-works-section-picture-content-text-color: #cccccc;
+$how-it-works-section-picture-content-text-padding-right: 15px;
+$how-it-works-section-picture-content-text-margin-top: 10px;
+
+/*PARTNERS*/
+$partners-margin-top: 40px;
+$partners-header-font-size: 22px;
+$partners-header-padding: 30px;
+$partners-view-width: 240px;
+$partners-view-margin-top: 20px;
+$partners-view-signature1-margin-top: 20px;
+$partners-view-signature1-font-size: 14px;
+$partners-view-signature2-margin: 20px auto 0px auto;
+$partners-view-signature2-font-size: 14px;
+$partners-view-signature2-width: 65%;
+$partners-view-signature2-line-height: 18px;
+$partners-view-signature2-color: #666666;
+$partners-view-icon-background-size: 40px;
+$partners-view-icon-background-color: white;
+$partners-search-font-size: 14px;
+$partners-search-line-position: 30px 15px 20px 15px;
+$partners-search-line-height: 40px;
+$partners-search-line-color: #ff4e50;
+$partners-search-line-border-radius: 20px;
+$partners-search-line-border: 2px solid $partners-search-line-color;
+$partners-search-line-hover-box-shadow: 0px 0px 4px 0px red;
+
+/*DISCOVER HOLIDAY ACTIVITY SECTION*/
+
+%discover-holiday-radius {
+  @include border-radius-compass(5px);
+}
+$discover-holiday-header-font-size: 22px;
+$discover-holiday-header-margin: 40px 15px 20px 15px;
+$discover-holiday-block-height: 120px;
+$discover-holiday-block-cover-opacity: 0.2;
+$discover-holiday-block-cover-start-color: rgba(0, 0, 0, 0.1);
+$discover-holiday-block-cover-end-color: rgba(0, 0, 0, 0.1);
+$discover-holiday-block-cover-start-color-hover: rgba(0, 0, 0, 0);
+$discover-holiday-block-cover-end-color-hover: rgba(0, 0, 0, 0);
+$discover-holiday-block-cover-hover-opacity: 0.1;
+$discover-holiday-block-text-font-size: 22px;
+$discover-holiday-block-text-color: white;
+$discover-holiday-block-content-margin: 10px;
+$discover-holiday-search-box-text-font-size: 18px;
+$discover-holiday-search-box-text-color: #333333;
+$discover-holiday-search-box-input-wrap-padding: 20px;
+$discover-holiday-search-box-input-margin-top: 20px;
+$discover-holiday-search-box-input-margin-bottom: 10px;
+$discover-holiday-search-box-input-height: 40px;
+$discover-holiday-search-box-input-border-radius: 4px;
+$discover-holiday-search-box-input-color: #cccccc;
+$discover-holiday-search-box-input-font-size: 14px;
+$discover-holiday-search-box-input-border: 1px solid $discover-holiday-search-box-input-color;
+$discover-holiday-search-box-input-padding-left: 15px;
+$discover-holiday-search-box-input-focus-shadow: 0px 0px 3px 0px rgba(0,240,64,1);
+$discover-holiday-search-box-link-error-font-size: 20px;
+$discover-holiday-search-box-link-error-font-color: green;
+$discover-holiday-search-box-link-error-margin-bottom: 10px;
+$discover-holiday-search-box-link-height: 30px;
+$discover-holiday-search-box-link-color: white;
+$discover-holiday-search-box-link-background: #ff4e50;
+$discover-holiday-search-box-link-font-size: 14px;
+$discover-holiday-search-box-link-border-radius: 15px;
+$discover-holiday-search-box-link-margin: 0px 20px 40px 20px;
+$discover-holiday-search-box-line-height: 4px;
+$discover-holiday-search-box-line-background-color: #ff4e50;
+
+/*FOOTER*/
+$footer-header-font-size: 16px;
+$footer-header-color: #ff4e50;
+$footer-header-letter-spacing: 1px;
+$footer-header-margin-top: 20px;
+$footer-navigation-margin-top: 20px;
+$footer-navigation-h2-font-size: 14px;
+$footer-navigation-h2-margin-bottom: 10px;
+$footer-navigation-list-item-padding: 5px;
+$footer-navigation-list-item-color: #666666;
+$footer-navigation-list-item-link-font-size: 14px;
+$footer-footer-font-size: 14px;
+$footer-footer-margin-top: 20px;
+$footer-logo-text-letter-spacing: 2px;
+$footer-logo-text-margin: 20px 20px 0px 20px;
+$footer-logo-text-font-size: 10px;
+$footer-logo-text-color: #cccccc;
+$footer-logo-height: 24px;
+$footer-logo-width: 110px;
+$footer-logo-margin: 10px auto 20px auto;

@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/helveticaneue-thin-webfont.eot');
+    src: url('../fonts/helveticaneue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helveticaneue-thin-webfont.woff2') format('woff2'),
+         url('../fonts/helveticaneue-thin-webfont.woff') format('woff'),
+         url('../fonts/helveticaneue-thin-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+	font-family: "Helvetica", Arial, sans-serif;
+}
+
+input, textarea {
+	outline: none;
+}
+
+.clearfix:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+header {
+	width: 100%;
+	background: #085291;
+}
+
+.mainMenu {
+	float: right;
+	margin-right: 15px;
+}
+
+.mainMenu li {
+	float: left;
+}
+
+.mainMenu li>a {
+	line-height: 35px;
+	color: #60b5ed;
+	display: block;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.mainMenu li>a:hover {
+	background-color: #4eabda;
+	color: white;
+}
+
+.vl {
+	padding-left: 15px;
+	padding-right: 15px;
+	height: 35px;
+}
+
+.vertical_line {
+	width: 1px;
+	height: 32px;
+	background: #56a2dc;
+}
+
+.mainMenu .img_link *{
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.mainMenu .img_link a {
+	padding-left: 5px;
+}
+
+.mainMenu p {
+	padding-right: 15px;
+	padding-left: 15px;
+	background: linear-gradient(to right, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(246,41,12,1) 0%, rgba(79,175,219,1) 0%, rgba(46,121,196,1) 100%);
+}
+
+.mainMenu p,
+.mainMenu p a{
+	line-height: 35px;
+	color: white;
+}
+
+.mainMenu p a {
+	text-decoration: underline;
+}
+
+.bg {
+	height: 800px;
+	background: url("../img/Cadastre-bg.png") no-repeat center center fixed;
+	background-size: cover;
+	position: relative;
+}
+
+.central_block {
+	text-align: center;
+	width: 520px;
+	max-height: 540px;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: fixed;
+	top:35px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+
+.central_block .head {
+	border-bottom: 1px solid #c3c7c6;
+	line-height: 55px;
+}
+
+.central_block .head p {
+	color: white;
+	font-size: 1.5em;
+}
+
+.central_block .form {
+	margin: 0 auto;
+	width: 50%;
+	margin-top: 20px;
+}
+
+.facebook {
+	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#3e5598 0%,#2e4579 100%);
+}
+
+.facebook div {
+	float: left;
+	height: 30px;
+}
+
+.facebook .logo {
+	box-sizing: border-box;
+	width: 15%;
+	border-right: 1px solid #213b6c;
+	border-top: 1px solid #7889b7;
+}
+
+.facebook .logo p img {
+	margin-top: 4px;
+}
+
+.facebook .logo p a {
+	display: block;
+}
+
+.facebook .link {
+	box-sizing: border-box;
+	width: 85%;
+	border-top: 1px solid #7889b7;
+	border-left: 1px solid #7889b7;
+}
+
+.facebook .link p {
+	height: 30px;
+	margin-top: 5px;
+}
+
+.facebook .link a:after {
+	content: url(../img/facebook-arrow.png);
+	margin-left: 25px;
+}
+
+.facebook .link p span {
+	font-weight: bold;
+}
+
+.facebook .link p a {
+	color: white;
+	display: block;
+}
+
+.central_block .lined_text {
+	clear: both;
+	margin-top: 20px;
+	color: #666666;
+	position: relative;
+	overflow: hidden;
+}
+
+.central_block .lined_text:before,
+.central_block .lined_text:after {
+	border-top: 1px solid #666666;
+	content: "";
+	position: absolute;
+	width: 50%;
+	top: 50%;
+	box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75); 
+}
+
+.central_block .lined_text:before {
+	margin-left: -50%;
+}
+
+.central_block .lined_text span {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+form {
+	margin-top: 20px;
+}
+
+form>input {
+	width: 100%;
+	box-sizing: border-box;
+	height: 30px;
+	margin-bottom: 15px;
+	background: black;
+	border: none;
+	color: white;
+	padding-left: 15px;
+}
+
+form>input:focus {
+	background: #1b5288;
+	-webkit-box-shadow: 0px 0px 7px 3px rgba(6,137,188,1);
+	-moz-box-shadow: 0px 0px 7px 3px rgba(6,137,188,1);
+	box-shadow: 0px 0px 7px 3px rgba(6,137,188,1);
+}
+
+form>input:focus::-webkit-input-placeholder {
+	color: white;
+}
+
+form input[type=checkbox] {
+	margin-left: -15px;
+}
+
+form input[type=checkbox]+span {
+	font-size: 14px;
+	color: #cccccc;
+}
+
+
+form input[type=submit] {
+	margin-top: 15px;
+	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#4faddb 0%,#2f7bc5 100%);
+	letter-spacing: 0.1px;
+	width: 55%;
+	padding-left: 0px;
+	padding-right: 0px;
+	border-radius: 3px;
+	transition: box-shadow 0.7s ease-out;
+}
+
+form input[type=submit]:hover:not(:active) {
+	box-shadow: 0px 0px 3px 3px rgba(69,255,205,1);
+}
+
+form input[type=submit]:active {
+	background: #1b5288;
+	box-shadow: 0px 0px 7px 3px rgba(6,137,188,1);
+}
+
+.policy {
+	color: white;
+	font-size: 0.75em;
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
