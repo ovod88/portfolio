@@ -1,0 +1,21 @@
+.sponsors_list {
+  padding: 85px 0 85px 0;
+  text-align: center;
+
+  ul {
+    @extend %clearfix;
+    display: inline-block;
+    position: relative;
+    left: -30px;
+  }
+
+  li {
+    float: left;
+    padding-left: 30px;
+    padding-right: 13px;
+  }
+
+  span {
+    display: block;
+  }
+}

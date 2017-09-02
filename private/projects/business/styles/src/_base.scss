@@ -1,0 +1,23 @@
+@import "sprite-icons";
+
+header, .header_content, .services_content, .news_banners_data,
+.sponsors_list, .footer_content, .bottom_content {
+  @extend %center;
+}
+
+@import "top";
+@include sprites($spritesheet-sprites);
+
+@import 'navigation_box';
+
+@import "slider";
+
+@import "read_more_section";
+
+@import "services";
+
+@import "new_banners";
+
+@import "sponsors";
+
+@import "footer";

@@ -1,0 +1,195 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$facebook-hover-name: 'facebook:hover';
+$facebook-hover-x: 0px;
+$facebook-hover-y: 34px;
+$facebook-hover-offset-x: 0px;
+$facebook-hover-offset-y: -34px;
+$facebook-hover-width: 16px;
+$facebook-hover-height: 16px;
+$facebook-hover-total-width: 67px;
+$facebook-hover-total-height: 50px;
+$facebook-hover-image: 'img/sprite-social-dist/social-icons.png';
+$facebook-hover: (0px, 34px, 0px, -34px, 16px, 16px, 67px, 50px, 'img/sprite-social-dist/social-icons.png', 'facebook:hover', );
+$facebook-name: 'facebook';
+$facebook-x: 17px;
+$facebook-y: 34px;
+$facebook-offset-x: -17px;
+$facebook-offset-y: -34px;
+$facebook-width: 16px;
+$facebook-height: 16px;
+$facebook-total-width: 67px;
+$facebook-total-height: 50px;
+$facebook-image: 'img/sprite-social-dist/social-icons.png';
+$facebook: (17px, 34px, -17px, -34px, 16px, 16px, 67px, 50px, 'img/sprite-social-dist/social-icons.png', 'facebook', );
+$linkedin-hover-name: 'linkedin:hover';
+$linkedin-hover-x: 34px;
+$linkedin-hover-y: 34px;
+$linkedin-hover-offset-x: -34px;
+$linkedin-hover-offset-y: -34px;
+$linkedin-hover-width: 16px;
+$linkedin-hover-height: 16px;
+$linkedin-hover-total-width: 67px;
+$linkedin-hover-total-height: 50px;
+$linkedin-hover-image: 'img/sprite-social-dist/social-icons.png';
+$linkedin-hover: (34px, 34px, -34px, -34px, 16px, 16px, 67px, 50px, 'img/sprite-social-dist/social-icons.png', 'linkedin:hover', );
+$linkedin-name: 'linkedin';
+$linkedin-x: 51px;
+$linkedin-y: 0px;
+$linkedin-offset-x: -51px;
+$linkedin-offset-y: 0px;
+$linkedin-width: 16px;
+$linkedin-height: 16px;
+$linkedin-total-width: 67px;
+$linkedin-total-height: 50px;
+$linkedin-image: 'img/sprite-social-dist/social-icons.png';
+$linkedin: (51px, 0px, -51px, 0px, 16px, 16px, 67px, 50px, 'img/sprite-social-dist/social-icons.png', 'linkedin', );
+$rss-hover-name: 'rss:hover';
+$rss-hover-x: 0px;
+$rss-hover-y: 0px;
+$rss-hover-offset-x: 0px;
+$rss-hover-offset-y: 0px;
+$rss-hover-width: 16px;
+$rss-hover-height: 16px;
+$rss-hover-total-width: 67px;
+$rss-hover-total-height: 50px;
+$rss-hover-image: 'img/sprite-social-dist/social-icons.png';
+$rss-hover: (0px, 0px, 0px, 0px, 16px, 16px, 67px, 50px, 'img/sprite-social-dist/social-icons.png', 'rss:hover', );
+$rss-name: 'rss';
+$rss-x: 17px;
+$rss-y: 0px;
+$rss-offset-x: -17px;
+$rss-offset-y: 0px;
+$rss-width: 16px;
+$rss-height: 16px;
+$rss-total-width: 67px;
+$rss-total-height: 50px;
+$rss-image: 'img/sprite-social-dist/social-icons.png';
+$rss: (17px, 0px, -17px, 0px, 16px, 16px, 67px, 50px, 'img/sprite-social-dist/social-icons.png', 'rss', );
+$skype-hover-name: 'skype:hover';
+$skype-hover-x: 0px;
+$skype-hover-y: 17px;
+$skype-hover-offset-x: 0px;
+$skype-hover-offset-y: -17px;
+$skype-hover-width: 16px;
+$skype-hover-height: 16px;
+$skype-hover-total-width: 67px;
+$skype-hover-total-height: 50px;
+$skype-hover-image: 'img/sprite-social-dist/social-icons.png';
+$skype-hover: (0px, 17px, 0px, -17px, 16px, 16px, 67px, 50px, 'img/sprite-social-dist/social-icons.png', 'skype:hover', );
+$skype-name: 'skype';
+$skype-x: 17px;
+$skype-y: 17px;
+$skype-offset-x: -17px;
+$skype-offset-y: -17px;
+$skype-width: 16px;
+$skype-height: 16px;
+$skype-total-width: 67px;
+$skype-total-height: 50px;
+$skype-image: 'img/sprite-social-dist/social-icons.png';
+$skype: (17px, 17px, -17px, -17px, 16px, 16px, 67px, 50px, 'img/sprite-social-dist/social-icons.png', 'skype', );
+$twitter-hover-name: 'twitter:hover';
+$twitter-hover-x: 34px;
+$twitter-hover-y: 0px;
+$twitter-hover-offset-x: -34px;
+$twitter-hover-offset-y: 0px;
+$twitter-hover-width: 16px;
+$twitter-hover-height: 16px;
+$twitter-hover-total-width: 67px;
+$twitter-hover-total-height: 50px;
+$twitter-hover-image: 'img/sprite-social-dist/social-icons.png';
+$twitter-hover: (34px, 0px, -34px, 0px, 16px, 16px, 67px, 50px, 'img/sprite-social-dist/social-icons.png', 'twitter:hover', );
+$twitter-name: 'twitter';
+$twitter-x: 34px;
+$twitter-y: 17px;
+$twitter-offset-x: -34px;
+$twitter-offset-y: -17px;
+$twitter-width: 16px;
+$twitter-height: 16px;
+$twitter-total-width: 67px;
+$twitter-total-height: 50px;
+$twitter-image: 'img/sprite-social-dist/social-icons.png';
+$twitter: (34px, 17px, -34px, -17px, 16px, 16px, 67px, 50px, 'img/sprite-social-dist/social-icons.png', 'twitter', );
+$spritesheet-width: 67px;
+$spritesheet-height: 50px;
+$spritesheet-image: 'img/sprite-social-dist/social-icons.png';
+$spritesheet-sprites: ($facebook-hover, $facebook, $linkedin-hover, $linkedin, $rss-hover, $rss, $skype-hover, $skype, $twitter-hover, $twitter, );
+$spritesheet: (67px, 50px, 'img/sprite-social-dist/social-icons.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

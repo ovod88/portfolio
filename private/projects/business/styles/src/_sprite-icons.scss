@@ -1,0 +1,360 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$-atx-name: 'Atx';
+$-atx-x: 144px;
+$-atx-y: 128px;
+$-atx-offset-x: -144px;
+$-atx-offset-y: -128px;
+$-atx-width: 143px;
+$-atx-height: 62px;
+$-atx-total-width: 328px;
+$-atx-total-height: 227px;
+$-atx-image: 'icons.png';
+$-atx: (144px, 128px, -144px, -128px, 143px, 62px, 328px, 227px, 'icons.png', 'Atx', );
+$-crave-name: 'Crave';
+$-crave-x: 0px;
+$-crave-y: 0px;
+$-crave-offset-x: 0px;
+$-crave-offset-y: 0px;
+$-crave-width: 184px;
+$-crave-height: 64px;
+$-crave-total-width: 328px;
+$-crave-total-height: 227px;
+$-crave-image: 'icons.png';
+$-crave: (0px, 0px, 0px, 0px, 184px, 64px, 328px, 227px, 'icons.png', 'Crave', );
+$-cruiser-name: 'Cruiser';
+$-cruiser-x: 0px;
+$-cruiser-y: 65px;
+$-cruiser-offset-x: 0px;
+$-cruiser-offset-y: -65px;
+$-cruiser-width: 143px;
+$-cruiser-height: 62px;
+$-cruiser-total-width: 328px;
+$-cruiser-total-height: 227px;
+$-cruiser-image: 'icons.png';
+$-cruiser: (0px, 65px, 0px, -65px, 143px, 62px, 328px, 227px, 'icons.png', 'Cruiser', );
+$-g-e-a-r-name: 'GEAR';
+$-g-e-a-r-x: 185px;
+$-g-e-a-r-y: 0px;
+$-g-e-a-r-offset-x: -185px;
+$-g-e-a-r-offset-y: 0px;
+$-g-e-a-r-width: 143px;
+$-g-e-a-r-height: 62px;
+$-g-e-a-r-total-width: 328px;
+$-g-e-a-r-total-height: 227px;
+$-g-e-a-r-image: 'icons.png';
+$-g-e-a-r: (185px, 0px, -185px, 0px, 143px, 62px, 328px, 227px, 'icons.png', 'GEAR', );
+$-m-o-t-o-name: 'MOTO';
+$-m-o-t-o-x: 185px;
+$-m-o-t-o-y: 63px;
+$-m-o-t-o-offset-x: -185px;
+$-m-o-t-o-offset-y: -63px;
+$-m-o-t-o-width: 143px;
+$-m-o-t-o-height: 62px;
+$-m-o-t-o-total-width: 328px;
+$-m-o-t-o-total-height: 227px;
+$-m-o-t-o-image: 'icons.png';
+$-m-o-t-o: (185px, 63px, -185px, -63px, 143px, 62px, 328px, 227px, 'icons.png', 'MOTO', );
+$-r-b-p-name: 'RBP';
+$-r-b-p-x: 0px;
+$-r-b-p-y: 128px;
+$-r-b-p-offset-x: 0px;
+$-r-b-p-offset-y: -128px;
+$-r-b-p-width: 143px;
+$-r-b-p-height: 62px;
+$-r-b-p-total-width: 328px;
+$-r-b-p-total-height: 227px;
+$-r-b-p-image: 'icons.png';
+$-r-b-p: (0px, 128px, 0px, -128px, 143px, 62px, 328px, 227px, 'icons.png', 'RBP', );
+$arrow-hover-name: 'arrow:hover';
+$arrow-hover-x: 316px;
+$arrow-hover-y: 178px;
+$arrow-hover-offset-x: -316px;
+$arrow-hover-offset-y: -178px;
+$arrow-hover-width: 10px;
+$arrow-hover-height: 9px;
+$arrow-hover-total-width: 328px;
+$arrow-hover-total-height: 227px;
+$arrow-hover-image: 'icons.png';
+$arrow-hover: (316px, 178px, -316px, -178px, 10px, 9px, 328px, 227px, 'icons.png', 'arrow:hover', );
+$arrow-name: 'arrow';
+$arrow-x: 305px;
+$arrow-y: 178px;
+$arrow-offset-x: -305px;
+$arrow-offset-y: -178px;
+$arrow-width: 10px;
+$arrow-height: 9px;
+$arrow-total-width: 328px;
+$arrow-total-height: 227px;
+$arrow-image: 'icons.png';
+$arrow: (305px, 178px, -305px, -178px, 10px, 9px, 328px, 227px, 'icons.png', 'arrow', );
+$email-name: 'email';
+$email-x: 288px;
+$email-y: 178px;
+$email-offset-x: -288px;
+$email-offset-y: -178px;
+$email-width: 16px;
+$email-height: 12px;
+$email-total-width: 328px;
+$email-total-height: 227px;
+$email-image: 'icons.png';
+$email: (288px, 178px, -288px, -178px, 16px, 12px, 328px, 227px, 'icons.png', 'email', );
+$facebook-hover-name: 'facebook:hover';
+$facebook-hover-x: 305px;
+$facebook-hover-y: 161px;
+$facebook-hover-offset-x: -305px;
+$facebook-hover-offset-y: -161px;
+$facebook-hover-width: 16px;
+$facebook-hover-height: 16px;
+$facebook-hover-total-width: 328px;
+$facebook-hover-total-height: 227px;
+$facebook-hover-image: 'icons.png';
+$facebook-hover: (305px, 161px, -305px, -161px, 16px, 16px, 328px, 227px, 'icons.png', 'facebook:hover', );
+$facebook-name: 'facebook';
+$facebook-x: 53px;
+$facebook-y: 191px;
+$facebook-offset-x: -53px;
+$facebook-offset-y: -191px;
+$facebook-width: 16px;
+$facebook-height: 16px;
+$facebook-total-width: 328px;
+$facebook-total-height: 227px;
+$facebook-image: 'icons.png';
+$facebook: (53px, 191px, -53px, -191px, 16px, 16px, 328px, 227px, 'icons.png', 'facebook', );
+$iphone-name: 'iphone';
+$iphone-x: 202px;
+$iphone-y: 191px;
+$iphone-offset-x: -202px;
+$iphone-offset-y: -191px;
+$iphone-width: 10px;
+$iphone-height: 16px;
+$iphone-total-width: 328px;
+$iphone-total-height: 227px;
+$iphone-image: 'icons.png';
+$iphone: (202px, 191px, -202px, -191px, 10px, 16px, 328px, 227px, 'icons.png', 'iphone', );
+$linkedin-hover-name: 'linkedin:hover';
+$linkedin-hover-x: 121px;
+$linkedin-hover-y: 191px;
+$linkedin-hover-offset-x: -121px;
+$linkedin-hover-offset-y: -191px;
+$linkedin-hover-width: 16px;
+$linkedin-hover-height: 16px;
+$linkedin-hover-total-width: 328px;
+$linkedin-hover-total-height: 227px;
+$linkedin-hover-image: 'icons.png';
+$linkedin-hover: (121px, 191px, -121px, -191px, 16px, 16px, 328px, 227px, 'icons.png', 'linkedin:hover', );
+$linkedin-name: 'linkedin';
+$linkedin-x: 172px;
+$linkedin-y: 191px;
+$linkedin-offset-x: -172px;
+$linkedin-offset-y: -191px;
+$linkedin-width: 16px;
+$linkedin-height: 16px;
+$linkedin-total-width: 328px;
+$linkedin-total-height: 227px;
+$linkedin-image: 'icons.png';
+$linkedin: (172px, 191px, -172px, -191px, 16px, 16px, 328px, 227px, 'icons.png', 'linkedin', );
+$location-name: 'location';
+$location-x: 189px;
+$location-y: 191px;
+$location-offset-x: -189px;
+$location-offset-y: -191px;
+$location-width: 12px;
+$location-height: 16px;
+$location-total-width: 328px;
+$location-total-height: 227px;
+$location-image: 'icons.png';
+$location: (189px, 191px, -189px, -191px, 12px, 16px, 328px, 227px, 'icons.png', 'location', );
+$logoicon-name: 'logoicon';
+$logoicon-x: 0px;
+$logoicon-y: 191px;
+$logoicon-offset-x: 0px;
+$logoicon-offset-y: -191px;
+$logoicon-width: 52px;
+$logoicon-height: 36px;
+$logoicon-total-width: 328px;
+$logoicon-total-height: 227px;
+$logoicon-image: 'icons.png';
+$logoicon: (0px, 191px, 0px, -191px, 52px, 36px, 328px, 227px, 'icons.png', 'logoicon', );
+$params-name: 'params';
+$params-x: 144px;
+$params-y: 65px;
+$params-offset-x: -144px;
+$params-offset-y: -65px;
+$params-width: 32px;
+$params-height: 32px;
+$params-total-width: 328px;
+$params-total-height: 227px;
+$params-image: 'icons.png';
+$params: (144px, 65px, -144px, -65px, 32px, 32px, 328px, 227px, 'icons.png', 'params', );
+$rss-hover-name: 'rss:hover';
+$rss-hover-x: 87px;
+$rss-hover-y: 191px;
+$rss-hover-offset-x: -87px;
+$rss-hover-offset-y: -191px;
+$rss-hover-width: 16px;
+$rss-hover-height: 16px;
+$rss-hover-total-width: 328px;
+$rss-hover-total-height: 227px;
+$rss-hover-image: 'icons.png';
+$rss-hover: (87px, 191px, -87px, -191px, 16px, 16px, 328px, 227px, 'icons.png', 'rss:hover', );
+$rss-name: 'rss';
+$rss-x: 104px;
+$rss-y: 191px;
+$rss-offset-x: -104px;
+$rss-offset-y: -191px;
+$rss-width: 16px;
+$rss-height: 16px;
+$rss-total-width: 328px;
+$rss-total-height: 227px;
+$rss-image: 'icons.png';
+$rss: (104px, 191px, -104px, -191px, 16px, 16px, 328px, 227px, 'icons.png', 'rss', );
+$settings-name: 'settings';
+$settings-x: 288px;
+$settings-y: 128px;
+$settings-offset-x: -288px;
+$settings-offset-y: -128px;
+$settings-width: 32px;
+$settings-height: 32px;
+$settings-total-width: 328px;
+$settings-total-height: 227px;
+$settings-image: 'icons.png';
+$settings: (288px, 128px, -288px, -128px, 32px, 32px, 328px, 227px, 'icons.png', 'settings', );
+$skype-hover-name: 'skype:hover';
+$skype-hover-x: 138px;
+$skype-hover-y: 191px;
+$skype-hover-offset-x: -138px;
+$skype-hover-offset-y: -191px;
+$skype-hover-width: 16px;
+$skype-hover-height: 16px;
+$skype-hover-total-width: 328px;
+$skype-hover-total-height: 227px;
+$skype-hover-image: 'icons.png';
+$skype-hover: (138px, 191px, -138px, -191px, 16px, 16px, 328px, 227px, 'icons.png', 'skype:hover', );
+$skype-name: 'skype';
+$skype-x: 155px;
+$skype-y: 191px;
+$skype-offset-x: -155px;
+$skype-offset-y: -191px;
+$skype-width: 16px;
+$skype-height: 16px;
+$skype-total-width: 328px;
+$skype-total-height: 227px;
+$skype-image: 'icons.png';
+$skype: (155px, 191px, -155px, -191px, 16px, 16px, 328px, 227px, 'icons.png', 'skype', );
+$truck-name: 'truck';
+$truck-x: 144px;
+$truck-y: 98px;
+$truck-offset-x: -144px;
+$truck-offset-y: -98px;
+$truck-width: 32px;
+$truck-height: 26px;
+$truck-total-width: 328px;
+$truck-total-height: 227px;
+$truck-image: 'icons.png';
+$truck: (144px, 98px, -144px, -98px, 32px, 26px, 328px, 227px, 'icons.png', 'truck', );
+$twitter-hover-name: 'twitter:hover';
+$twitter-hover-x: 288px;
+$twitter-hover-y: 161px;
+$twitter-hover-offset-x: -288px;
+$twitter-hover-offset-y: -161px;
+$twitter-hover-width: 16px;
+$twitter-hover-height: 16px;
+$twitter-hover-total-width: 328px;
+$twitter-hover-total-height: 227px;
+$twitter-hover-image: 'icons.png';
+$twitter-hover: (288px, 161px, -288px, -161px, 16px, 16px, 328px, 227px, 'icons.png', 'twitter:hover', );
+$twitter-name: 'twitter';
+$twitter-x: 70px;
+$twitter-y: 191px;
+$twitter-offset-x: -70px;
+$twitter-offset-y: -191px;
+$twitter-width: 16px;
+$twitter-height: 16px;
+$twitter-total-width: 328px;
+$twitter-total-height: 227px;
+$twitter-image: 'icons.png';
+$twitter: (70px, 191px, -70px, -191px, 16px, 16px, 328px, 227px, 'icons.png', 'twitter', );
+$spritesheet-width: 328px;
+$spritesheet-height: 227px;
+$spritesheet-image: 'icons.png';
+$spritesheet-sprites: ($-atx, $-crave, $-cruiser, $-g-e-a-r, $-m-o-t-o, $-r-b-p, $arrow-hover, $arrow, $email, $facebook-hover, $facebook, $iphone, $linkedin-hover, $linkedin, $location, $logoicon, $params, $rss-hover, $rss, $settings, $skype-hover, $skype, $truck, $twitter-hover, $twitter, );
+$spritesheet: (328px, 227px, 'icons.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

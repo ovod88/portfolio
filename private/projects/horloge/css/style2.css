@@ -1,0 +1,401 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background: url(../img/wall2.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#clock {
+    font-size: 45px;
+    display:block;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url("../fonts/Ubuntu-L.ttf" );
+}
+
+#border_1 {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: #ccc;
+    box-shadow: inset 0.05em -0.05em 0 crimson, /*ccc*/
+    inset 0.17em -0.05em 0 yellow,
+    /*-0.2em -0.2em 0.3em rgba(255,255,102,0.5),*/
+    inset 1px 1px 0 pink, /*999*/
+    inset -0.03em 0.02em 0 red, /*ccc*/
+    inset -0.1em -0.1em 0 green,
+    0.1em 0.2em 0.2em rgba(0,50,0,0.5);
+}
+
+#border_2 {
+    width:445px;
+    height:445px;
+    top: -1px;
+    left: 2px;
+    position:relative;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:
+            inset 0.04em 0 0 #fff,
+            inset 0 -0.06em 0 #ddd,
+            inset 0.16em -0.08em 0 darkorange,
+            inset -0.16em 0.08em 0 darkmagenta,
+            inset 0.2em 0.2em 0 MidnightBlue,
+            0.06em -0.03em 0 #999;
+}
+
+#border_3 {
+    width:445px;
+    height:445px;
+    top: -1px;
+    left: -2px;
+    position:relative;
+    border-radius:50%;
+    background: rgba(250,252,253,0.2);
+    box-shadow: inset -0.1em -0.2em 0 OrangeRed;
+}
+
+#time {
+    width:430px;
+    height:430px;
+    left: 10px;
+    top: 12px;
+    position:relative;
+    border-radius:50%;
+    background: rgb(250,252,253);
+}
+
+#time_marks {
+    padding-left: 213px;
+    position: absolute;
+    z-index: 2;
+}
+
+b {
+    border-style: solid;
+    border-color: #222;
+    border-width: 20px 0;
+    width: 5px;
+}
+
+i {
+    border-style: solid;
+    border-color: rgba(0,0,0, 0.5);
+    border-width: 20px 0;
+    width: 2px;
+    margin-top: -20px;
+}
+
+b, i {
+    height: 387px;
+    display: block;
+    position: absolute;
+}
+
+#clock b:nth-child(2) {
+    transform:rotate(30deg);
+    -ms-transform:rotate(30deg);
+    -webkit-transform:rotate(30deg);
+}
+
+#clock b:nth-child(3) {
+    transform:rotate(60deg);
+    -ms-transform:rotate(60deg);
+    -webkit-transform:rotate(60deg);
+}
+
+#clock b:nth-child(4) {
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+}
+
+#clock b:nth-child(5) {
+    transform:rotate(120deg);
+    -ms-transform:rotate(120deg);
+    -webkit-transform:rotate(120deg);
+}
+
+#clock b:nth-child(6) {
+    transform:rotate(150deg);
+    -ms-transform:rotate(150deg);
+    -webkit-transform:rotate(150deg);
+}
+
+#time_marks i:first-child {
+    transform:rotate(6deg);
+    -ms-transform:rotate(6deg);
+    -webkit-transform:rotate(6deg);
+}
+
+#time_marks i:nth-child(2) {
+    transform:rotate(12deg);
+    -ms-transform:rotate(12deg);
+    -webkit-transform:rotate(12deg);
+}
+
+
+#time_marks i:nth-child(3) {
+    transform:rotate(18deg);
+    -ms-transform:rotate(18deg);
+    -webkit-transform:rotate(18deg);
+}
+
+#time_marks i:nth-child(4) {
+    transform:rotate(24deg);
+    -ms-transform:rotate(24deg);
+    -webkit-transform:rotate(24deg);
+}
+
+#time_numbers {
+    height: 380px;
+    width: 380px;
+    z-index: 4;
+    border: solid 1px seagreen;
+    background: white;
+    border-radius: 50%;
+    left: 25px;
+    top: 23px;
+    box-shadow: inset 0 0 115px greenyellow;
+    text-align: left;
+    font-size: 55px;
+    position: absolute;
+}
+
+#time_numbers span {
+    letter-spacing: -13px;
+    display: block;
+    font-family: 'Ubuntu';
+}
+
+.left_numbers-first:first-child {
+    position: relative;
+    bottom: -9px;
+    left: 85px;
+}
+
+.left_numbers-first:last-child {
+    position: relative;
+    bottom: -52px;
+    left: 89px;
+}
+
+.left_numbers-second {
+    padding-left: 25px;
+}
+
+.left_numbers-second:nth-child(2) {
+    position: relative;
+    bottom: -9px;
+    left: -4px;
+}
+
+.left_numbers-third:nth-child(3) {
+    position: relative;
+    bottom: -29px;
+}
+
+.left_numbers-second:nth-child(4) {
+    position: relative;
+    bottom: -52px;
+}
+
+.left_numbers-second:last-child {
+    position: relative;
+    bottom: 2px;
+    left: 2px;
+}
+
+#left_numbers span>span {
+    display: inline;
+    opacity: 0;
+}
+
+#center_numbers {
+    text-align: center;
+    margin-top: -389px;
+}
+
+#center_numbers span:first-child {
+    position: relative;
+    left: -5px;
+    top: 62px;
+}
+
+#center_numbers span:last-child {
+    top: 337px;
+    position: relative;
+    left: -7px;
+}
+
+#right_numbers {
+    position: absolute;
+    text-align: right;
+    left: 250px;
+}
+
+.right_numbers-first:first-child{
+    position: absolute;
+    top: -42px;
+    left: 13px;
+}
+
+.right_numbers-first:last-child {
+    position: absolute;
+    left: 12px;
+    top: 251px;
+}
+
+.right_numbers-second:nth-child(2) {
+    position: absolute;
+    left: 71px;
+    top: 14px;
+}
+
+#right_numbers span:nth-child(3) {
+    position: absolute;
+    top: 105px;
+    left: 102px;
+}
+
+.right_numbers-second:nth-child(4) {
+    position: absolute;
+    top: 185px;
+    left: 79px;
+}
+
+#hour,
+#minute,
+#second {
+    position: absolute;
+    height: 380px;
+    width: 381px;
+    top: 22px;
+    left: 24px;
+    z-index: 16;
+}
+
+#hour_center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    background: LimeGreen;
+    border-radius: 50%;
+    transform: translate(-11px, -11px);
+}
+
+#hour_arrow {
+    width: 7px;
+    height: 135px;
+    background: LimeGreen;
+    position: relative;
+    left: 188px;
+    top: 56px;
+    /*animation: spin2 20s linear infinite;*/
+    transform-origin: center 110px;
+}
+
+#minute_arrow {
+    width: 5px;
+    height: 155px;
+    background: blue;
+    background: blue;
+    position: relative;
+    left: 189px;
+    top: 61px;
+    /*animation: spin3 30s linear infinite;*/
+    transform-origin: center 130px;
+}
+
+/*#second_arrow div {*/
+    /*width: 3px;*/
+    /*height: 3px;*/
+    /*background: black;*/
+    /*position: relative;*/
+    /*left: 1px;*/
+    /*top: 129px;*/
+    /*z-index: 1000;*/
+/*}*/
+
+#second_center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: Crimson;
+    border-radius: 50%;
+    transform: translate(-6px, -6px);
+}
+
+#second_arrow {
+    width: 3px;
+    height: 240px;
+    background: Crimson;
+    position: relative;
+    left: 50%;
+    top: -13px;
+    /*animation: spin 25s linear infinite;*/
+    transform-origin: center 190px;
+}
+
+/*@keyframes spin {*/
+    /*100% { transform:rotate(360deg); }*/
+/*}*/
+
+/*@keyframes spin2 {*/
+    /*0% { transform:rotate(0deg);  }*/
+    /*100% { transform:rotate(360deg); }*/
+/*}*/
+
+/*@keyframes spin3 {*/
+    /*0% { transform:rotate(0deg);  }*/
+    /*100% { transform:rotate(360deg); }*/
+/*}*/
+
+button {
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+}
+
+
+@-moz-document url-prefix() {
+    .left_numbers-third:nth-child(3) {
+        right: 2px;
+    }
+
+    .left_numbers-second:nth-child(4) {
+        right: 2px;
+        top: 43px;
+    }
+
+    .left_numbers-first:last-child {
+        bottom: -43px;
+    }
+    #center_numbers span:first-child {
+        top: 51px;
+    }
+
+    #center_numbers span:last-child {
+        top: 324px;
+    }
+
+    #right_numbers {
+        top: 51px;
+    }
+}

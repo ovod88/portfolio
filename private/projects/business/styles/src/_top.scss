@@ -1,0 +1,52 @@
+.top {
+  margin-top: 38px;
+  @extend %clearfix;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.logoicon {
+  display: block;
+  float: left;
+}
+
+.logo_text {
+  float: left;
+  margin-left: -6px;
+
+  p {
+    margin: 0;
+  }
+
+  .logo_line1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -2px;
+    line-height: 25px;
+  }
+
+  .logo_line2 {
+    font-size: 12px;
+    margin-left: 2px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+}
+
+.social-nav {
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+
+  a {
+    display: inline-block;
+    margin-left: 20px;
+    span {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+html {
+	background: url(../img/Asia_background.png) no-repeat center fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover; 
+  	font-family: Tahoma, Arial, sans-serif;
+}
+
+.wrapper {
+	width: 85%;
+	margin: 0 auto;
+}
+
+header {
+	height: 147px;
+}
+
+.logo {
+	position: relative;
+	float: left;
+    width: 276px;
+}
+
+/* resize images */
+.logo img {
+    width: 100%;
+}
+
+.logo p {
+	font-size: 0.8em;
+	color: white;
+	position: absolute;
+	bottom: 10px;
+	transform: translateX(-50%);
+  	left: 50%;
+}
+
+header .contacts {
+	float: right;
+	height: 147px;
+	line-height: 147px;
+}
+
+header .contacts .text {
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+header .contacts p span {
+	font-size: 1.1em;
+}
+header .contacts p {
+	line-height: 1.5;
+	color: white;
+	font-size: 0.7em;
+}
+
+.content {
+	margin-top: 14px;
+	clear:both;
+	overflow: hidden;
+	margin-bottom: 200px;
+}
+
+.item {
+	float: left;
+	width: 33.3%;
+	padding-bottom: 35%;
+	position: relative;
+}
+
+.photo {
+	position: absolute;
+	left: 5px;
+    right: 5px;
+}
+
+.photo p {
+	color: white;
+	text-align: center;
+}
+
+.first {
+	transform: translateX(-5px);
+}
+
+.third {
+	transform: translateX(5px);
+}
+
+.photo img {
+	box-sizing: border-box;
+	width: 100%;
+	border: 3px solid #c9c9c9;
+}
+
+footer {
+	margin-bottom: 40px;
+	color: white;
+	text-align: center;
+}
+
+@media screen and (max-width: 481px) {
+	header {
+		height: 100%;
+	}
+
+	.logo {
+		width: 100%;
+		float: none;
+	}
+
+	header .contacts {
+		line-height: 100%;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		overflow: hidden;
+		float: none;
+	}
+
+	.content {
+		margin-bottom: 50px;
+	}
+
+	.first {
+		transform: none;
+	}
+	
+	.photo {
+		position: static;
+	}
+
+	.item {
+		display: block;
+		width: 100%;
+		margin-bottom: 50px;
+		padding-bottom: 0;
+	}
+}
+
+
+
+
+

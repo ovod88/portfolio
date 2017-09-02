@@ -12,7 +12,8 @@ module.exports = function (options) {
                     .pipe($.if(function (file) {
 
                             return (file.relative.indexOf('libs') == -1) &&
-                                (file.relative.indexOf('bower_components') == -1);
+                                (file.relative.indexOf('bower_components') == -1)
+                                && (file.relative.indexOf('projects') == -1);
 
                         },
                         combine(

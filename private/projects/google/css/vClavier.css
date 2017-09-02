@@ -1,0 +1,142 @@
+.vClavier {
+	background: white;
+	height: auto;
+	position: absolute;
+	z-index: 3;
+	bottom: 0;
+	right: 0;
+	padding: 10px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	font-size: 14px;
+}
+
+.vClavier-line {
+	white-space: nowrap;
+}
+
+.vClavier-lines--header {
+	height: 24px;
+	cursor: move;
+	border: none !important;
+}
+
+.vClavier-lines {
+	border: none !important;
+}
+
+.vClaviername {
+	float: left;
+}
+
+.vClavier-closebutton {
+	margin-right: 20px;
+	width: 13px;
+	height: 14px;
+	background-position: -668px -18px;
+	background-image: url('../img/ita_sprite2.png');
+	float: right;
+	cursor: pointer;
+	opacity: 0.667;
+}
+
+.vClavier-closebutton:hover {
+	opacity: 1;
+}
+
+.padding-right {
+	padding-right: 20px;
+}
+
+.padding-left {
+	padding-left: 59px;
+}
+
+.clearfix:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.button-list {
+	line-height: 29px;
+	vertical-align: middle;
+	margin-top: 3px;
+	text-align: center;
+	opacity: 0.667;
+}
+
+.vClavier li {
+	display: inline-block;
+	margin-left: 3px;
+	float: left;
+	background: #eee;
+	border-radius: 3px;
+	height: 29px;
+	border: 1px solid #aaa;
+	cursor: default;
+}
+
+.vClavier li:hover {
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+	background: #efefef;
+}
+
+.letter {
+	width: 29px;
+	border-radius: 2px;
+}
+
+.backline, .capslock {
+	width: 55px;
+}
+
+.shift {
+	width: 74px;
+}
+
+.vClavier-icons {
+	display: block;
+	overflow: hidden;
+}
+
+.button-list li span {
+	position: relative;
+	top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+}
+
+.backline span {
+	display: block;
+	height: 14px;
+	width: 23px;
+	background-image: url('../img/ita_sprite2.png');
+	background-position: -714px -18px;
+}
+
+.capslock span {
+	display: block;
+	height: 19px;
+	width: 23px;
+	background-image: url('../img/ita_sprite2.png');
+	background-position: -613px -65px;
+}
+
+.shift span {
+	display: block;
+	height: 19px;
+	width: 23px;
+	background-image: url('../img/ita_sprite2.png');
+	background-position: -814px -15px;
+}
+
+.contrl {
+	display: block;
+	width: 13%;
+}
+
+.space {
+	display: block;
+	width: 70%;
+}
+

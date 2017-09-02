@@ -1,0 +1,105 @@
+@import "mixins";
+
+$h3-header-color: white;
+$h3-header-size: 20px;
+
+$content-size: 1160px;
+
+$top-height: 36px;
+
+$site-navigation-height: 55px;
+$site-navigation-box-color: #2a2d32;
+$site-navigation-text-hover-color: #f4b60d;
+$site-navigation-link-first-color: #248cec;
+$site-navigation-link-text-color: white;
+
+$site-navigation-search-box-height: 35px;
+$site-navigation-search-line-width: 240px;
+$site-navigation-search-line-color: #35383c;
+$site-navigation-box-border-color: #181a1d;
+$site-navigation-search-icon-color: #595b5e;
+
+$slider-height: 470px;
+$slider-pagination-color: white;
+$slider-pagination-active-color: #001d1d;
+$slider-pagination-border-color: white;
+
+$read-more-number-size: 90px;
+$read-more-number-color: #efeff0;
+$read-more-text-left-margin: 120px;
+$read_more_article_header_size:20px;
+$read_more_article_link_size: 13px;
+$read_more_article_link_color_hover: #248cec;
+
+$services-background-color: #2a2d32;
+$services-margin-top: 90px;
+$services-picture-size: 260px;
+$services-picture-caption-size: 12px;
+$services-picture-caption-color: white;
+$services-picture-caption-hover-color: #f4b60d;
+
+
+$news-banners-color: #f7f7f7;
+$news-banners-new-img-size: 150px;
+$new-banners-text-color: #9e9e9e;
+$new-banners-new-text-color-author: #0187f4;
+$new-banners-new-text-color-link-hover: #248cec;
+$news-banners-new-img-size-date: 37px;
+$news-banners-new-img-date-month-background-color: #248cec;
+$news-banners-new-img-date-month-color: white;
+$news-banners-new-img-date-day-background-color: #f4b60d;
+$news-banners-new-img-date-day-color: black;
+$news-banners-accordions-clicked-background-color: #f4b60d;
+$news-banners-accordions-clicked-color: white;
+
+
+$footer-background: #2a2d32;
+$footer-links-border-color: #393c40;
+$footer-links-color: #828385;
+$footer-links-hover-color: #248cec;
+$footer-bottom-background: #35383c;
+
+@include font-face(Ubuntu, "fonts/src/", Ubuntu-L, normal, normal);
+@include font-face(Ubuntu, "fonts/src/", Ubuntu-B, bold, normal);
+
+body {
+	font-family: Ubuntu, Arial, sans-serif;
+}
+
+nav {
+	list-style: none;
+}
+
+%center {
+	width: $content-size;
+	margin: 0 auto;
+}
+
+%capitalise_bold {
+	text-transform: capitalize;
+	font-weight: bold;
+}
+
+%clearfix {
+	&:after {
+		content: '';
+		clear: both;
+		display: block;
+	}
+}
+
+%cropping {
+	position: relative;
+	overflow: hidden;
+
+	img {
+		position: absolute;
+		z-index: 1;
+	}
+}
+
+h3 {
+	color: $h3-header-color;
+	font-size: $h3-header-size;
+}
+
