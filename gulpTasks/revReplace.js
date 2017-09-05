@@ -3,16 +3,26 @@ const gulp = require('gulp'),
 
 module.exports = function (options) {
 
+    let manifests = options.srcManifests;
+
     return function () {
 
-        return gulp.src(options.src)
-                   .pipe($.revReplace({
-                        replaceInExtensions : [ '.js', '.css', '.html', '.hbs','.ejs' ],
-                        manifest            : gulp.src(options.srcManifest)
-                    }))
-                   .pipe($.debug({ 'title' : $.util.colors.yellow('Revision replacing...') }))
-                   .pipe(gulp.dest(options.dst))
+        let stream = gulp.src(options.src);
 
-    }
+        for( let i = 0; i < manifests.length; i++ ) {
+
+            stream = stream
+                        .pipe(
+                            $.revReplace({
+                                replaceInExtensions : [ '.js', '.css', '.html', '.hbs','.ejs' ],
+                                manifest            : gulp.src(manifests[i])
+                            })
+                        )
+                        .pipe($.debug({ 'title' : $.util.colors.yellow('Revision replacing...') }));
+
+        }
+        return stream.pipe(gulp.dest(options.dst));
+
+    };
 
 };

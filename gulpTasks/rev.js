@@ -12,7 +12,7 @@ module.exports = function (options) {
                    .pipe($.debug({ 'title' : $.util.colors.yellow('Revisioning ...') }))
                    .pipe(gulp.dest(options.dst))
                    .pipe($.rev.manifest(options.name +  '.json'))
-                   .pipe(gulp.dest(options.dstManifest))
+                   .pipe(gulp.dest(options.dstManifest));
 
     }
 

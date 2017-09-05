@@ -101,25 +101,27 @@ lazyTaskRequest('revJs', './gulpTasks/rev', {
 });
 
 lazyTaskRequest('revImgs', './gulpTasks/rev', {
-    src         : [ configGulp.dstImgs + '/**/*.{png,jpg}' ],
+    src         : [ configGulp.dstImgs + '/**/*.{png,jpg,jpeg}' ],
     dst         : configGulp.dstImgs,
     name        : 'imgs',
     dstManifest : configGulp.dstRevisionManifest
 });
 
-lazyTaskRequest('revReplaceJS', './gulpTasks/revReplace', {
-    src         : [ configGulp.srcTemplates + '/**/*.ejs' ],
-    dst         : configGulp.dstTemplates,
-    srcManifest : configGulp.dstRevisionManifest + '/js.json'
-});
-
 lazyTaskRequest('revReplaceImgsInCSS', './gulpTasks/revReplace', {
-    src         : [ configGulp.dstCSS + '/**/*.css' ],
-    dst         : configGulp.dstCSS,
-    srcManifest : configGulp.dstRevisionManifest + '/imgs.json'
+    src          : [ configGulp.dstCSS + '/**/*.css' ],
+    dst          : configGulp.dstCSS,
+    srcManifests : [ configGulp.dstRevisionManifest + '/imgs.json' ]
 });
 
-gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs', 'revReplaceJS', 'revReplaceImgsInCSS'));
+lazyTaskRequest('revReplaceImgsAndJS', './gulpTasks/revReplace', {
+    src          : [ configGulp.srcTemplates + '/**/*.ejs' ],
+    dst          : configGulp.dstTemplates,
+    srcManifests : [ configGulp.dstRevisionManifest + '/imgs.json',
+                        configGulp.dstRevisionManifest + '/js.json' ]
+});
+
+gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs',
+                        'revReplaceImgsInCSS', 'revReplaceImgsAndJS'));
 
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
     src    : configGulp.srcImgs,
