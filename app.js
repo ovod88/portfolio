@@ -70,12 +70,13 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
 
+    logger.error(`Request to ${req.url} caused error status ${err.status} with message ${err.stack}`);
+
     if (typeof err === 'number') {
 
         err = new HttpError(err);
 
     }
-    logger.error(`Request to ${req.url} caused error status ${err.status} with message ${err.stack}`);
 
     if (!(err instanceof HttpError)) {
 

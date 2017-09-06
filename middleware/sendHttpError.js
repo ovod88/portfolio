@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
 
         if (req.app.get('env') == 'development') {
 
-            logger.error(`Sending error stack to the client...`);
+            logger.error(`Sending error stack to the developer...`);
             res.setHeader('Content-Type', 'text/plain');
             res.send(err.stack);
 
