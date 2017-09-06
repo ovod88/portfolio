@@ -3,6 +3,7 @@
 @include sprites($spritesheet-sprites);
 
 @import '../../commonSass/common';
+@import '../../commonSass/header';
 @import 'header';
 @import "section-intro";
 @import "portfolio";

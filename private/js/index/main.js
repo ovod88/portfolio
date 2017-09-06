@@ -2,11 +2,9 @@ require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass' ], fun
 
     $( function () {
 
-        // for( let i = 5; i > 0; i-- ) {
+        console.log($('.portfolio_list_slider').eq(0));
+        $('.portfolio_list_slider').eq(0).addClass('portfolio_list_slider--active');
 
-        //     $('.portfolio').fadeToggle('slow');
-
-        // }
         $(window).resize(function () {
 
             mediaQueryClass();

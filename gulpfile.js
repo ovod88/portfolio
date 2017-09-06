@@ -184,7 +184,9 @@ gulp.task('browser-sync', gulp.series( 'server' , function () {
                  configGulp.srcJS + '/commonCustom/*.js',
                  configGulp.routes ], gulp.series('watchjs'));
 
-    gulp.watch([ configGulp.srcCSS + '/**/sass/*.*', configGulp.srcCSS + '/typography/*.*' ], gulp.series('watchcss'));
+    gulp.watch([ configGulp.srcCSS + '/**/sass/*.*',
+                    configGulp.srcCSS + '/typography/*.*',
+                    configGulp.srcCSS + '/commonSass/*.*' ], gulp.series('watchcss'));
 
     gulp.watch(configGulp.srcTemplates, gulp.series('watchtemplates'));
 

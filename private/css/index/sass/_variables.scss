@@ -1,10 +1,2 @@
-%clearfix {
-  &:after {
-    content: '';
-    clear: both;
-    display: block;
-  }
-}
-
 $intro-bg-color: $bg-color;
 

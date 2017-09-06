@@ -2,6 +2,7 @@
 // @include sprites($spritesheet-sprites);
 
 @import '../../commonSass/common';
+@import '../../commonSass/header';
 @import 'header';
 @import 'body';
 @import "../../commonSass/social-navigation";
