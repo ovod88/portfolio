@@ -1,3 +1,19 @@
 .medium-desktops {
-    
+    header {
+        height: 400px;
+        width: 100%;
+        background-color: $bg-color;
+    }
+
+     .portfolio_navigation {
+        float: right;
+        width: 35%;
+        margin-top: 55px;
+        margin-right: 60px;
+    }
+
+    .portfolio_list_desc {
+        margin-top: 10px;
+        font-size: 15px;
+    }
 }

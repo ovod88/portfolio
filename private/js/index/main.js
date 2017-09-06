@@ -2,7 +2,6 @@ require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass' ], fun
 
     $( function () {
 
-        console.log($('.portfolio_list_slider').eq(0));
         $('.portfolio_list_slider').eq(0).addClass('portfolio_list_slider--active');
 
         $(window).resize(function () {
