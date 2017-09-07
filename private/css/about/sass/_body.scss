@@ -1,0 +1,53 @@
+.medium-desktops {
+    .about_intro {
+        height: 200px;
+        width: 100%;
+        text-align: center;
+    }
+    .about_intro_text {
+        display: block;
+        height: 100%;
+        margin-top: 80px;
+    }
+
+    .about_services {
+        background-color: $bg-color;
+        text-align: center;
+    }
+
+    .about_services_service_block {
+        display: inline-block;
+        margin-left: 150px;
+        width: 320px;
+    }
+
+    .about_services_service_block_img {
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        background: white;
+        margin: 0 auto;
+    }
+
+    .about_services_service_block:first-child {
+        margin-left: 0;
+    }
+
+    .about_services_service_block_img_icon {
+        display: block;
+    }
+
+    .about_services_service_block_img_text {
+        margin-top: 20px;
+    }
+
+    .about_services_service_block_img_line {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        width: 50%;
+        background: red;
+        display: block;
+        height: 1px;
+    }
+
+}

@@ -1,8 +1,20 @@
 .medium-desktops {
     header {
-        height: 400px;
+        height: 180px;
         width: 100%;
         background-color: $bg-color;
+        margin-bottom: 0;
+    }
+
+    .about_logo {
+        margin-top: 55px;
+        margin-left: 100px;
+        float: left;
+        font-size: 25px;
+    }
+    
+    .about_logo_name {
+        margin-bottom: 25px;
     }
 
      .portfolio_navigation {
