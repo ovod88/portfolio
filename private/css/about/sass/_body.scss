@@ -21,7 +21,7 @@
         width: 320px;
     }
 
-    .about_services_service_block_img {
+    .about_services_service_block_img_bg {
         width: 128px;
         height: 128px;
         border-radius: 50%;
@@ -44,10 +44,26 @@
     .about_services_service_block_img_line {
         margin-top: 30px;
         margin-bottom: 40px;
-        width: 50%;
+        width: 25%;
         background: red;
         display: block;
         height: 1px;
     }
 
+    .about_services_service_block_service {
+        @extend %clearfix;
+        position: relative;
+    }
+
+    .about_services_service_block_service_img {
+        margin: 15px 30px;
+    }
+
+    .about_services_service_block_service_text {
+        position: absolute;
+        left: 110px;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: left;
+    }
 }
