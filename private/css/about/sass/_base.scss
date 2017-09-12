@@ -1,9 +1,11 @@
+@import "../../common/sass/sprite-icons";
+@include sprites($spritesheet-sprites); 
 @import "sprite-icons";
 @include sprites($spritesheet-sprites);
 
-@import '../../commonSass/common';
-@import '../../commonSass/header';
+@import '../../common/sass/common';
+@import '../../common/sass/header';
 @import 'header';
 @import 'body';
-@import "../../commonSass/social-navigation";
+@import "../../common/sass/social-navigation";
 @import "footer";

@@ -123,6 +123,10 @@ lazyTaskRequest('revReplaceImgsAndJS', './gulpTasks/revReplace', {
 gulp.task('revision', gulp.series('revCSS', 'revJs', 'revImgs',
                         'revReplaceImgsInCSS', 'revReplaceImgsAndJS'));
 
+lazyTaskRequest('cleanspriteCss', './gulpTasks/del', {
+    dst : configGulp.srcCSS  + '/**/sass/_sprite-icons.scss',
+});
+
 lazyTaskRequest('sprite', './gulpTasks/sprite', {
     src    : configGulp.srcImgs,
     dstImg : configGulp.dstImgs + '/',
@@ -211,9 +215,9 @@ gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-autopref-css',
 gulp.task('build-styles-without-minify', gulp.series('cleanCSS', 'sass', 'concat-autopref-css', 'copyfonts'));
 gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', 'copy-css', 'copyfonts'));
 
-gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
+gulp.task('build-images', gulp.series('cleanImgs', gulp.parallel('cleanspriteCss', 'sprite', 'copyfavicon', 'compress-imgs')));
 gulp.task('build-images-dev', gulp.series('cleanImgs',
-                                gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
+                                gulp.parallel('cleanspriteCss', 'sprite', 'copyfavicon', 'compress-imgs')));
 
 gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js'), 'copyprojects',
                                         'revision', 'server'));

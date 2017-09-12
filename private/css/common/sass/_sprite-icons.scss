@@ -1,0 +1,189 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$-facebook-hover-name: 'Facebook:hover';
+$-facebook-hover-x: 0px;
+$-facebook-hover-y: 0px;
+$-facebook-hover-offset-x: 0px;
+$-facebook-hover-offset-y: 0px;
+$-facebook-hover-width: 32px;
+$-facebook-hover-height: 32px;
+$-facebook-hover-total-width: 131px;
+$-facebook-hover-total-height: 98px;
+$-facebook-hover-image: '../../../imgs/common/icons/icons.png';
+$-facebook-hover: (0px, 0px, 0px, 0px, 32px, 32px, 131px, 98px, '../../../imgs/common/icons/icons.png', 'Facebook:hover', );
+$-facebook-name: 'Facebook';
+$-facebook-x: 33px;
+$-facebook-y: 0px;
+$-facebook-offset-x: -33px;
+$-facebook-offset-y: 0px;
+$-facebook-width: 32px;
+$-facebook-height: 32px;
+$-facebook-total-width: 131px;
+$-facebook-total-height: 98px;
+$-facebook-image: '../../../imgs/common/icons/icons.png';
+$-facebook: (33px, 0px, -33px, 0px, 32px, 32px, 131px, 98px, '../../../imgs/common/icons/icons.png', 'Facebook', );
+$-github-hover-name: 'Github:hover';
+$-github-hover-x: 0px;
+$-github-hover-y: 33px;
+$-github-hover-offset-x: 0px;
+$-github-hover-offset-y: -33px;
+$-github-hover-width: 32px;
+$-github-hover-height: 32px;
+$-github-hover-total-width: 131px;
+$-github-hover-total-height: 98px;
+$-github-hover-image: '../../../imgs/common/icons/icons.png';
+$-github-hover: (0px, 33px, 0px, -33px, 32px, 32px, 131px, 98px, '../../../imgs/common/icons/icons.png', 'Github:hover', );
+$-github-name: 'Github';
+$-github-x: 33px;
+$-github-y: 33px;
+$-github-offset-x: -33px;
+$-github-offset-y: -33px;
+$-github-width: 32px;
+$-github-height: 32px;
+$-github-total-width: 131px;
+$-github-total-height: 98px;
+$-github-image: '../../../imgs/common/icons/icons.png';
+$-github: (33px, 33px, -33px, -33px, 32px, 32px, 131px, 98px, '../../../imgs/common/icons/icons.png', 'Github', );
+$-linkedin-hover-name: 'Linkedin:hover';
+$-linkedin-hover-x: 66px;
+$-linkedin-hover-y: 0px;
+$-linkedin-hover-offset-x: -66px;
+$-linkedin-hover-offset-y: 0px;
+$-linkedin-hover-width: 32px;
+$-linkedin-hover-height: 32px;
+$-linkedin-hover-total-width: 131px;
+$-linkedin-hover-total-height: 98px;
+$-linkedin-hover-image: '../../../imgs/common/icons/icons.png';
+$-linkedin-hover: (66px, 0px, -66px, 0px, 32px, 32px, 131px, 98px, '../../../imgs/common/icons/icons.png', 'Linkedin:hover', );
+$-linkedin-name: 'Linkedin';
+$-linkedin-x: 66px;
+$-linkedin-y: 33px;
+$-linkedin-offset-x: -66px;
+$-linkedin-offset-y: -33px;
+$-linkedin-width: 32px;
+$-linkedin-height: 32px;
+$-linkedin-total-width: 131px;
+$-linkedin-total-height: 98px;
+$-linkedin-image: '../../../imgs/common/icons/icons.png';
+$-linkedin: (66px, 33px, -66px, -33px, 32px, 32px, 131px, 98px, '../../../imgs/common/icons/icons.png', 'Linkedin', );
+$-skype-hover-name: 'Skype:hover';
+$-skype-hover-x: 0px;
+$-skype-hover-y: 66px;
+$-skype-hover-offset-x: 0px;
+$-skype-hover-offset-y: -66px;
+$-skype-hover-width: 32px;
+$-skype-hover-height: 32px;
+$-skype-hover-total-width: 131px;
+$-skype-hover-total-height: 98px;
+$-skype-hover-image: '../../../imgs/common/icons/icons.png';
+$-skype-hover: (0px, 66px, 0px, -66px, 32px, 32px, 131px, 98px, '../../../imgs/common/icons/icons.png', 'Skype:hover', );
+$-skype-name: 'Skype';
+$-skype-x: 33px;
+$-skype-y: 66px;
+$-skype-offset-x: -33px;
+$-skype-offset-y: -66px;
+$-skype-width: 32px;
+$-skype-height: 32px;
+$-skype-total-width: 131px;
+$-skype-total-height: 98px;
+$-skype-image: '../../../imgs/common/icons/icons.png';
+$-skype: (33px, 66px, -33px, -66px, 32px, 32px, 131px, 98px, '../../../imgs/common/icons/icons.png', 'Skype', );
+$-twitter-hover-name: 'Twitter:hover';
+$-twitter-hover-x: 66px;
+$-twitter-hover-y: 66px;
+$-twitter-hover-offset-x: -66px;
+$-twitter-hover-offset-y: -66px;
+$-twitter-hover-width: 32px;
+$-twitter-hover-height: 32px;
+$-twitter-hover-total-width: 131px;
+$-twitter-hover-total-height: 98px;
+$-twitter-hover-image: '../../../imgs/common/icons/icons.png';
+$-twitter-hover: (66px, 66px, -66px, -66px, 32px, 32px, 131px, 98px, '../../../imgs/common/icons/icons.png', 'Twitter:hover', );
+$-twitter-name: 'Twitter';
+$-twitter-x: 99px;
+$-twitter-y: 0px;
+$-twitter-offset-x: -99px;
+$-twitter-offset-y: 0px;
+$-twitter-width: 32px;
+$-twitter-height: 32px;
+$-twitter-total-width: 131px;
+$-twitter-total-height: 98px;
+$-twitter-image: '../../../imgs/common/icons/icons.png';
+$-twitter: (99px, 0px, -99px, 0px, 32px, 32px, 131px, 98px, '../../../imgs/common/icons/icons.png', 'Twitter', );
+$spritesheet-width: 131px;
+$spritesheet-height: 98px;
+$spritesheet-image: '../../../imgs/common/icons/icons.png';
+$spritesheet-sprites: ($-facebook-hover, $-facebook, $-github-hover, $-github, $-linkedin-hover, $-linkedin, $-skype-hover, $-skype, $-twitter-hover, $-twitter, );
+$spritesheet: (131px, 98px, '../../../imgs/common/icons/icons.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
