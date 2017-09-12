@@ -8,4 +8,6 @@ module.exports = function (app) {
 
     app.get('/about', require('./about'));
 
+    app.get('/contact', require('./contact'));
+
 };

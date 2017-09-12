@@ -1,10 +1,2 @@
-%clearfix {
-  &:after {
-    content: '';
-    clear: both;
-    display: block;
-  }
-}
-
 $bg-color: #e6f9ff;
 $navigation-hover-underline-color: rgba(0, 255, 0, 0.4);

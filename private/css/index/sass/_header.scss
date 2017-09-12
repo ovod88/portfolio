@@ -1,4 +1,9 @@
 .medium-desktops {
+
+    header {
+        @extend %clearfix;
+    }
+
     .portfolio_navigation {
         width: 80%;
     }

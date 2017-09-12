@@ -104,4 +104,27 @@
     .portfolio_list_link *{
         transition: all 500ms linear;
     }
+
+    .portfolio_navigation {
+        float: right;
+        width: 35%;
+        margin-top: 55px;
+        margin-right: 60px;
+    }
+
+    .portfolio_list_desc {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    .about_logo {
+        margin-top: 55px;
+        margin-left: 100px;
+        float: left;
+        font-size: 25px;
+    }
+    
+    .about_logo_name {
+        margin-bottom: 25px;
+    }
 }

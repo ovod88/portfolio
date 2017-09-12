@@ -7,6 +7,7 @@ requirejs.config ({
         "Modernizr"       : "libs/modernizr-custom",
         "settings"        : "commonCustom/settings",
         "mediaQueryClass" : "commonCustom/mediaQueryClass",
+        "resizeFunc"      : "commonCustom/resizeFunc",
         "sassToJs"        : "../bower_components/sass-to-js/js/dist/sass-to-js.min"
     },
     shim        : {
