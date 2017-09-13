@@ -1,4 +1,56 @@
-.portfolio_footer_logo {
+footer {
+    background: $bg-color;
+    @extend %clearfix;
+    padding-bottom: 30px;
+}
+
+.footer_block {
+    width: 25%;
+    padding-top: 40px;
+    float: left;
+}
+
+.footer_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    float: left
+}
+
+.footer_block_content {
+    width: 95%;
+    margin: 0 auto;
+    @extend %clearfix;
+}
+
+.footer_text {
+    margin-left: 140px;
+}
+
+.footer_follow_block {
+    @extend %clearfix;
+    margin-top: 30px;
+    position: relative;
+}
+
+.footer_follow_img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer_follow_text {
+    margin-left: 58px;
+}
+
+.footer_link_block {
+    margin-top: 20px;
+}
+
+.footer_logo {
+    clear: both;
+    text-align: center;
+    padding-top: 60px;
     font-size: 18px;
     margin-bottom: 50px;
 }
