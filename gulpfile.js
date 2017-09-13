@@ -135,7 +135,7 @@ lazyTaskRequest('sprite', './gulpTasks/sprite', {
 
 lazyTaskRequest('compress-imgs', './gulpTasks/compressImgs', {
     taskname : 'compress-imgs',
-    src      : configGulp.srcImgs + '/**/pics/*.{png,jpg,jpeg}',
+    src      : configGulp.srcImgs + '/**/pics/*.{png,jpg,jpeg,gif}',
     dst      : configGulp.dstImgs
 });
 
@@ -215,7 +215,8 @@ gulp.task('build-styles', gulp.series('cleanCSS', 'sass', 'concat-autopref-css',
 gulp.task('build-styles-without-minify', gulp.series('cleanCSS', 'sass', 'concat-autopref-css', 'copyfonts'));
 gulp.task('build-styles-dev', gulp.series('cleanCSS', 'sass', 'copy-css', 'copyfonts'));
 
-gulp.task('build-images', gulp.series('cleanImgs', 'cleanspriteCss', gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
+gulp.task('build-images', gulp.series('cleanImgs', 'cleanspriteCss', 
+                                gulp.parallel('sprite', 'copyfavicon', 'compress-imgs')));
 gulp.task('build-images-dev', gulp.series('cleanImgs', 'cleanspriteCss',
                                 gulp.parallel( 'sprite', 'copyfavicon', 'compress-imgs')));
 
