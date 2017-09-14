@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
 
         res.status(err.status || 500);
 
-        if (req.app.get('env') == 'development') {
+        if (req.app.get('env') !== 'development') {
 
             logger.error(`Sending error stack to the developer...`);
             res.setHeader('Content-Type', 'text/plain');
@@ -15,7 +15,11 @@ module.exports = (req, res, next) => {
         } else {
 
             logger.error(`Sending error page to the client...`);
-            res.render('error');
+            console.log(err.styles);
+            res.render('error', {
+                error  : err,
+                styles : err.styles
+            });
 
         }
 
@@ -23,4 +27,4 @@ module.exports = (req, res, next) => {
 
     next();
 
-}
+};

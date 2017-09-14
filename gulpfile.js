@@ -267,7 +267,7 @@ gulp.task('bump', function () {
 
                 }));
 
-})
+});
 
 function browserReload (done) {
 

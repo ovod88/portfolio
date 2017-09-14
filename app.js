@@ -13,7 +13,7 @@ app.engine('ejs', require('ejs-locals'));
 app.set('views', path.join(__dirname, configApp.dstTemplates));
 app.set('view engine', 'ejs');
 
-if (app.get('env') == 'development') {
+if (app.get('env') === 'development') {
 
     app.use(loggerM('dev'));
 

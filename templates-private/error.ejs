@@ -1,3 +1,11 @@
-<%- partial('partials/commonHeader') %>
+<% layout('layouts/commonPage') -%>
+<% block('title', 'Error Page') %>
+<% block('main', 'js/error/main.js') %>
 
+<%- partial('partials/commonHeader') %>
+<section class="error_block">
+    <p class='error_block_message'>
+        <%= error.message%>
+    </p>
+</section>
 <%- partial('partials/commonFooter') %>

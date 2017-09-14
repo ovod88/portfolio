@@ -10,6 +10,6 @@ module.exports = function (options) {
                 .pipe($.newer(options.dst))
                 .pipe(gulp.dest(options.dst));
 
-    }
+    };
 
 };

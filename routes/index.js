@@ -15,6 +15,7 @@ module.exports = function (app) {
     app.get('/works', (req, res) => {
 
         let err = new HttpError(404, 'Page is under construction...');
+        err.styles = require('./getFiles')('css/error');
 
         res.sendHttpError(err);
 

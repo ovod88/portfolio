@@ -18,6 +18,7 @@ module.exports = function () {
         srcProjects = "private/projects",
         dstProjects = "public/projects",
         reports = "reports",
+        isProduction = false,
         config = {
         "app"   : {
             "port"              : 3000,
@@ -49,7 +50,8 @@ module.exports = function () {
             "nodemon"             : {
                 "script"   : "bin/www.js",
                 "env"      : {
-                    "NODE_PATH" : "."
+                    "NODE_PATH" : ".",
+                    'NODE_ENV'  : isProduction ? 'production' : 'development'
                 },
                 "delay"    : 2,
                 "nodeArgs" : [ "--debug" ],
