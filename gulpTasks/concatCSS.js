@@ -6,33 +6,31 @@ module.exports = function (options) {
 
     return function () {
 
-        let set = false;
         return gulp.src(options.src, { read : false })
-               .pipe($.tap(function (file, t) {
+            .pipe($.debug({ title : $.util.colors.yellow('Here are the files ') }))
+            .pipe($.tap(function (file, t) {
 
-                    var rpath = '.';
-                    if (path.dirname(file.path).indexOf('style') !=-1 && !set) {
+                var rpath = path.dirname(file.relative);
+                rpath = rpath.split(path.sep).slice(0, -1).join(path.sep);
 
-                        set = true;
-                        var rpath = path.dirname(file.relative).split(path.sep)[0];
-                        return gulp.src(options.src)
-                           .pipe($.autoprefixer({
-                                browsers : [ 'last 2 versions' ],
-                                cascade  : false
-                            }))
-                           .pipe($.concat(options.dstName))
-                           .pipe($.debug({ title : $.util.colors.yellow('Concatinating css ... ') }))
-                           .pipe($.rename(function (file) {
+                return gulp.src([ options.srcLibs, options.base + '/' +
+                          rpath.split(path.sep).slice(0, -1).join('/') + '/libs/*.css', file.path ])
+                    .pipe($.debug({ title : $.util.colors.yellow('Here are the files inside...') }))
+                    .pipe($.autoprefixer({
+                        browsers : [ 'last 2 versions' ],
+                        cascade  : false
+                    }))
+                    .pipe($.concat(options.dstName))
+                    .pipe($.debug({ title : $.util.colors.yellow('Concatinating css ... ') }))
+                    .pipe($.rename(function (file) {
 
-                                file.dirname = rpath;
+                        file.dirname = rpath;
 
-                            }))
-                           .pipe(gulp.dest(options.dst));
+                    }))
+                    .pipe(gulp.dest(options.dst));
 
-                    }
+            }));
 
-                }))
-
-    }
+    };
 
 };

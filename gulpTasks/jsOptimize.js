@@ -23,7 +23,9 @@ module.exports = function (options) {
                 .pipe($.tap(function (file, t) {
 
                                 var rpath = path.parse(file.relative);
-                                return gulp.src(options.src)
+
+                                return gulp.src(file.path, { base : options.base })
+                                    .pipe($.debug({ title : $.util.colors.yellow('JS optimising before... ') }))
                                     .pipe($.requirejsOptimize({
                                         mainConfigFile : `${configGulp.dstJS}/${rpath.dir}/main.js`,
                                         name           : rpath.dir + '/' + rpath.name
@@ -32,7 +34,7 @@ module.exports = function (options) {
                                     .pipe($.uglify())
                                     .pipe(gulp.dest(options.dst));
 
-                            }))
+                            }));
 
         };
 

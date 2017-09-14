@@ -12,7 +12,7 @@
             <script data-main=<%= blocks.main %> src="bower_components/requirejs/require.js"></script>
         <% } %>
 
-        <% if (styles && (styles.length > 0)) { %>
+        <% if ((styles.length > 0) || styles.customStyle) { %>
             <% for(let style of styles) { %>
                <link rel="stylesheet" href= <%= style %>> 
             <% } %>
