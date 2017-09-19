@@ -13,6 +13,7 @@ require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass', 'inde
         mediaQueryClass();
 
         let portfolioController = new Portfolio($('.portfolio_container_block'));
+        portfolioController.start();
 
     });
 

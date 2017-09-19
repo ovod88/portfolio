@@ -4,17 +4,18 @@ let path = require('path'),
 
 module.exports = (req, res, next) => {
 
-    let options = {
-        root     : path.join( __dirname, '../../', configGulp.dstProjects, req.params.project ),
-        dotfiles : 'deny',
-        headers  : {
-            'x-timestamp': Date.now(),
-            'x-sent': true
-        }
-    },
-    fileName = 'index.html';
-
     if ( req.params.project ) {
+
+        let options = {
+            root     : path.join( __dirname, '../../', configGulp.dstProjects, 
+                                        req.params.projectfolder, req.params.project ),
+            dotfiles : 'deny',
+            headers  : {
+                'x-timestamp' : Date.now(),
+                'x-sent'      : true
+            }
+        },
+        fileName = 'index.html';
 
         res.sendFile(fileName, options, function (err) {
 
