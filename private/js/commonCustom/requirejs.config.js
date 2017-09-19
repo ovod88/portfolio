@@ -3,6 +3,7 @@ requirejs.config ({
     waitSeconds : 200,
     paths       : {
         "jquery"          : "../bower_components/jquery/dist/jquery",
+        'jqueryeasing'    : "libs/jquery.easing",
         "testcommon"      : "commonCustom/testcommon",
         "Modernizr"       : "libs/modernizr-custom",
         "settings"        : "commonCustom/settings",

@@ -1,4 +1,4 @@
-define([ 'jquery' ], function ($) {
+define([ 'jquery', 'jqueryeasing' ], function ($, $e) {
 
     class Portfolio {
         constructor(catLinks) {
@@ -27,7 +27,7 @@ define([ 'jquery' ], function ($) {
             let href = el.find('a').attr('href');
             this.hideAll();
             this.arrow.show();
-            this.catLinks.find('a[href*="' + href + '/"]').parent().show();
+            this.catLinks.find('a[href*="' + href + '/"]').parent().fadeIn(1000, 'easeInOutExpo');
 
         }
 
@@ -43,6 +43,7 @@ define([ 'jquery' ], function ($) {
 
             this.arrow.on('click', function (event) {
 
+                event.preventDefault();
                 that.goUp();
 
             });
