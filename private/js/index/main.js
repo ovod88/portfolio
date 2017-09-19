@@ -1,4 +1,5 @@
-require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass' ], function ($, t, tc, mediaQueryClass) {
+require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass', 'index/custom/Portfolio' ],
+                        function ($, t, tc, mediaQueryClass, Portfolio ) {
 
     $( function () {
 
@@ -10,6 +11,8 @@ require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass' ], fun
 
         });
         mediaQueryClass();
+
+        let portfolioController = new Portfolio($('.portfolio_container_block'));
 
     });
 

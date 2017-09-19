@@ -10,48 +10,76 @@
     .portfolio_container_block {
         width: 33.3%;
         height: 220px;
+        text-align: center;
         float: left;
-        border: 1px #4dff4d solid;
-        border-radius: 5px;
-        overflow: hidden;
     }
 
     .portfolio_block_link {
         display: block;
         height: 100%;
+        margin-top: 35px;
+        padding: 10px;
     }
 
     .portfolio_block_link_bg {
         width: 100%;
         height: 100%;
+        border-radius: 30px;
     }
 
-    .portfolio_block_link_bg:nth-of-type(6) {
-        left: -35%;
-        width: 120%;
-    }
-
-    .portfolio_container_block:hover {
-        transform: scaleX(1.1);
-        transition: all 200ms ease-in;
-    }
-
-    .portfolio_container_block:hover .portfolio_block_text{
-        height: 30px;
-        transition: all 200ms ease-in;
-    }
-    
     .portfolio_block_text {
-        display: block;
-        height: 0px;
-        width: 100%;
-        background-color: yellow;
-        position: absolute;
-        bottom: 0;
+        position: relative;
+        bottom: 20px;
+        opacity: 0;
+        display: inline;
     }
 
-    .portfolio_block_link_bg_remark1 {
-        width: 145%;
-        margin-left: -33%;
+    .portfolio_container_block:hover .portfolio_block_text {
+        display: inline;
+        opacity: 1;
+        bottom: 0;
+        transition: all 500ms ease-out;
     }
+
+    .portfolio_container_block:hover .portfolio_block_link {
+
+    }
+
+    // .portfolio_container_block {
+    //     width: 33.3%;
+    //     height: 220px;
+    //     float: left;
+    //     border: 1px #4dff4d solid;
+    //     border-radius: 5px;
+    //     overflow: hidden;
+    // }
+
+    // .portfolio_block_link_bg:nth-of-type(6) {
+    //     left: -35%;
+    //     width: 120%;
+    // }
+
+    // .portfolio_container_block:hover {
+    //     transform: scaleX(1.1);
+    //     transition: all 200ms ease-in;
+    // }
+
+    // .portfolio_container_block:hover .portfolio_block_text{
+    //     height: 30px;
+    //     transition: all 200ms ease-in;
+    // }
+    
+    // .portfolio_block_text {
+    //     display: block;
+    //     height: 0px;
+    //     width: 100%;
+    //     background-color: yellow;
+    //     position: absolute;
+    //     bottom: 0;
+    // }
+
+    // .portfolio_block_link_bg_remark1 {
+    //     width: 145%;
+    //     margin-left: -33%;
+    // }
 }
