@@ -21,8 +21,8 @@ module.exports = (req, res, next) => {
         },
         fileName = 'index.html',
         htmlProject = fs.readFileSync(path.join(options.root, fileName), 'utf8'),
-        htmlMenu = fs.readFileSync(path.join(__dirname, '../../', configGulp.dstProjects, 'menu.html' ), 'utf8'),
-        htmlCssMenu = '<link rel="stylesheet" href="../../menu.css">',
+        htmlMenu = fs.readFileSync(path.join(__dirname, '../../', configGulp.dstProjects, 'menu-to-all.html' ), 'utf8'),
+        htmlCssMenu = '<link rel="stylesheet" href="../../menu-to-all.css">',
         $ = cheerio.load(htmlProject);
 
         $('body').append(htmlMenu);

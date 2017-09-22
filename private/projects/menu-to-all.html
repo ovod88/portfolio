@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu</title>
+        <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <link rel="stylesheet" href="menu-to-all.css">
+    </head>
+    <body >
+        <section class="menuM menu--circle preload">
+            <input type="checkbox" id="menu__active" class="menuMInputs">
+            <label for="menu__active" class="menu__active">
+                <div class="menu__toggle">
+                    <div class="iconM">
+                        <div class="hamburgerM"></div>
+                    </div>
+                </div>
+                <input type="radio" name="arrowM--up" id="degree--up-0" class="menuMInputs">
+                <input type="radio" name="arrowM--up" id="degree--up-1" class="menuMInputs">
+                <input type="radio" name="arrowM--up" id="degree--up-2" class="menuMInputs">
+                <div class="menu__listings">
+                    <ul class="circleM">
+                        <li>
+                            <div class="placeholderM">
+                                <div class="upsideM">
+                                    <a href="#" class="buttonM"><i class="fa fa-user"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="placeholderM">
+                                <div class="upsideM">
+                                    <a href="#" class="buttonM"><i class="fa fa-cog"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="placeholderM">
+                                <div class="upsideM">
+                                    <a href="#">&nbsp</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="placeholderM">
+                                <div class="upsideM">
+                                    <a href="#" class="buttonM"><i class="fa fa-commenting"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="placeholderM">
+                                <div class="upsideM">
+                                    <a href="#" class="buttonM"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="placeholderM">
+                                <div class="upsideM">
+                                    <a href="#" class="buttonM"><i class="fa fa-battery-4"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="placeholderM">
+                                <div class="upsideM">
+                                    <a href="#" class="buttonM"><i class="fa fa-calendar"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="placeholderM">
+                                <div class="upsideM">
+                                    <a href="#" class="buttonM"><i class="fa fa-cloud"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="placeholderM">
+                                <div class="upsideM">
+                                    <a href="#" class="buttonM"><i class="fa fa-wifi"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="placeholderM">
+                                <div class="upsideM">
+                                    <a href="#" class="buttonM"><i class="fa fa-envelope-o"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu__arrowM menu__arrowM--top">
+                    <label for="degree--up-0"><div class="arrowM"></div></label>
+                    <label for="degree--up-1"><div class="arrowM"></div></label>
+                    <label for="degree--up-2"><div class="arrowM"></div></label>
+                </div>
+            </label>
+        </section>
+    </body>
+    <script>
+        var menu = document.querySelector(".preload");
+        menu.classList.remove('preload');
+    </script>
+</html>
