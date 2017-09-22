@@ -36,7 +36,9 @@ app.use(require('middleware/sendHttpError'));
 //sourceMap: true
 //}));
 
-app.use(express.static(path.join(__dirname, configApp.dstAll)));
+app.use(express.static(path.join(__dirname, configApp.dstAll), {
+    index : false
+}));
 
 app.get('/hello', (req, res) => {
 

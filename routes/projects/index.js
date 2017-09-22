@@ -1,8 +1,12 @@
 let path = require('path'),
     config = require('../../config')(),
-    configGulp = config.gulp;
+    configGulp = config.gulp,
+    fs = require('fs'),
+    cheerio = require('cheerio');
 
 module.exports = (req, res, next) => {
+
+    console.log('HERE');
 
     if ( req.params.project ) {
 
@@ -16,22 +20,15 @@ module.exports = (req, res, next) => {
             }
         },
         fileName = 'index.html',
+        htmlProject = fs.readFileSync(path.join(options.root, fileName), 'utf8'),
+        htmlMenu = fs.readFileSync(path.join(__dirname, '../../', configGulp.dstProjects, 'menu.html' ), 'utf8'),
+        htmlCssMenu = '<link rel="stylesheet" href="../../menu.css">',
+        $ = cheerio.load(htmlProject);
 
-        html = fs.readFileSync(path.join(options.root, fileName), 'utf8');
+        $('body').append(htmlMenu);
+        $('head').append(htmlCssMenu);
 
-        res.sendFile(fileName, options, function (err) {
-
-            if (err) {
-
-                next(err);
-
-            } else {
-
-                next();
-
-            }
-
-        });
+        res.send($.html());
 
     }
 
