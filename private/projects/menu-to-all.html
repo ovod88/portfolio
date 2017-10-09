@@ -17,8 +17,8 @@
                     </div>
                 </div>
                 <input type="radio" name="arrowM--up" id="degree--up-0" class="menuMInputs">
-                <input type="radio" name="arrowM--up" id="degree--up-1" class="menuMInputs">
-                <input type="radio" name="arrowM--up" id="degree--up-2" class="menuMInputs">
+                <!-- <input type="radio" name="arrowM--up" id="degree--up-1" class="menuMInputs">
+                <input type="radio" name="arrowM--up" id="degree--up-2" class="menuMInputs"> -->
                 <div class="menu__listings">
                     <ul class="circleM">
                         <li>
@@ -38,13 +38,6 @@
                         <li>
                             <div class="placeholderM">
                                 <div class="upsideM">
-                                    <a href="#">&nbsp</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="placeholderM">
-                                <div class="upsideM">
                                     <a href="#" class="buttonM"><i class="fa fa-commenting"></i></a>
                                 </div>
                             </div>
@@ -56,53 +49,50 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="placeholderM">
-                                <div class="upsideM">
-                                    <a href="#" class="buttonM"><i class="fa fa-battery-4"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="placeholderM">
-                                <div class="upsideM">
-                                    <a href="#" class="buttonM"><i class="fa fa-calendar"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="placeholderM">
-                                <div class="upsideM">
-                                    <a href="#" class="buttonM"><i class="fa fa-cloud"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="placeholderM">
-                                <div class="upsideM">
-                                    <a href="#" class="buttonM"><i class="fa fa-wifi"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="placeholderM">
-                                <div class="upsideM">
-                                    <a href="#" class="buttonM"><i class="fa fa-envelope-o"></i></a>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
                 </div>
                 <div class="menu__arrowM menu__arrowM--top">
                     <label for="degree--up-0"><div class="arrowM"></div></label>
-                    <label for="degree--up-1"><div class="arrowM"></div></label>
-                    <label for="degree--up-2"><div class="arrowM"></div></label>
+                    <!-- <label for="degree--up-1"><div class="arrowM"></div></label>
+                    <label for="degree--up-2"><div class="arrowM"></div></label> -->
                 </div>
             </label>
         </section>
     </body>
     <script>
-        var menu = document.querySelector(".preload");
+        var menu = document.querySelector(".preload"),
+            menu__toggle = document.querySelector(".menu__toggle"),
+            arrowM = document.querySelector(".arrowM"),
+            menu__listings = document.querySelector(".menu__listings"),
+            rotateAdded = false;
+            deg = 0;
         menu.classList.remove('preload');
+
+        menu__toggle.addEventListener('click', addRotateEvent);
+
+        function addRotateEvent() {
+            if(!rotateAdded) {
+                rotateAdded = !rotateAdded;
+                arrowM.addEventListener('click', rotateMenu);
+            } else {
+                rotateAdded = !rotateAdded;
+                arrowM.removeEventListener('click', rotateMenu);
+                deg = 0;
+                menu__listings.style.webkitTransform = null; 
+                menu__listings.style.mozTransform    = null; 
+                menu__listings.style.msTransform     = null; 
+                menu__listings.style.oTransform      = null; 
+                menu__listings.style.transform       = null;
+            }
+        }
+
+        function rotateMenu() {
+            deg += 60;
+            menu__listings.style.webkitTransform = 'rotate(' + deg + 'deg)'; 
+            menu__listings.style.mozTransform    = 'rotate(' + deg + 'deg)'; 
+            menu__listings.style.msTransform     = 'rotate(' + deg + 'deg)'; 
+            menu__listings.style.oTransform      = 'rotate(' + deg + 'deg)'; 
+            menu__listings.style.transform       = 'rotate(' + deg + 'deg)';  
+        }
     </script>
 </html>

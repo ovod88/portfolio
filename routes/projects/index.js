@@ -6,8 +6,6 @@ let path = require('path'),
 
 module.exports = (req, res, next) => {
 
-    console.log('HERE');
-
     if ( req.params.project ) {
 
         let options = {
