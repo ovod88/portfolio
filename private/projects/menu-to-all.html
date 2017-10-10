@@ -17,8 +17,6 @@
                     </div>
                 </div>
                 <input type="radio" name="arrowM--up" id="degree--up-0" class="menuMInputs">
-                <!-- <input type="radio" name="arrowM--up" id="degree--up-1" class="menuMInputs">
-                <input type="radio" name="arrowM--up" id="degree--up-2" class="menuMInputs"> -->
                 <div class="menu__listings">
                     <ul class="circleM">
                         <li>
@@ -31,6 +29,12 @@
                         <li>
                             <div class="placeholderM">
                                 <div class="upsideM">
+                                    <div class="upsideSubM">
+                                        <a href="#" class="buttonSubM"><i class="fa fa-cog"></i></a>
+                                    </div>
+                                    <div class="upsideSubM">
+                                        <a href="#" class="buttonSubM"><i class="fa fa-cog"></i></a>
+                                    </div>
                                     <a href="#" class="buttonM"><i class="fa fa-cog"></i></a>
                                 </div>
                             </div>
@@ -53,8 +57,6 @@
                 </div>
                 <div class="menu__arrowM menu__arrowM--top">
                     <label for="degree--up-0"><div class="arrowM"></div></label>
-                    <!-- <label for="degree--up-1"><div class="arrowM"></div></label>
-                    <label for="degree--up-2"><div class="arrowM"></div></label> -->
                 </div>
             </label>
         </section>
@@ -64,8 +66,11 @@
             menu__toggle = document.querySelector(".menu__toggle"),
             arrowM = document.querySelector(".arrowM"),
             menu__listings = document.querySelector(".menu__listings"),
-            rotateAdded = false;
-            deg = 0;
+            rotateAdded = false,
+            currentElem = null,
+            deg = 0,
+            subMenus;
+            
         menu.classList.remove('preload');
 
         menu__toggle.addEventListener('click', addRotateEvent);
@@ -74,9 +79,13 @@
             if(!rotateAdded) {
                 rotateAdded = !rotateAdded;
                 arrowM.addEventListener('click', rotateMenu);
+                menu__listings.addEventListener('mouseover', showSubmenu);
+                menu__listings.addEventListener('mouseout', hideSubmenu);
             } else {
                 rotateAdded = !rotateAdded;
                 arrowM.removeEventListener('click', rotateMenu);
+                menu__listings.removeEventListener('mouseover', showSubmenu);
+                menu__listings.removeEventListener('mouseout', hideSubmenu);
                 deg = 0;
                 menu__listings.style.webkitTransform = null; 
                 menu__listings.style.mozTransform    = null; 
@@ -93,6 +102,44 @@
             menu__listings.style.msTransform     = 'rotate(' + deg + 'deg)'; 
             menu__listings.style.oTransform      = 'rotate(' + deg + 'deg)'; 
             menu__listings.style.transform       = 'rotate(' + deg + 'deg)';  
+        }
+
+        function showSubmenu() {
+            if (currentElem) {
+                return;
+            }
+
+            var target = event.target;
+
+            while (target != this) {
+                if (target.className == 'upsideM') break;
+                target = target.parentNode;
+            }
+            if (target == this) return;
+            currentElem = target;
+
+            subMenus = target.querySelectorAll('.upsideSubM');
+            for(var i = 0; i < subMenus.length; i++) {
+                subMenus[i].classList.add('submenu');
+            }
+        }
+
+        function hideSubmenu() {
+            if (!currentElem) return;
+
+            var relatedTarget = event.relatedTarget;
+            if (relatedTarget) {
+                while (relatedTarget) {
+                    if (relatedTarget == currentElem) return;
+                    relatedTarget = relatedTarget.parentNode;
+                }
+            }
+
+            for(var i = 0; i < subMenus.length; i++) {
+                subMenus[i].classList.remove('submenu');
+            }
+
+            currentElem = null;
         }
     </script>
 </html>
