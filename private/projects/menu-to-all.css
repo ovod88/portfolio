@@ -88,8 +88,8 @@ body {
     z-index: 10;
     position: absolute;
     background: red;
-    top: -200px;
-    left: -200px;  
+     top: -200px;
+    left: -200px;   
     width: 390px;
     height: 390px;
     border-radius: 50%;
@@ -126,7 +126,7 @@ body {
     overflow: hidden
 }
 
-.circleM li:nth-child(1) {
+/* .circleM li:nth-child(1) {
     transform: rotate(60deg) skewY(-60deg);
     background-color: red;
 }
@@ -141,31 +141,33 @@ body {
 .circleM li:nth-child(4) {
     transform: rotate(-30deg) skewY(-60deg);
     background-color: red;
-}
-.circleM li:nth-child(5) {
-    transform: rotate(144deg) skewY(-54deg);
+} */
+
+
+/* .circleM li:nth-child(5) {
+    transform: rotate(-60deg) skewY(-60deg);
     background-color: red;
 }
 .circleM li:nth-child(6) {
-    transform: rotate(180deg) skewY(-54deg);
+    transform: rotate(-90deg) skewY(-60deg);
     background-color: red;
 }
 .circleM li:nth-child(7) {
-    transform: rotate(216deg) skewY(-54deg);
+    transform: rotate(-120deg) skewY(-60deg);
     background-color: red;
 }
 .circleM li:nth-child(8) {
-    transform: rotate(252deg) skewY(-54deg);
+    transform: rotate(-150deg) skewY(-60deg);
     background-color: red;
 }
 .circleM li:nth-child(9) {
-    transform: rotate(288deg) skewY(-54deg);
+    transform: rotate(-180deg) skewY(-60deg);
     background-color: red;
 }
 .circleM li:nth-child(10) {
-    transform: rotate(324deg) skewY(-54deg);
+    transform: rotate(-210deg) skewY(-60deg);
     background-color: red;
-}
+} */
 
 .circleM li .placeholderM {
     position: absolute;

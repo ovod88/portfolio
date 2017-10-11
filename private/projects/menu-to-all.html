@@ -62,46 +62,82 @@
         </section>
     </body>
     <script>
-        var menu = document.querySelector(".preload"),
+        var menuM = document.querySelector(".preload"),
             menu__toggle = document.querySelector(".menu__toggle"),
             arrowM = document.querySelector(".arrowM"),
             menu__listings = document.querySelector(".menu__listings"),
-            rotateAdded = false,
+            circleM = document.querySelector(".circleM"),
+            circleMLis = circleM.querySelectorAll("li"),
+            rotateAddedM = false,
             currentElem = null,
-            deg = 0,
-            subMenus;
-            
-        menu.classList.remove('preload');
+            degM = 0,
+            subMenus,
+            firstTurnM = true;
+
+        menuM.classList.remove('preload');
 
         menu__toggle.addEventListener('click', addRotateEvent);
 
         function addRotateEvent() {
-            if(!rotateAdded) {
-                rotateAdded = !rotateAdded;
+            if(!rotateAddedM) {
+                rotateAddedM = !rotateAddedM;
+
                 arrowM.addEventListener('click', rotateMenu);
+
+                for(var i = 0; i < circleMLis.length; i++) {
+                    circleMLis[i].style.transform = 'rotate(' + (60 - 30*i) + 'deg)' + ' skewY(-60deg)';
+                    circleM.appendChild(circleMLis[i]);
+                }
+
                 menu__listings.addEventListener('mouseover', showSubmenu);
                 menu__listings.addEventListener('mouseout', hideSubmenu);
             } else {
-                rotateAdded = !rotateAdded;
+                rotateAddedM = !rotateAddedM;
+
                 arrowM.removeEventListener('click', rotateMenu);
                 menu__listings.removeEventListener('mouseover', showSubmenu);
                 menu__listings.removeEventListener('mouseout', hideSubmenu);
-                deg = 0;
+
+                degM = 0;
+                firstTurnM = true;
+
                 menu__listings.style.webkitTransform = null; 
                 menu__listings.style.mozTransform    = null; 
                 menu__listings.style.msTransform     = null; 
                 menu__listings.style.oTransform      = null; 
                 menu__listings.style.transform       = null;
+
+                for(var i = 0; i < circleMLis.length; i++) {
+                    circleMLis[i].style.transform = '';
+                }
+
+                while (circleM.firstChild) {
+                    circleM.removeChild(circleM.firstChild);
+                }
             }
         }
 
         function rotateMenu() {
-            deg += 60;
-            menu__listings.style.webkitTransform = 'rotate(' + deg + 'deg)'; 
-            menu__listings.style.mozTransform    = 'rotate(' + deg + 'deg)'; 
-            menu__listings.style.msTransform     = 'rotate(' + deg + 'deg)'; 
-            menu__listings.style.oTransform      = 'rotate(' + deg + 'deg)'; 
-            menu__listings.style.transform       = 'rotate(' + deg + 'deg)';  
+            var first = circleM.querySelector("li:first-child"),
+                last = circleM.querySelector("li:last-child");
+            
+                if(firstTurnM) {
+                degM = 30;
+                firstTurnM = false;
+            }
+
+            degM += 30;
+
+            menu__listings.style.webkitTransform = 'rotate(' + degM + 'deg)'; 
+            menu__listings.style.mozTransform    = 'rotate(' + degM + 'deg)'; 
+            menu__listings.style.msTransform     = 'rotate(' + degM + 'deg)'; 
+            menu__listings.style.oTransform      = 'rotate(' + degM + 'deg)'; 
+            menu__listings.style.transform       = 'rotate(' + degM + 'deg)';
+
+            insertAfter(first, last);
+
+            last = circleM.querySelector("li:last-child");
+            last.style.transform = 'rotate(' + -degM + 'deg)' + ' skewY(-60deg)';
         }
 
         function showSubmenu() {
@@ -115,10 +151,13 @@
                 if (target.className == 'upsideM') break;
                 target = target.parentNode;
             }
+
             if (target == this) return;
+
             currentElem = target;
 
             subMenus = target.querySelectorAll('.upsideSubM');
+
             for(var i = 0; i < subMenus.length; i++) {
                 subMenus[i].classList.add('submenu');
             }
@@ -128,6 +167,7 @@
             if (!currentElem) return;
 
             var relatedTarget = event.relatedTarget;
+            
             if (relatedTarget) {
                 while (relatedTarget) {
                     if (relatedTarget == currentElem) return;
@@ -140,6 +180,10 @@
             }
 
             currentElem = null;
+        }
+
+        function insertAfter(elem, refElem) {
+            return refElem.parentNode.insertBefore(elem, refElem.nextSibling);
         }
     </script>
 </html>
