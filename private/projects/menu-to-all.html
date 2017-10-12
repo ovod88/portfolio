@@ -81,15 +81,20 @@
             menuClicked = false,
             rotateDuration = 1000,
             defaultDegree = 30,
-            showMenuDefault = 3000;
+            showMenuDefault = 3000,
+            hasHScroll = window.innerWidth > document.documentElement.clientWidth;
 
         menuM.classList.remove('preload');
 
         window.onscroll = showHideMenu;
 
-        showMenutimeout = setTimeout(function() {
-            menuM.classList.add('menuMhidden');
-        }, showMenuDefault);
+        if(hasHScroll) {
+            showMenutimeout = setTimeout(function() {
+                menuM.classList.add('menuMhidden');
+            }, showMenuDefault);
+        } else {
+            showMenutimeout = null;
+        }
 
         menu__toggle.addEventListener('click', addRotateEvent);
 
@@ -185,7 +190,7 @@
             }, rotateDuration);
         }
 
-        function showSubmenu() {
+        function showSubmenu(event) {
             if (currentElem) {
                 return;
             }
@@ -208,7 +213,7 @@
             }
         }
 
-        function hideSubmenu() {
+        function hideSubmenu(event) {
             if (!currentElem) return;
 
             var relatedTarget = event.relatedTarget;
@@ -239,7 +244,7 @@
 
                 positive = true;
 
-            } else if(diff < 0) {
+            } else if(diff <= 0) {
                 menuM.classList.remove('menuMhidden');
                 menuM.classList.add('menuMshown');
 
