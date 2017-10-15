@@ -1,16 +1,14 @@
 .medium-desktops, .large-desktops {
 
     header {
-        height: 180px;
         width: 100%;
-        margin-bottom: 20px;
+        padding: 20px 0 0 0;
     }
 
     .portfolio_navigation {
-        font-family: Arial, Helvetica, sans-serif;
-        width: 95%;
+        font-family: "Roboto" , Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
         margin: 0 auto;
-        margin-top: 30px;
     }
 
     .portfolio_list {
@@ -27,28 +25,28 @@
     .portfolio_list_link {
         text-decoration: none;
         display: block;
-        color: #ccc;
+        color: $portfolio-navigation-color;
     }
 
     .portfolio_list_link:hover,
     .portfolio_list_link:hover .portfolio_list_icon {
         text-decoration: none;
         display: block;
-        color: #999;
+        color: $portfolio-navigation-color-hover;
     }
 
     .portfolio_list_link:hover .portfolio_list_icon {
-        border: solid 2px #999;
+        border: solid 2px $portfolio-navigation-color-hover;
     }
 
     .portfolio_list_icon {
-        font-size: 25px;
-        border: solid 2px #ccc;
+        font-size: $portfolio-navigation-text-size;
+        border: solid 2px $portfolio-navigation-color;
         box-sizing: content-box;
         display: block;
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
+        width: $portfolio-navigation-list-icon-size;
+        height: $portfolio-navigation-list-icon-size;
+        line-height: $portfolio-navigation-list-icon-size;
         border-radius: 50%;
         margin: 0 auto;
     }
@@ -58,21 +56,12 @@
         margin-top: 20px;
     }
 
-    .portfolio_list_slider--first {
-        border-radius: 5px 0 0 5px;
-    }
-
-    .portfolio_list_slider--last {
-        border-radius: 0 5px 5px 0;
-    }
-
     .portfolio_list_slider {
         position: relative;
         width: 100%;
         display: block;
-        background: #ccc;
-        height: 5px;
-        margin-top: 10px;
+        height: $portfolio-navigation-list-slider-size;
+        margin-top: 15px;
     }
 
     .portfolio_list_slider:after {
@@ -96,47 +85,56 @@
         left: 0px;
         display: block;
         background: $navigation-hover-underline-color;
-        height: 5px;
-        border-radius: 5px;
+        height: $portfolio-navigation-list-slider-size;
         transition-property: left, right;
-        transition-duration: 0.5s;
+        transition-duration: 0.3s;
     }
 
-    .portfolio_list_link *{
+    .portfolio_list_link * {
         transition: all 500ms linear;
     }
 
     .portfolio_navigation {
         float: right;
-        width: 35%;
-        margin-top: 55px;
-        margin-right: 60px;
+        width: 50%;
     }
 
     .portfolio_list_desc {
-        margin-top: 10px;
-        font-size: 15px;
+        margin-top: 9px;
+        font-size: 12px;
+        text-transform: uppercase;
     }
 
     .header_logo {
         position: relative;
-        margin-top: 55px;
-        margin-left: 100px;
+        margin-left: 60px;
         float: left;
-        font-size: 25px;
+        font-size: $portfolio-navigation-text-size;
     }
     
     .header_logo_name {
-        margin-bottom: 25px;
+        margin-bottom: 10px;
     }
 
     .header_logo_texts {
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        font-weight: bold;
         margin-left: 30px;
+        color: $portfolio-navigation-color-hover;
     }
 
     .header_logo_LOGO {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+    }
+
+    .header_underline {
+        border-bottom: 1px solid $portfolio-navigation-underline-color;
+        border-top: 1px solid $portfolio-navigation-underline-color;
+        height: 2*$portfolio-navigation-list-slider-size;
+        clear: both;
+        position: relative;
+        top: -3px;
     }
 }
