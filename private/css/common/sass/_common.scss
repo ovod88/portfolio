@@ -7,9 +7,14 @@
 }
 
 body {
-    background: rgb(242, 255, 250);
+    background: #f2fffa;
 }
 
 span {
     display: block;
+}
+
+.medium-desktops, .large-desktops {
+    width: 1200px;
+    margin: 0 auto;
 }

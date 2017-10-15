@@ -1,4 +1,4 @@
-.medium-desktops {
+.medium-desktops, .large-desktops {
 
     header {
         height: 180px;
@@ -119,6 +119,7 @@
     }
 
     .header_logo {
+        position: relative;
         margin-top: 55px;
         margin-left: 100px;
         float: left;
@@ -127,5 +128,15 @@
     
     .header_logo_name {
         margin-bottom: 25px;
+    }
+
+    .header_logo_texts {
+        margin-left: 30px;
+    }
+
+    .header_logo_LOGO {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }

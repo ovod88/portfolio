@@ -1,31 +1,3 @@
-.medium-desktops {
+.medium-desktops, .large-desktops {
 
-    header {
-        @extend %clearfix;
-        width: 50%;
-    }
-
-    .portfolio_navigation {
-        width: 80%;
-    }
-
-    .portfolio_list_icon {
-        font-size: 22px;
-        width: 45px;
-        height: 45px;
-        line-height: 45px;
-    }
-
-    .portfolio_list_desc {
-        font-size: 15px;
-        margin-top: 10px;
-    }
-
-    .portfolio_list_slider {
-        height: 3px;
-    }
-
-    .portfolio_list_link:hover .portfolio_list_slider:after {
-        height: 3px;
-    }
 }
