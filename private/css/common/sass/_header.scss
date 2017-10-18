@@ -61,7 +61,9 @@
         width: 100%;
         display: block;
         height: $portfolio-navigation-list-slider-size;
-        margin-top: 15px;
+        margin-top: 10px;
+        position: relative;
+        top: 3px;
     }
 
     .portfolio_list_slider:after {
@@ -134,7 +136,5 @@
         border-top: 1px solid $portfolio-navigation-underline-color;
         height: 2*$portfolio-navigation-list-slider-size;
         clear: both;
-        position: relative;
-        top: -3px;
     }
 }
