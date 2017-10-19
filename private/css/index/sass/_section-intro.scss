@@ -4,13 +4,27 @@
         height: 350px;
         clear: both;
         position: relative;
-        background:  #e6f9ff;
+        // background:  #e6f9ff;
+        background: url('../../../imgs/index/pics/main-bg.png') no-repeat center center;
+    }
+
+    .portfolio_intro:before {
+        content: " ";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: -moz-linear-gradient(top, rgba(97,170,92,0.8) 0%, rgba(35,81,16,0.9) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(97,170,92,0.8) 0%,rgba(35,81,16,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(97,170,92,0.8) 0%,rgba(35,81,16,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc61aa5c', endColorstr='#e6235110',GradientType=0 ); /* IE6-9 */
     }
 
     .portfolio_intro_desc {
         @extend %clearfix;
         position: relative;
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
         // top: 50%;
         // left: 50%;
@@ -22,11 +36,41 @@
 
     }
 
+    .portfolio_intro_desc_text_1 {
+        font-size: 25px;
+        color: white;
+        font-weight: bold;
+        font-family: "Open sans", Arial, Helvetica, sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .portfolio_intro_desc_text_2 {
+        font-size: 40px;
+        color: #1efb09;
+        font-weight: bold;
+        font-family: "Open sans", Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .portfolio_intro_desc_text_3 {
+        font-size: 35px;
+        color: white;
+        font-weight: bold;
+        font-family: "Open sans", Arial, Helvetica, sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .portfolio_intro_desc_figure {
+        float: right;
+        margin: 100px 60px 100px 0;
+        text-align: center;
+        width: 20%;
+    }
+
     .portfolio_intro_desc_img {
         width: 150px;
         height: 150px;
-        float: right;
-        margin: 100px 60px 100px 0;
         // position: absolute;
         // top: 50%;
         // transform: translateY(-50%);
@@ -45,6 +89,7 @@
         top: 50%;
         margin-left: 60px;
         transform: translateY(-50%);
+        width: 60%;
     }
 
     .portfolio_intro_message_me {
