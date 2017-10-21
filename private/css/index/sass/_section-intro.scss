@@ -3,7 +3,7 @@
     .portfolio_intro {
         clear: both;
         position: relative;
-        background: url('../../../imgs/index/pics/main-bg.png') no-repeat center center;
+        background: url('../../../imgs/index/pics/main-bg6.jpg') no-repeat center center;
         background-size: cover;
         overflow: hidden;
     }
@@ -126,8 +126,7 @@
     .portfolio_intro_message_me {
         font-family: "Capture", Arial, Helvetica, sans-serif;
         letter-spacing: 1px;
-        position: absolute;
-        bottom: 65px;
+        display: inline-block;
         background: #1efb09;
         color: white;
         border-radius: 30px;
@@ -135,11 +134,9 @@
         line-height: 25px;
         padding: 6px 20px;
         font-size: 18px;
-        margin-left: 120px;
+        margin-left: 80px;
+        margin-top: 10px;
         text-decoration: none;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;  
     }
 
     .portfolio_intro_message_me:hover {
@@ -168,5 +165,10 @@
         display: inline;
         position: relative;
         top: 4px;
+    }
+
+    .portfolio_intro_desc_text_show_hide {
+        margin-top: 10px;
+        color:  #ffcc00;
     }
 }
