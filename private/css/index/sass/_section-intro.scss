@@ -61,14 +61,14 @@
     }
 
     .portfolio_intro_desc_text_1 {
-        font-size: 30px;
+        font-size: 25px;
         color: white;
         font-weight: bold;
         margin-bottom: 10px;
     }
 
     .portfolio_intro_desc_text_2 {
-        font-size: 25px;
+        font-size: 23px;
         color: #1efb09;
         font-weight: bold;
         // text-transform: uppercase;
@@ -76,7 +76,7 @@
     }
 
     .portfolio_intro_desc_text_3 {
-        font-size: 30px;
+        font-size: 25px;
         color: white;
         font-weight: bold;
         margin-bottom: 10px;
@@ -115,7 +115,7 @@
         // text-align: center;
         // padding-left: 200px;
         // padding-right: 30px;
-        font-family: "Open sans", Arial, Helvetica, sans-serif;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
         position: absolute;
         top: 50%;
         margin-left: 60px;
@@ -124,26 +124,49 @@
     }
 
     .portfolio_intro_message_me {
-        display: none;
+        font-family: "Capture", Arial, Helvetica, sans-serif;
+        letter-spacing: 1px;
         position: absolute;
-        bottom: 10px;
-        margin: 0 auto;
-        // display: block;
-        text-align: center;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #e6f9ff;
+        bottom: 65px;
+        background: #1efb09;
+        color: white;
         border-radius: 30px;
-        padding: 10px 50px;
-        font-size: 20px;
+        height: 45px;
+        line-height: 25px;
+        padding: 6px 20px;
+        font-size: 18px;
+        margin-left: 120px;
         text-decoration: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;  
     }
 
+    .portfolio_intro_message_me:hover {
+        background: white;
+        color: #1efb09;
+        box-shadow: 0 0 0 3px #1efb09;
+        transition: all 100ms ease-in-out;
+    }
+
+    // .portfolio_intro_message_me:hover .portfolio_intro_message_me_text {
+    //     top: 0;
+    // }
+
+    // .portfolio_intro_message_me:hover .envelope {
+    //     top: 2px;
+    // }
+
     .portfolio_intro_message_me_text {
-        padding-bottom: 5px;
+        display: inline-block;
+        position: relative;
+        top: 2px;
     }
 
     .envelope {
-        font-size: 30px;
+        font-size: 25px;
+        display: inline;
+        position: relative;
+        top: 4px;
     }
 }
