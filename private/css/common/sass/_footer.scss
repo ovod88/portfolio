@@ -2,12 +2,27 @@ footer {
     background: $bg-color;
     @extend %clearfix;
     padding-bottom: 30px;
+    background: rgba(35, 81, 16, 1);
 }
 
 .footer_block {
     width: 25%;
-    padding-top: 40px;
+    padding-top: 50px;
     float: left;
+    color: $portfolio-intro-desc-color-white;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-size: 15px;
+    line-height: 17px;
+}
+
+.footer_link {
+    color: $portfolio-intro-desc-text-orange;
+}
+
+.footer_link:hover {
+    text-decoration: none;
+    color: $portfolio-intro-desc-color-green;
 }
 
 .footer_img {
@@ -17,6 +32,11 @@ footer {
     float: left
 }
 
+.footer_follow_header {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .footer_block_content {
     width: 95%;
     margin: 0 auto;
@@ -24,7 +44,7 @@ footer {
 }
 
 .footer_text {
-    margin-left: 140px;
+    margin-left: 127px;
 }
 
 .footer_follow_block {
@@ -40,11 +60,15 @@ footer {
 }
 
 .footer_follow_text {
-    margin-left: 58px;
+    margin-left: 40px;
 }
 
 .footer_link_block {
     margin-top: 20px;
+}
+
+.footer_link_block:first-of-type {
+    margin-top: 0;
 }
 
 .footer_logo {
@@ -53,4 +77,7 @@ footer {
     padding-top: 60px;
     font-size: 18px;
     margin-bottom: 50px;
+    color: $portfolio-intro-desc-color-white;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
 }
