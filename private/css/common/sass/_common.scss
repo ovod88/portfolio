@@ -18,5 +18,6 @@ span {
     .centering_block {
         max-width: 1200px;
         margin: 0 auto;
+        @extend %clearfix;
     }
 }

@@ -1,13 +1,34 @@
 .medium-desktops, .large-desktops {
    .portfolio {
         display: block;
+        @extend %clearfix;
+        margin-top: 45px;
+    }
+
+    .portfolio_intro_message {
+        text-align: center;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        font-size: 19px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        letter-spacing: 2px;
+        color: rgba(35, 81, 16, 1);
+    }
+
+    .portfolio_block_center {
+        margin: 0 auto;
+        @extend %clearfix;
+        width: 900px;
     }
 
     .portfolio_container_block {
-        width: 33.3%;
-        height: 220px;
+        width: 33%;
+        height: 250px;
         text-align: center;
         float: left;
+        box-sizing: border-box;
+        position: relative;
     }
 
     .portfolio_container_block--enabled {
@@ -21,7 +42,6 @@
     .portfolio_block_link {
         display: block;
         height: 100%;
-        margin-top: 35px;
         padding: 10px;
     }
 
@@ -32,21 +52,45 @@
     }
 
     .portfolio_block_text {
-        position: relative;
-        bottom: 20px;
+        position: absolute;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #1efb09;
+        font-weight: bold;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         opacity: 0;
         display: inline;
+        pointer-events: none;
+        width: 85%;
+        line-height: 20px;
     }
 
     .portfolio_container_block:hover .portfolio_block_text {
-        display: inline;
         opacity: 1;
-        bottom: 0;
-        transition: all 500ms ease-out;
+        transition: all 200ms ease-out;
     }
 
-    .portfolio_container_block:hover .portfolio_block_link {
+    .portfolio_container_block:hover .portfolio_block_link:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0.7;
+        background: rgba(35, 81, 16, 1);
+        border-radius: 40px;
+        box-sizing: border-box;
+        border: 10px solid #fafafa;
+    }
 
+    .arrow:hover .portfolio_block_link:after {
+        display: none;
     }
 
     .arrow img{
