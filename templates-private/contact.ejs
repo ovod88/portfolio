@@ -5,33 +5,41 @@
 <%- partial('partials/commonHeader') %>
 
 <section class="contact_hire_message">
-    <h1 class="contact_hire_message_header">
-        Contact Vlad
-    </h1>
-    <p class="contact_hire_message_text">
-        To contact me for any reason, please fill the short form below,
-        so I could quickier respond to you message
-    </p>
+    <div class="centering_block">
+        <p class="contact_hire_message_text">
+            To contact me for any reason, please fill the short form below,
+            so I could quickier respond to your message
+        </p>
+    </div>
 </section>
 <section class="contact_hire_form_sec">
-    <div class="contact_hire_form_block">
-        <form action="/hire" class="contact_hire_form" method="post">
-            <h2 class="contact_hire_form_header">
-                Your contacts
-            </h2>
-            <hr>
-            <p class="contact_hire_form_field">
-                Your name
-                <input type="text" name="client_name" id="client_name" required="" placeholder="ex. Vlad Khrystenko" autofocus="">
-            </p>
-            <p class="contact_hire_form_field">
-                Your email
-                <input type="email" name="client_email" id="client_email" required="" placeholder="ex. hi@gmail.com">
-            </p>
-            <textarea name="client_msg" id="client_msg" required></textarea>
-            <input value="Send" class="contact_hire_form_submit" type="submit">
-            <span class="contact_hire_form_ajax_status"></span>
-        </form>
+    <div class="centering_block">
+        <div class="contact_hire_form_block">
+            <form action="/hire" class="contact_hire_form" method="post">
+                <div class="contact_hire_form_block_center">
+                    <h2 class="contact_hire_form_header">
+                        Your contacts
+                    </h2>
+                    <hr class="contact_hire_form_header_line">
+                    <p class="contact_hire_form_field">
+                        Your name
+                        <input type="text" class="contact_hire_form_input" name="client_name" 
+                                        id="client_name" required="" placeholder="ex. Vlad Khrystenko" autofocus="">
+                    </p>
+                    <p class="contact_hire_form_field">
+                        Your email
+                        <input type="email" class="contact_hire_form_input" name="client_email" 
+                                        id="client_email" required="" placeholder="ex. hi@gmail.com">
+                    </p>
+                    <p class="contact_hire_form_field">
+                        Yourmessage
+                    </p>
+                    <textarea name="client_msg" id="client_msg" required></textarea>
+                    <input value="Send" class="contact_hire_form_submit" type="submit">
+                    <span class="contact_hire_form_ajax_status"></span>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 <%- partial('partials/commonFooter') %>
