@@ -28,6 +28,27 @@
         eot woff ttf
 );
 
+@include font-face("Monserrat",
+        "../../../css/typography/fonts/Monserrat/montserrat-light",
+        200,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Monserrat",
+        "../../../css/typography/fonts/Monserrat/montserrat-regular",
+        400,
+        normal,
+        eot woff ttf
+);
+
+@include font-face("Monserrat",
+        "../../../css/typography/fonts/Monserrat/montserrat-medium",
+        700,
+        normal,
+        eot woff ttf
+);
+
 @include font-face("Open Sans",
         "../../../css/typography/fonts/Open_Sans/opensans-light",
         200,
