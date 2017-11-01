@@ -43,6 +43,10 @@
         display: block;
         height: 100%;
         padding: 10px;
+        background: #fefefe;
+        border-radius: 40px;
+        box-sizing: border-box;
+        border: 10px solid #fafafa;
     }
 
     .portfolio_block_link_bg {
@@ -81,8 +85,8 @@
         left: 0;
         height: 100%;
         width: 100%;
-        opacity: 0.7;
-        background: $portfolio-navigation-color-hover;
+        opacity: 0.8;
+        background: rgba(35, 81, 16, 1);
         border-radius: 40px;
         box-sizing: border-box;
         border: 10px solid #fafafa;
