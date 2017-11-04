@@ -43,10 +43,8 @@
         display: block;
         height: 100%;
         padding: 10px;
-        background: #fefefe;
         border-radius: 40px;
         box-sizing: border-box;
-        border: 10px solid #fafafa;
     }
 
     .portfolio_block_link_bg {
@@ -57,12 +55,12 @@
 
     .portfolio_block_text {
         position: absolute;
-        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        font-family: "Monserrat", Arial, Helvetica, sans-serif;
         letter-spacing: 2px;
         font-size: 16px;
         text-transform: uppercase;
         color: $portfolio-intro-desc-text-color-green;
-        font-weight: bold;
+        // font-weight: bold;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -96,7 +94,17 @@
         display: none;
     }
 
-    .arrow img{
-        transform: rotate(180deg);
+    .arrow_img {
+        background-image: url(../../../imgs/index/pics/arrow.png);
+        display: block;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 128px;
+        height: 128px;
+    }
+    .portfolio_container_block:hover .arrow_img {
+        background-position: -129px 0;
     }
 }
