@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Menu</title>
-        <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-        <link rel="stylesheet" href="menu-to-all.css">
-    </head>
-    <body >
+
         <section class="menuM menu--circle preload">
             <input type="checkbox" id="menu__active" class="menuMInputs">
             <label for="menu__active" class="menu__active">
@@ -22,34 +13,28 @@
                         <li>
                             <div class="placeholderM">
                                 <div class="upsideM">
-                                    <a href="#" class="buttonM"><i class="fa fa-user"></i></a>
+                                    <a href="/" class="buttonM"><i class="fa fa-home"></i></a>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="placeholderM">
                                 <div class="upsideM">
-                                    <div class="upsideSubM">
-                                        <a href="#" class="buttonSubM"><i class="fa fa-cog"></i></a>
-                                    </div>
-                                    <div class="upsideSubM">
-                                        <a href="#" class="buttonSubM"><i class="fa fa-cog"></i></a>
-                                    </div>
-                                    <a href="#" class="buttonM"><i class="fa fa-cog"></i></a>
+                                    <a href="/works" class="buttonM"><i class="fa fa-cog"></i></a>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="placeholderM">
                                 <div class="upsideM">
-                                    <a href="#" class="buttonM"><i class="fa fa-commenting"></i></a>
+                                    <a href="/about" class="buttonM"><i class="fa fa-info"></i></a>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="placeholderM">
                                 <div class="upsideM">
-                                    <a href="#" class="buttonM"><i class="fa fa-trash"></i></a>
+                                    <a href="/contact" class="buttonM"><i class="fa fa-inbox"></i></a>
                                 </div>
                             </div>
                         </li>
@@ -60,7 +45,6 @@
                 </div>
             </label>
         </section>
-    </body>
     <script>
         var menuM = document.querySelector(".preload"),
             menu__toggle = document.querySelector(".menu__toggle"),
@@ -267,4 +251,3 @@
             return refElem.parentNode.insertBefore(elem, refElem.nextSibling);
         }
     </script>
-</html>
