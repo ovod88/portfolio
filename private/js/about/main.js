@@ -1,11 +1,5 @@
-require( [ 'jquery', 'resizeFunc', "hideHeadScreen" ], function ($, resizeF, hideScreen) {
+require( [ 'jquery', 'resizeFunc' ], function ($, resizeF) {
 
-    $( function () {
-
-        resizeF(2);
-
-    });
-
-    hideScreen();
+    resizeF(2);
 
 });

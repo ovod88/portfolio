@@ -1,6 +1,6 @@
 require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass', 'index/custom/Portfolio',
-            'index/custom/showhideText', "hideHeadScreen" ],
-                        function ($, t, tc, mediaQueryClass, Portfolio, shtext, hideScreen ) {
+            'index/custom/showhideText' ],
+                        function ($, t, tc, mediaQueryClass, Portfolio, shtext) {
 
     $( function () {
 
@@ -19,7 +19,5 @@ require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass', 'inde
         shtext($('.portfolio_intro_desc_text_show_hide'));
 
     });
-
-    hideScreen();
 
 });

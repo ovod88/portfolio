@@ -14,13 +14,20 @@
 
         <% if (styles && ((styles.length > 0) || styles.customStyle)) { %>
             <% for(let style of styles) { %>
-               <link rel="stylesheet" href= <%= style %>> 
+               <link rel="stylesheet" href= <%= style %> sync> 
             <% } %>
-            <link rel="stylesheet" href= <%= styles.customStyle %>> 
+            <link rel="stylesheet" href= <%= styles.customStyle %> sync> 
         <% } %>
     </head>
     <body>
         <div class="preload"></div>
+        <script type="text/javascript">
+              window.onload = function() {
+                 setTimeout(function() {
+                     document.querySelector(".preload").style.display = 'none'; 
+                 }, 200);
+              }
+        </script>
         <pre class="breakpoints"></pre>        
         <%- body%>
     </body>
