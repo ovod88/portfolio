@@ -4,6 +4,29 @@
 @import "sprite-icons";
 @include sprites($spritesheet-sprites);
 
+.preload {
+    background-color:rgba(97, 170, 92, 1); 
+    position:absolute; 
+    top:0px; 
+    left:0px; 
+    width:100%; 
+    height:100%; 
+    z-index:2000;
+}
+
+.preload:before {
+    content: '';
+    display: block;
+    background-image: url(../../../imgs/favicon.ico);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    z-index: 2001;
+}
+
 @import '../../common/sass/common';
 @import '../../common/sass/header';
 @import 'header';

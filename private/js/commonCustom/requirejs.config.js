@@ -5,6 +5,7 @@ requirejs.config ({
         "jquery"          : "../bower_components/jquery/dist/jquery",
         'jqueryeasing'    : "libs/jquery.easing",
         "testcommon"      : "commonCustom/testcommon",
+        "hideHeadScreen"  : "commonCustom/hideHS",
         "Modernizr"       : "libs/modernizr-custom",
         "settings"        : "commonCustom/settings",
         "mediaQueryClass" : "commonCustom/mediaQueryClass",

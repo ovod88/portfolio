@@ -33,6 +33,7 @@
         text-decoration: none;
         display: block;
         color: $portfolio-navigation-color-hover;
+        transition: color 500ms linear;
     }
 
     .portfolio_list_link:hover .portfolio_list_icon {
@@ -90,10 +91,6 @@
         height: $portfolio-navigation-list-slider-size;
         transition-property: left, right;
         transition-duration: 0.3s;
-    }
-
-    .portfolio_list_link * {
-        transition: all 500ms linear;
     }
 
     .portfolio_navigation {
