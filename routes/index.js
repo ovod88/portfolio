@@ -10,7 +10,8 @@ module.exports = function (app) {
 
     app.get('/about', require('./about'));
 
-    app.get('/contact', require('./contact'));
+    app.get('/contact', require('./contact').get);
+    app.post('/contact/hire', require('./contact').post);
 
     app.get('/works', (req, res) => {
 

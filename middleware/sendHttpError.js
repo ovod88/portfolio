@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
         } else {
 
             logger.error(`Sending error page to the client...`);
-            console.log(err.styles);
+
             res.render('error', {
                 error  : err,
                 styles : err.styles
