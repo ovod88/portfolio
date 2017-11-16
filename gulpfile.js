@@ -228,6 +228,11 @@ gulp.task('build-dev', gulp.series('clean', 'build-images-dev',
                                             'copyprojects', 'copytemplates',
                                                             gulp.parallel('browser-sync', 'autotests')));
 
+gulp.task('build-dev-quick', gulp.series('cleanJS', 'cleanCSS',
+                                            gulp.parallel('build-styles-dev', 'build-js-dev'),
+                                            'copyprojects', 'copytemplates',
+                                                            gulp.parallel('browser-sync', 'autotests')));
+                                                            
 gulp.task('watchjs', gulp.series('process-js', browserReload));
 
 gulp.task('watchcss', gulp.series('sass', 'copy-css', function () {

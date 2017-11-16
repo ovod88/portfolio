@@ -42,7 +42,7 @@ exports.post = (req, res) => {
 
             } else {
 
-                res.send('Message is sent successfully sent.');
+                res.send('Message is successfully sent.');
             }
 
         });
