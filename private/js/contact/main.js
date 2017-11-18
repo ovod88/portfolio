@@ -7,7 +7,6 @@ require( [ 'jquery', 'resizeFunc', 'contact/custom/formChecker' ], function ($, 
                 formData = $form.serialize(),
                 $preload = $('.preload'),
                 $email_result_message = $('.email_result_message'),
-                $email_result = $('.email_result'),
                 $email_result_cover = $('.email_result_cover'),
                 $email_result_button = $('.email_result_button'),
                 formCheck = new formChecker($form);

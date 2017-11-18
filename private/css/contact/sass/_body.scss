@@ -76,9 +76,10 @@
         transition: box-shadow 200ms linear;
         border-radius: 5px;
         color: $portfolio-navigation-color-hover;
-        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
         font-size: 14px;
         letter-spacing: 1px;
+        font-weight: normal;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
@@ -88,6 +89,8 @@
     textarea::-webkit-input-placeholder {
         color: $portfolio-navigation-color-hover;
         font-size: 14px;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        font-weight: normal;
         opacity: 0.4;
         text-shadow: none;
         -webkit-text-fill-color: $portfolio-navigation-color-hover;

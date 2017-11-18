@@ -13,6 +13,14 @@ var smtpTransport = nodemailer.createTransport({
     }
 });
 
+function checkEmail (value) {
+
+    let regExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return value.match(regExp) ? true : false;
+
+}
+
 exports.get = (req, res) => {
 
     res.render('contact', {
@@ -33,7 +41,12 @@ exports.post = (req, res) => {
                    </li><li>Email: ${req.body.client_email}</li><li>Message: ${req.body.client_msg}</li></ul>`
     }
 
-    smtpTransport.sendMail(mailOptions,
+    if ( req.body.client_name.trim().length > 0 &&
+        req.body.client_email.trim().length > 0 &&
+        req.body.client_msg.trim().length > 0 &&
+        checkEmail(req.body.client_email.trim())) {
+
+        smtpTransport.sendMail(mailOptions,
         function (error, response) {
 
             if (error) {
@@ -47,6 +60,13 @@ exports.post = (req, res) => {
 
         });
 
-    smtpTransport.close();
+        smtpTransport.close();
+
+    } else {
+
+        res.status(206).send('Server failed with provided data. Resend correct data');
+        res.end();
+
+    }
 
 };

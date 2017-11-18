@@ -13,10 +13,7 @@ define([ 'jquery' ], function ( $ ) {
         constructor(form) {
 
             this.$form = form;
-            this.$inputs = this.$form.find('.contact_hire_form_input');
-            this.$email = this.$form.find('#client_email');
             this.$fields = this.$form.find('.contact_hire_form_input, textarea');
-            this.$textArea = this.$form.find('textarea');
             this.$errors = this.$form.find('.error_message');
 
         }
