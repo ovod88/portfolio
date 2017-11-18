@@ -24,17 +24,20 @@
                     <p class="contact_hire_form_field">
                         Your name
                         <input type="text" class="contact_hire_form_input" name="client_name" 
-                                        id="client_name" required="" placeholder="ex. Vlad Khrystenko" autofocus="">
+                                        id="client_name" required placeholder="ex. Vlad Khrystenko" autofocus="">
+                        <em class="error_message">Please name yourself</em>
                     </p>
                     <p class="contact_hire_form_field">
                         Your email
                         <input type="email" class="contact_hire_form_input" name="client_email" 
-                                        id="client_email" required="" placeholder="ex. hi@gmail.com">
+                                        id="client_email" required placeholder="ex. hi@gmail.com">
+                        <em class="error_message">Please enter valid email</em>
                     </p>
                     <p class="contact_hire_form_field">
                         Your message
+                        <textarea name="client_msg" id="client_msg" required placeholder="enter text here"></textarea>
+                        <em class="error_message">Please write something</em>
                     </p>
-                    <textarea name="client_msg" id="client_msg" required></textarea>
                     <input value="Send" class="contact_hire_form_submit" type="submit">
                     <span class="contact_hire_form_ajax_status"></span>
                 </div>
