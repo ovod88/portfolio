@@ -1,17 +1,9 @@
 require( [ 'jquery', 'index/custom/test', 'testcommon', 'mediaQueryClass', 'index/custom/Portfolio',
-            'index/custom/showhideText' ],
-                        function ($, t, tc, mediaQueryClass, Portfolio, shtext) {
+            'index/custom/showhideText', 'resizeFunc' ],
+                        function ($, t, tc, mediaQueryClass, Portfolio, shtext, resizeF) {
+    resizeF(0);
 
     $( function () {
-
-        $('.portfolio_list_slider').eq(0).addClass('portfolio_list_slider--active');
-
-        $(window).resize(function () {
-
-            mediaQueryClass();
-
-        });
-        mediaQueryClass();
 
         let portfolioController = new Portfolio($('.portfolio_container_block'));
         portfolioController.start();

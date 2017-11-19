@@ -55,12 +55,10 @@
 
     .portfolio_block_text {
         position: absolute;
-        font-family: "Monserrat", Arial, Helvetica, sans-serif;
-        letter-spacing: 2px;
-        font-size: 16px;
-        text-transform: uppercase;
-        color: $portfolio-intro-desc-text-color-green;
-        // font-weight: bold;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        letter-spacing: 3px;
+        font-size: 18px;
+        color: $portfolio-intro-desc-color-white;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

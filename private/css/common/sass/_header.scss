@@ -36,7 +36,8 @@
         transition: color 500ms linear;
     }
 
-    .portfolio_list_link:hover .portfolio_list_icon {
+    .portfolio_list_link:hover .portfolio_list_icon,
+    .portfolio_list_link_active  .portfolio_list_icon {
         border: solid 2px $portfolio-navigation-color-hover;
     }
 
@@ -50,6 +51,19 @@
         line-height: $portfolio-navigation-list-icon-size;
         border-radius: 50%;
         margin: 0 auto;
+        position: relative;
+    }
+
+    .portfolio_list_link_active {
+       text-decoration: none;
+        display: block;
+        color: #235110;
+        transition: color 500ms linear;
+    }
+
+    .portfolio_list_icon i {
+        position: relative;
+        left: 1px;
     }
 
     .portfolio_list_desc {
@@ -116,9 +130,10 @@
     }
 
     .header_logo_texts {
-        font-family: "Monserrat", Arial, Helvetica, sans-serif;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
         font-weight: 700;
         margin-left: 30px;
+        letter-spacing: 0px;
         color: $portfolio-navigation-color-hover;
     }
 

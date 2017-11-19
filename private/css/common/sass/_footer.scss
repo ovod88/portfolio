@@ -34,8 +34,8 @@ footer {
 
 .footer_follow_header {
     font-size: 18px;
-    font-family: "Monserrat", Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 400;
     color: $portfolio-intro-desc-color-green;
 }
 
@@ -69,6 +69,10 @@ footer {
     margin-top: 20px;
 }
 
+.footer_link_text {
+    margin-top: 5px;
+}
+
 .footer_link_block:first-of-type {
     margin-top: 0;
 }
@@ -80,6 +84,6 @@ footer {
     font-size: 18px;
     margin-bottom: 50px;
     color: $portfolio-intro-desc-text-orange;
-    font-family: "Monserrat", Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
 }
