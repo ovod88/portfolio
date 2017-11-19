@@ -13,16 +13,33 @@ footer {
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
     font-size: 15px;
-    line-height: 17px;
+    line-height: 18px;
 }
 
-.footer_link {
+.footer_link, em.skype {
     color: $portfolio-intro-desc-text-orange;
 }
 
-.footer_link:hover {
+.skype_name {
+    display: none;
+    position: absolute;
+    background: $navigation-hover-underline-color2;
+    padding: 7px;
+    border-radius: 8px;
+}
+
+.footer_link:hover, em.skype:hover {
     text-decoration: none;
     color: $portfolio-intro-desc-color-green;
+}
+
+em.skype:hover ~ .skype_name {
+    display: inline;
+}
+
+.Skype:hover .skype_name {
+    right: 100%;
+    display: inline;
 }
 
 .footer_img {
