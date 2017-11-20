@@ -26,9 +26,9 @@ require( [ 'jquery', 'resizeFunc', 'contact/custom/formChecker' ], function ($, 
                     showHideEmailBlock(msg);
 
                 },
-                function (error) {
+                function (errorXHR) {
 
-                    showHideEmailBlock(error);
+                    showHideEmailBlock(errorXHR.responseText);
 
                 });
 

@@ -47,18 +47,25 @@ exports.post = (req, res) => {
         checkEmail(req.body.client_email.trim())) {
 
         smtpTransport.sendMail(mailOptions,
-        function (error, response) {
+            function (error, response) {
 
-            if (error) {
+                if (error) {
+                    if (req.app.get('env') === 'development') {
 
-                res.status(500).send('Service is unavailable. Try later please');
+                        res.status(500).send(error.toString());
 
-            } else {
+                    } else {
 
-                res.send('Message is successfully sent.');
-            }
+                        res.status(500).send('Service is unavailable. Try later please');
 
-        });
+                    }
+
+                } else {
+
+                    res.send('Message is successfully sent.');
+                }
+
+            });
 
         smtpTransport.close();
 
