@@ -53,7 +53,6 @@ function Clock(arrows) {
             minutes = 0;
             hours++;
         }
-        console.log('MINUTE', minutes);
 
         arrows.minutes.rotate({endDeg: minutes * MINDEGREE + (seconds/60) * MINDEGREE});
 

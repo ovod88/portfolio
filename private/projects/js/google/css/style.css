@@ -144,6 +144,7 @@
 	border-color: #e5e5e5;
 	border-bottom: 1px solid #667;
 	height: 40px;
+	position: relative;
 }
 
 #search .logo {
@@ -161,13 +162,13 @@
 }
 
 #search .search_box {
-	position: relative;
+	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 	height: 30px;
     width: 500px;
     background: white;
-    margin-left: 20px;
+    left: 135px;
 	border: 1px solid rgb(229, 229, 229);
 }
 
@@ -186,8 +187,9 @@
 
 #search .buttons {
 	height: 35px;
-	position: relative;
-	top: 50%;
+    position: absolute;
+    top: 50%;
+	left: 630px;
 	transform: translateY(-50%);
 }
 

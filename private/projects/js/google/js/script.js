@@ -1,5 +1,5 @@
 'use strict';
-$(function() {
+$(function () {
 	var $search_box = $('.search_box');
 	var $search_input = $search_box.find('input');
 	var clavier;
@@ -27,48 +27,55 @@ $(function() {
 		$(this).removeClass('hovered');
 	});
 
-	function askBing() {
-		var azureKey = btoa(':8IyMlq81z0M+RY63ZD4TyXP2Il8Fye8c83AgkXxM1NE');
-    	var myUrl = 'https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27' + $search_input.val() + '%27' + '&$format=json';
+	function askAPI() {
+		if($search_input.val() && $search_input.val().trim().length) {
+			$('#data').remove();
+			$('body').append('<span id="data"> Here you have Search API results for ' + $search_input.val() + '</span>');
+		}
+		// var azureKey = btoa(':8IyMlq81z0M+RY63ZD4TyXP2Il8Fye8c83AgkXxM1NE');
+    	// var myUrl = 'https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27' + $search_input.val() + '%27' + '&$format=json';
 
-    	if($search_input.val() && $search_input.val().trim().length) {
-			$.ajax({
-	      		method: 'post',
-		     	url: myUrl,
-		      	headers: {
-		        	'Authorization': 'Basic ' + azureKey
-		      	},
-		      	success: function(data) {
-		      		var ul, results = data.d.results;
+    	// if($search_input.val() && $search_input.val().trim().length) {
+		// 	$.ajax({
+	    //   		method: 'post',
+		//      	url: myUrl,
+		//       	headers: {
+		//         	'Authorization': 'Basic ' + azureKey
+		//       	},
+		//       	success: function(data) {
+		//       		var ul, results = data.d.results;
 
-		      		if($('.result').length) {
-		      			ul = $('.result');
-		      			ul.html('');
-		      			ul = ul[0];
-		      		} else {
-						ul = document.createElement("ul");
-						ul.className = 'result';
-					}
-					if(results.length) {
+		//       		if($('.result').length) {
+		//       			ul = $('.result');
+		//       			ul.html('');
+		//       			ul = ul[0];
+		//       		} else {
+		// 				ul = document.createElement("ul");
+		// 				ul.className = 'result';
+		// 			}
+		// 			if(results.length) {
 
-						$.each(data.d.results, function(i, val){
-							var li = document.createElement("li");
-							li.innerHTML = '<p class="title">' + '<a href="' + val.Url + '">'+ val.Title +
-									'</a>' + '</p>' + '<p class = "url">' +
-									val.Url +'</p>' + '<p class="description">' + val.Description + '</p>';
+		// 				$.each(data.d.results, function(i, val){
+		// 					var li = document.createElement("li");
+		// 					li.innerHTML = '<p class="title">' + '<a href="' + val.Url + '">'+ val.Title +
+		// 							'</a>' + '</p>' + '<p class = "url">' +
+		// 							val.Url +'</p>' + '<p class="description">' + val.Description + '</p>';
 
-							ul.appendChild(li);
-						});
-						$('#nothing').remove();
-						$('body').append(ul);
+		// 					ul.appendChild(li);
+		// 				});
+		// 				$('#nothing').remove();
+		// 				$('body').append(ul);
 
-					} else {
-						$('body').append('<span id="nothing"> Nothing found </span>');
-					}
+		// 			} else {
+		// 				$('body').append('<span id="nothing"> Nothing found </span>');
+		// 			}
 
-				}
-			});
-    	}
+		// 		},
+		// 		error: function(err) {
+		// 			$('body').append('<p>' + err.responseText + '</p>');
+		// 		}
+		// 	});
+    	// }
 	}
 
 	function watchTextbox() {
@@ -80,12 +87,12 @@ $(function() {
 			clearInterval(watchInputInterval);
 			$(document).keypress(function(e) {
     			if(e.which == 13) {
-        			askBing();
+        			askAPI();
     			}
 			});
 
 			$('.buttons').click(function(e) {
-        		askBing();
+        		askAPI();
 			});
 		}
 	}
