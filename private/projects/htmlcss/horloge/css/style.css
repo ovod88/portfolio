@@ -76,7 +76,7 @@ Content is licensed under CC BY-NC-SA 3.0 -->
     padding-left:4.34em;
     position:absolute;
 }
-b, i {
+b, #clock i {
     height:8.2em;
     position:absolute;
     display:block;
@@ -86,7 +86,7 @@ b {
     border-width:0.3em 0;
     width:0.12em;
 }
-i {
+#clock i {
     border:solid 0 rgba(0,0,0,0.5);
     border-width:0.3em 0;
     width:0.04em;

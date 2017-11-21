@@ -112,9 +112,11 @@
                 menu__listings.removeEventListener('mouseover', showSubmenu);
                 menu__listings.removeEventListener('mouseout', hideSubmenu);
 
-                showMenutimeout = setTimeout(function() {
-                    menuM.classList.add('menuMhidden');
-                }, 6000);
+                if(hasHScroll) {
+                    showMenutimeout = setTimeout(function() {
+                        menuM.classList.add('menuMhidden');
+                    }, 6000);
+                }
 
                 degM = 0;
                 firstTurnM = true;
