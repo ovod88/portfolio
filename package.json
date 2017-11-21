@@ -12,6 +12,7 @@
     "Volodymyr Khrystenko <ovod88@bigmir.net>"
   ],
   "dependencies": {
+    "async": "^2.6.0",
     "body-parser": "~1.15.2",
     "cheerio": "^1.0.0-rc.2",
     "cookie-parser": "~1.4.3",

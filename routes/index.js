@@ -1,4 +1,4 @@
-HttpError = require('errors').HttpError;
+let HttpError = require('errors').HttpError;
 
 module.exports = function (app) {
 
