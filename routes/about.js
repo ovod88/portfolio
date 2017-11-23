@@ -1,7 +1,9 @@
 module.exports = (req, res) => {
 
-    res.render('about', {
-        styles : require('./getFiles')('css/about')
+    require('./getFiles')('css/about', function(err, data) {
+        res.render('about', {
+            styles : data
+        });
     });
 
 };

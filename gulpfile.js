@@ -223,6 +223,7 @@ gulp.task('build-images-dev', gulp.series('cleanImgs', 'cleanspriteCss',
 
 gulp.task('build', gulp.series('clean', 'build-images', gulp.parallel('build-styles', 'build-js'), 'copyprojects',
                                         'revision', 'server'));
+
 gulp.task('build-dev', gulp.series('clean', 'build-images-dev',
                                             gulp.parallel('build-styles-dev', 'build-js-dev'),
                                             'copyprojects', 'copytemplates',
@@ -231,7 +232,7 @@ gulp.task('build-dev', gulp.series('clean', 'build-images-dev',
 gulp.task('build-dev-quick', gulp.series('cleanJS', 'cleanCSS',
                                             gulp.parallel('build-styles-dev', 'build-js-dev'),
                                             'copyprojects', 'copytemplates',
-                                                            gulp.parallel('browser-sync', 'autotests')));
+                                                    gulp.parallel('browser-sync', 'autotests')));
                                                             
 gulp.task('watchjs', gulp.series('process-js', browserReload));
 

@@ -63,19 +63,22 @@ module.exports = (req, res, next) => {
             if (e) {
 
                 let err = new HttpError(404, e.message);
-                err.styles = require('./getFiles')('css/error');
+                require('./getFiles')('css/error', function(e, data) {
+                    err.styles = data;
+                    res.sendHttpError(err);
+                    res.end();
+                });
 
-                res.sendHttpError(err);
-                res.end();
+            } else {
 
+                $ = cheerio.load(htmlProject);
+
+                $('body').append(htmlMenu);
+                $('head').append(htmlCssMenu);
+                $('head').append(htmlFontsAwesome);
+
+                res.send($.html());
             }
-            $ = cheerio.load(htmlProject);
-
-            $('body').append(htmlMenu);
-            $('head').append(htmlCssMenu);
-            $('head').append(htmlFontsAwesome);
-
-            res.send($.html());
 
         });
 

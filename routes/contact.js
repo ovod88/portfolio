@@ -22,10 +22,12 @@ function checkEmail (value) {
 }
 
 exports.get = (req, res) => {
-
-    res.render('contact', {
-        styles : require('./getFiles')('css/contact')
-    });
+    
+    require('./getFiles')('css/contact', function(err, data) {
+        res.render('contact', {
+            styles : data
+        });
+    })
 
 };
 

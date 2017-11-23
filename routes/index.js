@@ -16,9 +16,13 @@ module.exports = function (app) {
     app.get('/works', (req, res) => {
 
         let err = new HttpError(404, 'Page is under construction...');
-        err.styles = require('./getFiles')('css/error');
+    
+        require('./getFiles')('css/error', function(e, data) {
 
-        res.sendHttpError(err);
+            err.styles = data;
+            res.sendHttpError(err);
+            
+        });
 
     });
 
