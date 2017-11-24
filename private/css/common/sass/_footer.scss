@@ -16,10 +16,6 @@ footer {
     line-height: 18px;
 }
 
-.footer_link, em.skype {
-    color: $portfolio-intro-desc-text-orange;
-}
-
 .skype_name {
     display: none;
     position: absolute;
@@ -28,9 +24,14 @@ footer {
     border-radius: 8px;
 }
 
-.footer_link:hover, em.skype:hover {
+.footer_link, em.skype, .footer_link:focus {
     text-decoration: none;
+    color: $portfolio-intro-desc-text-orange;
+}
+
+.footer_link:hover, em.skype:hover {
     color: $portfolio-intro-desc-color-green;
+    text-decoration: none;
 }
 
 em.skype:hover ~ .skype_name {
