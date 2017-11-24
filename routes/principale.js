@@ -1,9 +1,20 @@
-exports.get = (req, res) => {
-    
-    require('./getFiles')('css/index', function(err, data) {
-        res.render('index', {
-            styles : data
-        });
-    })
+let indexStyles;
 
-}
+require('./getFiles')('css/index', function (err, data) {
+
+    if (err) {
+
+        indexStyles = [];
+
+    }
+    indexStyles = data;
+
+});
+
+exports.get = (req, res) => {
+
+        res.render('index', {
+            styles : indexStyles
+        });
+
+};

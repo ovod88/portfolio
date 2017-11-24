@@ -13,6 +13,10 @@ app.engine('ejs', require('ejs-locals'));
 app.set('views', path.join(__dirname, configApp.dstTemplates));
 app.set('view engine', 'ejs');
 
+process.on('uncaughtException', function (err) {
+  console.log('Caught exception: ' + err);
+});
+
 if (app.get('env') === 'development') {
 
     app.use(loggerM('dev'));

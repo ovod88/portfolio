@@ -1,9 +1,20 @@
+let aboutStyles;
+
+require('./getFiles')('css/about', function (err, data) {
+
+    if (err) {
+
+        aboutStyles = [];
+
+    }
+    aboutStyles = data;
+
+});
+
 module.exports = (req, res) => {
 
-    require('./getFiles')('css/about', function(err, data) {
-        res.render('about', {
-            styles : data
-        });
+    res.render('about', {
+        styles : aboutStyles
     });
 
 };

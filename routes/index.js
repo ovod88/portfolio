@@ -1,5 +1,20 @@
 let HttpError = require('errors').HttpError;
 
+if (!global.errStyles) {
+
+    require('./getFiles')('css/error', function (e, data) {
+
+        if (e) {
+
+            global.errStyles = [];
+
+        }
+        global.errStyles = data;
+
+    });
+
+}
+
 module.exports = function (app) {
 
     app.locals.styles = null;
@@ -16,13 +31,9 @@ module.exports = function (app) {
     app.get('/works', (req, res) => {
 
         let err = new HttpError(404, 'Page is under construction...');
-    
-        require('./getFiles')('css/error', function(e, data) {
 
-            err.styles = data;
-            res.sendHttpError(err);
-            
-        });
+        err.styles = global.errStyles;
+        res.sendHttpError(err);
 
     });
 

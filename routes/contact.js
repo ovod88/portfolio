@@ -1,6 +1,17 @@
 const nodemailer = require("nodemailer"),
       config = require('../config/mail');
+let contactStyles;
 
+require('./getFiles')('css/contact', function (err, data) {
+
+    if (err) {
+
+        contactStyles = [];
+
+    }
+    contactStyles = data;
+
+});
 
 var smtpTransport = nodemailer.createTransport({
     service : "gmail",
@@ -22,12 +33,10 @@ function checkEmail (value) {
 }
 
 exports.get = (req, res) => {
-    
-    require('./getFiles')('css/contact', function(err, data) {
-        res.render('contact', {
-            styles : data
-        });
-    })
+
+    res.render('contact', {
+        styles : contactStyles
+    });
 
 };
 

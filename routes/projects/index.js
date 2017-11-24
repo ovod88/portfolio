@@ -4,33 +4,46 @@ let path = require('path'),
     fs = require('fs'),
     cheerio = require('cheerio'),
     HttpError = require('errors').HttpError,
-    async = require('async');
+    async = require('async'),
+    loadedProjects = [];
 
-module.exports = (req, res, next) => {
+if (!global.errStyles) {
 
-    if ( req.params.project ) {
+    require('../getFiles')('css/error', function (e, data) {
 
-        let options = {
-                root     : path.join( __dirname, '../../', configGulp.dstProjects,
-                                            req.params.projectfolder, req.params.project ),
-                dotfiles : 'deny',
-                headers  : {
-                    'x-timestamp' : Date.now(),
-                    'x-sent'      : true
-                }
-            },
-            fileName = 'index.html',
-            htmlProject,
-            htmlMenu,
-            htmlCssMenu = '<link rel="stylesheet" href="../../menu-to-all.css">',
-            htmlFontsAwesome = "<link rel='stylesheet prefetch'" +
-                               "href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>",
-            $;
+        if (e) {
+
+            global.errStyles = [];
+
+        }
+        global.errStyles = data;
+
+    });
+
+}
+
+function prepareProject (rootDir, callback) {
+
+    let project = loadedProjects[rootDir];
+
+    if (project) {
+
+        callback(null, project);
+
+    } else {
+
+        let fileName = 'index.html',
+        htmlProject,
+        htmlMenu,
+        htmlCssMenu = '<link rel="stylesheet" href="../../menu-to-all.css">',
+        htmlFontsAwesome = "<link rel='stylesheet prefetch'" +
+                            "href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>",
+        $;
 
         async.parallel([
             function (cb) {
 
-                fs.readFile(path.join(options.root, fileName), 'utf8', (err, data) => {
+                fs.readFile(path.join(rootDir, fileName), 'utf8', (err, data) => {
 
                     if (err) {
 
@@ -63,11 +76,8 @@ module.exports = (req, res, next) => {
             if (e) {
 
                 let err = new HttpError(404, e.message);
-                require('./getFiles')('css/error', function(e, data) {
-                    err.styles = data;
-                    res.sendHttpError(err);
-                    res.end();
-                });
+                err.style = global.errStyles;
+                callback(err);
 
             } else {
 
@@ -77,8 +87,40 @@ module.exports = (req, res, next) => {
                 $('head').append(htmlCssMenu);
                 $('head').append(htmlFontsAwesome);
 
-                res.send($.html());
+                loadedProjects[rootDir] = $.html();
+                callback(null, $.html());
+
             }
+
+        });
+
+    }
+
+}
+
+module.exports = (req, res, next) => {
+
+    if ( req.params.project ) {
+
+        let options = {
+                root     : path.join( __dirname, '../../', configGulp.dstProjects,
+                                            req.params.projectfolder, req.params.project ),
+                dotfiles : 'deny',
+                headers  : {
+                    'x-timestamp' : Date.now(),
+                    'x-sent'      : true
+                }
+            };
+
+        prepareProject(options.root, function (err, project) {
+
+            if (err) {
+
+                res.sendHttpError(err);
+                res.end();
+
+            }
+            res.send(project);
 
         });
 
