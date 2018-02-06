@@ -6,21 +6,28 @@ module.exports = (req, res, next) => {
 
         res.status(err.status || 500);
 
-        if (req.app.get('env') === 'development') {
+        if (res.req.headers['x-requested-with'] === 'XMLHttpRequest') {
 
-            logger.error(`Sending error stack to the developer...`);
-            res.setHeader('Content-Type', 'text/plain');
-            res.send(err.stack);
+            res.json(err);
 
         } else {
 
-            logger.error(`Sending error page to the client...`);
+            if (req.app.get('env') === 'development') {
 
-            res.render('error', {
-                error  : err,
-                styles : err.styles
-            });
+                logger.error(`Sending error stack to the developer...`);
+                res.setHeader('Content-Type', 'text/plain');
+                res.send(err.stack);
 
+            } else {
+
+                logger.error(`Sending error page to the client...`);
+
+                res.render('error', {
+                    error  : err,
+                    styles : err.styles
+                });
+
+            }
         }
 
     }

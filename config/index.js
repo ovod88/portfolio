@@ -18,7 +18,7 @@ module.exports = function () {
         srcProjects = "private/projects",
         dstProjects = "public/projects",
         reports = "reports",
-        isProduction = true,
+        isProduction = false,
         config = {
         "app"   : {
             "port"              : 3000,
